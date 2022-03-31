@@ -24,10 +24,12 @@ namespace K1
             panel1.BackColor = Color.FromArgb(73, 101, 214);
             panelLogo.BackColor = Color.FromArgb(21, 51, 173);
             panelTitle.BackColor = Color.FromArgb(44, 61, 130);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
             btnClose.Visible = false;
             this.Text = string.Empty;
             this.ControlBox = false;
-
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -154,6 +156,24 @@ namespace K1
         private void panelTitle_MouseUp(object sender, MouseEventArgs e)
         {
             
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnFill_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void btnhide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
