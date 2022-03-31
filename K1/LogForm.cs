@@ -13,6 +13,7 @@ namespace K1
 {
     public partial class LogForm : Form
     {
+
         public LogForm()
         {
             InitializeComponent();

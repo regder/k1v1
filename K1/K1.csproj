@@ -122,6 +122,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NotesForm.resx">
+      <DependentUpon>NotesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\servicesForm.resx">
       <DependentUpon>servicesForm.cs</DependentUpon>
     </EmbeddedResource>

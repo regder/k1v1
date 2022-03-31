@@ -51,6 +51,9 @@ namespace K1
     partial void InsertOrders(Orders instance);
     partial void UpdateOrders(Orders instance);
     partial void DeleteOrders(Orders instance);
+    partial void InsertNotes(Notes instance);
+    partial void UpdateNotes(Notes instance);
+    partial void DeleteNotes(Notes instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -144,6 +147,14 @@ namespace K1
 			get
 			{
 				return this.GetTable<Order>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Notes> Notes
+		{
+			get
+			{
+				return this.GetTable<Notes>();
 			}
 		}
 	}
@@ -1778,6 +1789,116 @@ namespace K1
 				{
 					this._Фамилия_сотрудника = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Notes")]
+	public partial class Notes : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _Заголовок;
+		
+		private string _Текст;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnЗаголовокChanging(string value);
+    partial void OnЗаголовокChanged();
+    partial void OnТекстChanging(string value);
+    partial void OnТекстChanged();
+    #endregion
+		
+		public Notes()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Заголовок", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Заголовок
+		{
+			get
+			{
+				return this._Заголовок;
+			}
+			set
+			{
+				if ((this._Заголовок != value))
+				{
+					this.OnЗаголовокChanging(value);
+					this.SendPropertyChanging();
+					this._Заголовок = value;
+					this.SendPropertyChanged("Заголовок");
+					this.OnЗаголовокChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Текст", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Текст
+		{
+			get
+			{
+				return this._Текст;
+			}
+			set
+			{
+				if ((this._Текст != value))
+				{
+					this.OnТекстChanging(value);
+					this.SendPropertyChanging();
+					this._Текст = value;
+					this.SendPropertyChanged("Текст");
+					this.OnТекстChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
