@@ -40,13 +40,13 @@ namespace K1
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnFill = new System.Windows.Forms.Button();
+            this.btnhide = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.DesktopPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnhide = new System.Windows.Forms.Button();
-            this.btnFill = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitle.SuspendLayout();
@@ -264,6 +264,54 @@ namespace K1
             this.panelTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseMove);
             this.panelTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseUp);
             // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit.Location = new System.Drawing.Point(730, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(31, 41);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "o";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnFill
+            // 
+            this.btnFill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFill.FlatAppearance.BorderSize = 0;
+            this.btnFill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFill.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFill.ForeColor = System.Drawing.Color.Transparent;
+            this.btnFill.Location = new System.Drawing.Point(693, 0);
+            this.btnFill.Name = "btnFill";
+            this.btnFill.Size = new System.Drawing.Size(31, 41);
+            this.btnFill.TabIndex = 3;
+            this.btnFill.Text = "o";
+            this.btnFill.UseVisualStyleBackColor = true;
+            this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
+            // 
+            // btnhide
+            // 
+            this.btnhide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnhide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnhide.FlatAppearance.BorderSize = 0;
+            this.btnhide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhide.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnhide.ForeColor = System.Drawing.Color.Transparent;
+            this.btnhide.Location = new System.Drawing.Point(656, 0);
+            this.btnhide.Name = "btnhide";
+            this.btnhide.Size = new System.Drawing.Size(31, 41);
+            this.btnhide.TabIndex = 2;
+            this.btnhide.Text = "o";
+            this.btnhide.UseVisualStyleBackColor = true;
+            this.btnhide.Click += new System.EventHandler(this.btnhide_Click);
+            // 
             // btnClose
             // 
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
@@ -312,54 +360,6 @@ namespace K1
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnhide
-            // 
-            this.btnhide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnhide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnhide.FlatAppearance.BorderSize = 0;
-            this.btnhide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnhide.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhide.ForeColor = System.Drawing.Color.Transparent;
-            this.btnhide.Location = new System.Drawing.Point(656, 0);
-            this.btnhide.Name = "btnhide";
-            this.btnhide.Size = new System.Drawing.Size(31, 41);
-            this.btnhide.TabIndex = 2;
-            this.btnhide.Text = "o";
-            this.btnhide.UseVisualStyleBackColor = true;
-            this.btnhide.Click += new System.EventHandler(this.btnhide_Click);
-            // 
-            // btnFill
-            // 
-            this.btnFill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFill.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFill.FlatAppearance.BorderSize = 0;
-            this.btnFill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFill.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFill.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFill.Location = new System.Drawing.Point(693, 0);
-            this.btnFill.Name = "btnFill";
-            this.btnFill.Size = new System.Drawing.Size(31, 41);
-            this.btnFill.TabIndex = 3;
-            this.btnFill.Text = "o";
-            this.btnFill.UseVisualStyleBackColor = true;
-            this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExit.Location = new System.Drawing.Point(730, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(31, 41);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "o";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Form1
             // 
