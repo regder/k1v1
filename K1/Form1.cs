@@ -16,6 +16,7 @@ namespace K1
         private Form activeForm;
         private Button currentButton;
         
+        //https://colorscheme.ru/#3R31TvZvVw0w0
 
         public Form1()
         {
