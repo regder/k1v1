@@ -31,10 +31,12 @@ namespace K1
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelTitle = new System.Windows.Forms.Panel();
-            this.lbTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelTitle = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.DesktopPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnNotes = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
@@ -42,10 +44,11 @@ namespace K1
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnWorkers = new System.Windows.Forms.Button();
             this.btnService = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitle.SuspendLayout();
+            this.DesktopPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,7 +65,7 @@ namespace K1
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 560);
+            this.panel1.Size = new System.Drawing.Size(220, 611);
             this.panel1.TabIndex = 0;
             // 
             // panelLogo
@@ -75,29 +78,6 @@ namespace K1
             this.panelLogo.Size = new System.Drawing.Size(220, 75);
             this.panelLogo.TabIndex = 0;
             // 
-            // panelTitle
-            // 
-            this.panelTitle.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelTitle.Controls.Add(this.btnClose);
-            this.panelTitle.Controls.Add(this.lbTitle);
-            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitle.ForeColor = System.Drawing.Color.Transparent;
-            this.panelTitle.Location = new System.Drawing.Point(220, 0);
-            this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(775, 75);
-            this.panelTitle.TabIndex = 1;
-            // 
-            // lbTitle
-            // 
-            this.lbTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Meiryo", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbTitle.Location = new System.Drawing.Point(312, 26);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(113, 31);
-            this.lbTitle.TabIndex = 0;
-            this.lbTitle.Text = "ГЛАВНАЯ";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -109,13 +89,69 @@ namespace K1
             this.label1.TabIndex = 0;
             this.label1.Text = "Компас-1";
             // 
+            // panelTitle
+            // 
+            this.panelTitle.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelTitle.Controls.Add(this.btnClose);
+            this.panelTitle.Controls.Add(this.lbTitle);
+            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitle.ForeColor = System.Drawing.Color.Transparent;
+            this.panelTitle.Location = new System.Drawing.Point(220, 0);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.Size = new System.Drawing.Size(764, 75);
+            this.panelTitle.TabIndex = 1;
+            this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
+            this.panelTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseMove);
+            this.panelTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseUp);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Meiryo UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnClose.Location = new System.Drawing.Point(0, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(72, 75);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Х";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Meiryo", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbTitle.Location = new System.Drawing.Point(307, 26);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(113, 31);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "ГЛАВНАЯ";
+            // 
             // DesktopPanel
             // 
+            this.DesktopPanel.BackColor = System.Drawing.Color.White;
+            this.DesktopPanel.Controls.Add(this.pictureBox1);
             this.DesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DesktopPanel.Location = new System.Drawing.Point(220, 75);
             this.DesktopPanel.Name = "DesktopPanel";
-            this.DesktopPanel.Size = new System.Drawing.Size(775, 485);
+            this.DesktopPanel.Size = new System.Drawing.Size(764, 536);
             this.DesktopPanel.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImage = global::K1.Properties.Resources._4c277fc303ac594b84a06dda48440977;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(158, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(432, 241);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnSettings
             // 
@@ -271,28 +307,15 @@ namespace K1
             this.btnService.UseVisualStyleBackColor = true;
             this.btnService.Click += new System.EventHandler(this.btnService_Click);
             // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Meiryo UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnClose.Location = new System.Drawing.Point(0, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(72, 75);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Х";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 560);
+            this.ClientSize = new System.Drawing.Size(984, 611);
             this.Controls.Add(this.DesktopPanel);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(1000, 650);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -301,6 +324,8 @@ namespace K1
             this.panelLogo.PerformLayout();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
+            this.DesktopPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,6 +346,7 @@ namespace K1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel DesktopPanel;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

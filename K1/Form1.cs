@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,17 +15,24 @@ namespace K1
     {
         private Form activeForm;
         private Button currentButton;
+        
 
         public Form1()
         {
             InitializeComponent();
+            
             panel1.BackColor = Color.FromArgb(73, 101, 214);
             panelLogo.BackColor = Color.FromArgb(21, 51, 173);
             panelTitle.BackColor = Color.FromArgb(44, 61, 130);
             btnClose.Visible = false;
+            this.Text = string.Empty;
+            this.ControlBox = false;
 
         }
-
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void OpenChildForm(Form childForm, object btnSender)
         {
             if(activeForm!=null)
@@ -69,7 +77,7 @@ namespace K1
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+           
 
         }
 
@@ -129,5 +137,23 @@ namespace K1
             btnClose.Visible = false;
         }
 
+        private void panelTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            
+
+            
+        }
+
+        private void panelTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void panelTitle_MouseUp(object sender, MouseEventArgs e)
+        {
+            
+        }
     }
 }

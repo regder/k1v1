@@ -179,6 +179,8 @@
   <ItemGroup>
     <None Include="Resources\imgonline-com-ua-Resize-ELDo1AGihP1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\4c277fc303ac594b84a06dda48440977.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
