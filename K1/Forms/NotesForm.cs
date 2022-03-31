@@ -58,12 +58,16 @@ namespace K1.Forms
             //  titleBox.Clear();
             //   textBox.Clear();
             var db = new DataClasses1DataContext();
-            var n = new Notes();
-            n.Заголовок = titleBox.Text;
-            n.Текст = textBox.Text;
-            db.Notes.InsertOnSubmit(n);
-            db.SubmitChanges();
-            
+            if (btnSave.Enabled)
+            {
+                var n = new Notes();
+                n.Заголовок = titleBox.Text;
+                n.Текст = textBox.Text;
+                db.Notes.InsertOnSubmit(n);
+                db.SubmitChanges();
+            }
+            dataGridView1.DataSource = from n in db.Notes select n;
+
         }
 
         private void btnRead_Click(object sender, EventArgs e)

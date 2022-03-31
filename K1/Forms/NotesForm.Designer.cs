@@ -71,6 +71,7 @@ namespace K1.Forms
             // 
             // btnSave
             // 
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSave.Location = new System.Drawing.Point(279, 391);
             this.btnSave.Name = "btnSave";
