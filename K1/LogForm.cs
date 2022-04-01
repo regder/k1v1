@@ -17,7 +17,7 @@ namespace K1
         public LogForm()
         {
             InitializeComponent();
-            panel1.BackColor = Color.FromArgb(73, 101, 214);
+            panel1.BackColor = Color.FromArgb(255, 160, 64);
             btnEnter.BackColor = Color.FromArgb(73, 101, 214);
             btnReg.BackColor = Color.FromArgb(73, 101, 214);
 

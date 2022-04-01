@@ -51,7 +51,8 @@ namespace K1.Forms
                 db.SubmitChanges();
             }
             dataGridView1.DataSource = from n in db.Notes select n;
-
+            titleBox.Clear();
+            textBox.Clear();
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -60,21 +61,6 @@ namespace K1.Forms
 
             titleBox.Text = (string)dataGridView1.Rows[index].Cells[1].Value;
             textBox.Text = (string)dataGridView1.Rows[index].Cells[2].Value;
-
-
-            //    int index = dataGridView1.CurrentCell.RowIndex;
-            //   titleBox.Text = dataGridView1.Rows[index].Cells[0].ToString();
-            //   textBox.Text = dataGridView1.Rows[index].Cells[1].ToString();
-
-
-            //   int index = dataGridView1.CurrentCell.RowIndex;
-            //       if (index > -1)
-            //      {
-            //          titleBox.Text = table.Rows[index].ItemArray[1].ToString();
-            //          textBox.Text = table.Rows[index].ItemArray[2].ToString();
-            //      }
-            //   db.SubmitChanges();
-
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -98,5 +84,6 @@ namespace K1.Forms
             
             dataGridView1.DataSource = from n in db.Notes select n;
         }
+
     }
 }

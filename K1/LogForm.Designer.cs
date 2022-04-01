@@ -86,6 +86,7 @@ namespace K1
             // 
             // btnEnter
             // 
+            this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnter.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEnter.Location = new System.Drawing.Point(235, 289);
             this.btnEnter.Name = "btnEnter";
@@ -109,6 +110,7 @@ namespace K1
             // 
             // btnReg
             // 
+            this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReg.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnReg.Location = new System.Drawing.Point(79, 289);
             this.btnReg.Name = "btnReg";

@@ -15,6 +15,41 @@ namespace K1.Forms
         public SettingsForm()
         {
             InitializeComponent();
+            // 254, 219, 0 желтый
+            // 254, 128, 0 оранжевый
+            btnLight.BackColor = Color.FromArgb(254, 219, 0);
+            btnRelog.BackColor = Color.FromArgb(254, 128, 0);
+            btnDEL.BackColor = Color.FromArgb(254, 128, 0);
+        }
+
+        
+
+        private void btnLight_Click(object sender, EventArgs e)
+        {
+            
+            // 44, 61, 130
+            
+
+        }
+
+        private void btnRelog_Click(object sender, EventArgs e)
+        {
+            
+
+            if (MessageBox.Show("Are you sure?", "Attantion", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Form1.ActiveForm.Hide();  //Скрываем первую форму
+                LogForm MyForm2 = new LogForm(); //Инициализируем 2 форму
+                MyForm2.ShowDialog();             // Отображает форму как модальное окно
+                Close();
+
+                //   f.Close();
+            }
+            
+        }
+        private void btnDEL_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

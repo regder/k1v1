@@ -113,6 +113,16 @@ namespace K1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgonline_com_ua_Resize_dBCJ4MqitVy {
+            get {
+                object obj = ResourceManager.GetObject("imgonline-com-ua-Resize-dBCJ4MqitVy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgonline_com_ua_Resize_ELDo1AGihP {
             get {
                 object obj = ResourceManager.GetObject("imgonline-com-ua-Resize-ELDo1AGihP", resourceCulture);

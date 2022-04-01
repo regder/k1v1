@@ -51,6 +51,7 @@ namespace K1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(355, 35);
             this.panel1.TabIndex = 5;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // btnHide
             // 
@@ -83,6 +84,7 @@ namespace K1
             // btnSave
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSave.Location = new System.Drawing.Point(129, 294);
             this.btnSave.Name = "btnSave";
