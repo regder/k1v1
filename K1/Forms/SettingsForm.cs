@@ -20,6 +20,10 @@ namespace K1.Forms
             btnLight.BackColor = Color.FromArgb(254, 219, 0);
             btnRelog.BackColor = Color.FromArgb(254, 128, 0);
             btnDEL.BackColor = Color.FromArgb(254, 128, 0);
+            label7.ForeColor = Color.FromArgb(254, 128, 0);
+            delPanel.BackColor = Color.FromArgb(255, 228, 64);
+
+            delPanel.Visible = false;
         }
 
         
@@ -36,20 +40,55 @@ namespace K1.Forms
         {
             
 
-            if (MessageBox.Show("Are you sure?", "Attantion", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("Вы уверены?", "Attantion", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
                 Form1.ActiveForm.Hide();  //Скрываем первую форму
                 LogForm MyForm2 = new LogForm(); //Инициализируем 2 форму
                 MyForm2.ShowDialog();             // Отображает форму как модальное окно
-                Close();
-
-                //   f.Close();
+                Close();                
             }
             
         }
         private void btnDEL_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Вы уверены?", "Attantion", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                delPanel.Visible = true;
+            }
+        }
 
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void acceptbtn_Click(object sender, EventArgs e)
+        {
+            var db = new DataClasses1DataContext();
+            
+            var query = from c in db.Users
+                        where (c.login == LOGBox.Text && c.password == PASSBox.Text)
+                        select c;
+
+            if (query.Count() == 1 && LOGBox.Text != "admin" && PASSBox.Text != "123")
+            {
+                var q = new Users();
+                q.login = LOGBox.Text;
+                q.password = PASSBox.Text;
+                
+                db.Users.DeleteOnSubmit(q);                              
+                db.SubmitChanges();
+                Form1.ActiveForm.Hide();  //Скрываем первую форму
+                LogForm MyForm2 = new LogForm(); //Инициализируем 2 форму
+                MyForm2.ShowDialog();             // Отображает форму как модальное окно
+                Close();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Ошибка!!!");
+            }
         }
     }
 }
