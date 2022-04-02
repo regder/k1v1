@@ -41,6 +41,7 @@ namespace K1
                 var p = new Users();
                 p.login = form.logBoxReg.Text;
                 p.password = form.PassBoxReg.Text;
+                p.Name = form.Namebox.Text;
                 p.role = 2;
 
                 db.Users.InsertOnSubmit(p);

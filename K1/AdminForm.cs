@@ -25,6 +25,7 @@ namespace K1
             btnview.BackColor = Color.FromArgb(255, 185, 115);
             btnCl.BackColor = Color.FromArgb(255, 185, 115);
             lightBtn.BackColor = Color.FromArgb(255, 185, 115);
+            Savebtn.BackColor = Color.FromArgb(255, 185, 115);
 
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -39,6 +40,8 @@ namespace K1
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            var db = new DataClasses1DataContext();
+            dataGridView1.DataSource = db.Users;
 
         }
 
@@ -78,17 +81,31 @@ namespace K1
 
         private void btnCl_Click(object sender, EventArgs e)
         {
-
+            var db = new DataClasses1DataContext();
+            logbox.Clear();
+            passbox.Clear();
+            namebox.Clear();
+            dataGridView1.DataSource = from n in db.Users select n;
         }
 
         private void btnview_Click(object sender, EventArgs e)
         {
+            int index = dataGridView1.CurrentCell.RowIndex;
 
+            logbox.Text = (string)dataGridView1.Rows[index].Cells[1].Value;
+            passbox.Text = (string)dataGridView1.Rows[index].Cells[2].Value;
+            namebox.Text = (string)dataGridView1.Rows[index].Cells[3].Value;
         }
 
         private void Relogbtn_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Вы уверены?", "Attantion", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                AdminForm.ActiveForm.Hide();  //Скрываем первую форму
+                LogForm MyForm2 = new LogForm(); //Инициализируем 2 форму
+                MyForm2.ShowDialog();             // Отображает форму как модальное окно
+                Close();
+            }
         }
         int i = 0;
         private void lightBtn_Click(object sender, EventArgs e)
@@ -114,12 +131,14 @@ namespace K1
                 btnFill.ForeColor = Color.FromArgb(255, 255, 255);
                 Relogbtn.ForeColor = Color.FromArgb(255, 255, 255);
                 lightBtn.ForeColor = Color.FromArgb(255, 255, 255);
+                Savebtn.ForeColor = Color.FromArgb(255, 255, 255);
 
                 Relogbtn.BackColor = Color.FromArgb(73, 101, 214);
                 btnCl.BackColor = Color.FromArgb(73, 101, 214);
                 btnde.BackColor = Color.FromArgb(73, 101, 214);
                 btnview.BackColor = Color.FromArgb(73, 101, 214);
                 lightBtn.BackColor = Color.FromArgb(73, 101, 214);
+                Savebtn.ForeColor = Color.FromArgb(73, 101, 214);
             }
             else if (i >= 1)
             {
@@ -143,14 +162,21 @@ namespace K1
                 btnFill.ForeColor = Color.FromArgb(0, 0, 0);
                 Relogbtn.ForeColor = Color.FromArgb(0, 0, 0);
                 lightBtn.ForeColor = Color.FromArgb(0, 0, 0);
+                Savebtn.ForeColor = Color.FromArgb(0, 0, 0);
 
                 Relogbtn.BackColor = Color.FromArgb(255, 185, 115);
                 btnde.BackColor = Color.FromArgb(255, 185, 115);
                 btnview.BackColor = Color.FromArgb(255, 185, 115);
                 btnCl.BackColor = Color.FromArgb(255, 185, 115);
                 lightBtn.BackColor = Color.FromArgb(255, 185, 115);
+                Savebtn.BackColor = Color.FromArgb(255, 185, 115);
             }
             
+        }
+
+        private void Savebtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

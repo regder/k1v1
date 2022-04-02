@@ -50,6 +50,7 @@ namespace K1
             this.label7 = new System.Windows.Forms.Label();
             this.lightBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.Savebtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -121,9 +122,9 @@ namespace K1
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(333, 102);
+            this.dataGridView1.Location = new System.Drawing.Point(342, 102);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(455, 255);
+            this.dataGridView1.Size = new System.Drawing.Size(446, 255);
             this.dataGridView1.TabIndex = 1;
             // 
             // btnde
@@ -142,7 +143,7 @@ namespace K1
             // 
             this.btnCl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCl.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCl.Location = new System.Drawing.Point(544, 380);
+            this.btnCl.Location = new System.Drawing.Point(568, 380);
             this.btnCl.Name = "btnCl";
             this.btnCl.Size = new System.Drawing.Size(107, 32);
             this.btnCl.TabIndex = 3;
@@ -154,7 +155,7 @@ namespace K1
             // 
             this.btnview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnview.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnview.Location = new System.Drawing.Point(406, 380);
+            this.btnview.Location = new System.Drawing.Point(455, 380);
             this.btnview.Name = "btnview";
             this.btnview.Size = new System.Drawing.Size(107, 32);
             this.btnview.TabIndex = 4;
@@ -166,7 +167,7 @@ namespace K1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(329, 73);
+            this.label2.Location = new System.Drawing.Point(338, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 24);
             this.label2.TabIndex = 6;
@@ -279,11 +280,24 @@ namespace K1
             this.label8.TabIndex = 17;
             this.label8.Text = "Вкл/Откл темную тему:";
             // 
+            // Savebtn
+            // 
+            this.Savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Savebtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Savebtn.Location = new System.Drawing.Point(342, 380);
+            this.Savebtn.Name = "Savebtn";
+            this.Savebtn.Size = new System.Drawing.Size(107, 32);
+            this.Savebtn.TabIndex = 18;
+            this.Savebtn.Text = "Сохранить";
+            this.Savebtn.UseVisualStyleBackColor = true;
+            this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Savebtn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lightBtn);
             this.Controls.Add(this.label7);
@@ -335,5 +349,6 @@ namespace K1
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button lightBtn;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button Savebtn;
     }
 }

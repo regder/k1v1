@@ -39,6 +39,8 @@ namespace K1
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.PassBoxReg = new System.Windows.Forms.TextBox();
             this.logBoxReg = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Namebox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +100,7 @@ namespace K1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(87, 97);
+            this.label1.Location = new System.Drawing.Point(108, 143);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 24);
             this.label1.TabIndex = 8;
@@ -108,7 +110,7 @@ namespace K1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(87, 147);
+            this.label2.Location = new System.Drawing.Point(97, 188);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 24);
             this.label2.TabIndex = 9;
@@ -118,7 +120,7 @@ namespace K1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(87, 195);
+            this.label3.Location = new System.Drawing.Point(118, 236);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 24);
             this.label3.TabIndex = 10;
@@ -127,7 +129,7 @@ namespace K1
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(180, 192);
+            this.textBox1.Location = new System.Drawing.Point(180, 233);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(137, 31);
@@ -137,7 +139,7 @@ namespace K1
             // PassBoxReg
             // 
             this.PassBoxReg.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PassBoxReg.Location = new System.Drawing.Point(180, 144);
+            this.PassBoxReg.Location = new System.Drawing.Point(180, 185);
             this.PassBoxReg.Name = "PassBoxReg";
             this.PassBoxReg.PasswordChar = '*';
             this.PassBoxReg.Size = new System.Drawing.Size(137, 31);
@@ -146,16 +148,37 @@ namespace K1
             // logBoxReg
             // 
             this.logBoxReg.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.logBoxReg.Location = new System.Drawing.Point(180, 94);
+            this.logBoxReg.Location = new System.Drawing.Point(180, 140);
             this.logBoxReg.Name = "logBoxReg";
             this.logBoxReg.Size = new System.Drawing.Size(137, 31);
             this.logBoxReg.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(9, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(165, 24);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Имя пользователя:";
+            // 
+            // Namebox
+            // 
+            this.Namebox.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Namebox.Location = new System.Drawing.Point(180, 94);
+            this.Namebox.Name = "Namebox";
+            this.Namebox.PasswordChar = '*';
+            this.Namebox.Size = new System.Drawing.Size(137, 31);
+            this.Namebox.TabIndex = 15;
             // 
             // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 383);
+            this.Controls.Add(this.Namebox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.logBoxReg);
             this.Controls.Add(this.PassBoxReg);
             this.Controls.Add(this.textBox1);
@@ -184,5 +207,7 @@ namespace K1
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox PassBoxReg;
         public System.Windows.Forms.TextBox logBoxReg;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox Namebox;
     }
 }
