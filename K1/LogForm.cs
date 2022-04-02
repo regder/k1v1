@@ -58,7 +58,7 @@ namespace K1
             if (query.Count() == 1 && logBox.Text == "admin" && passBox.Text == "123")
             {
 
-                Form1 A = new Form1();
+                AdminForm A = new AdminForm();
                 A.Show();
                 this.Hide();
 

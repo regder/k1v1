@@ -75,9 +75,9 @@ namespace K1.Forms
                 var q = new Users();
                 q.login = LOGBox.Text;
                 q.password = PASSBox.Text;
-                
-                db.Users.DeleteOnSubmit(q);                              
-                db.SubmitChanges();
+
+                db.Users.DeleteOnSubmit(q);
+
                 Form1.ActiveForm.Hide();  //Скрываем первую форму
                 LogForm MyForm2 = new LogForm(); //Инициализируем 2 форму
                 MyForm2.ShowDialog();             // Отображает форму как модальное окно
@@ -89,6 +89,7 @@ namespace K1.Forms
             {
                 MessageBox.Show("Ошибка!!!");
             }
+            db.SubmitChanges();
         }
     }
 }
