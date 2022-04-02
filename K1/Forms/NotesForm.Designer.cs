@@ -42,6 +42,7 @@ namespace K1.Forms
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ordersDataSet = new K1.OrderDataSet();
             this.ordersDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.updateBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataSetBindingSource)).BeginInit();
@@ -49,6 +50,7 @@ namespace K1.Forms
             // 
             // btnRead
             // 
+            this.btnRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRead.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRead.Location = new System.Drawing.Point(522, 391);
             this.btnRead.Name = "btnRead";
@@ -60,6 +62,7 @@ namespace K1.Forms
             // 
             // btnDel
             // 
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDel.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDel.Location = new System.Drawing.Point(669, 391);
             this.btnDel.Name = "btnDel";
@@ -72,8 +75,9 @@ namespace K1.Forms
             // btnSave
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSave.Location = new System.Drawing.Point(279, 391);
+            this.btnSave.Location = new System.Drawing.Point(147, 391);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 38);
             this.btnSave.TabIndex = 2;
@@ -83,12 +87,13 @@ namespace K1.Forms
             // 
             // btnCreate
             // 
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCreate.Location = new System.Drawing.Point(147, 391);
+            this.btnCreate.Location = new System.Drawing.Point(294, 391);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(93, 38);
             this.btnCreate.TabIndex = 3;
-            this.btnCreate.Text = "Создать";
+            this.btnCreate.Text = "Закрыть";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
@@ -161,11 +166,24 @@ namespace K1.Forms
             this.ordersDataSetBindingSource.DataSource = this.ordersDataSet;
             this.ordersDataSetBindingSource.Position = 0;
             // 
+            // updateBtn
+            // 
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.updateBtn.Location = new System.Drawing.Point(404, 391);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(101, 38);
+            this.updateBtn.TabIndex = 10;
+            this.updateBtn.Text = "Обновить";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
             // NotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.titleBox);
@@ -201,5 +219,6 @@ namespace K1.Forms
         private System.Windows.Forms.DataGridView dataGridView1;
         private OrderDataSet ordersDataSet;
         private System.Windows.Forms.BindingSource ordersDataSetBindingSource;
+        private System.Windows.Forms.Button updateBtn;
     }
 }

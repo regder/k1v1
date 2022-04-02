@@ -42,7 +42,9 @@ namespace K1
         {
             var db = new DataClasses1DataContext();
             dataGridView1.DataSource = db.Users;
-
+            dataGridView1.Columns["role"].Visible = false;
+            dataGridView1.Columns["Roles"].Visible = false;
+            dataGridView1.Columns["Name"].Width = 197;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -147,7 +147,7 @@ namespace K1
             this.logBox.Name = "logBox";
             this.logBox.Size = new System.Drawing.Size(163, 31);
             this.logBox.TabIndex = 8;
-            this.logBox.Text = "admin";
+            this.logBox.Text = "user1";
             // 
             // passBox
             // 
@@ -157,7 +157,7 @@ namespace K1
             this.passBox.PasswordChar = '*';
             this.passBox.Size = new System.Drawing.Size(163, 31);
             this.passBox.TabIndex = 9;
-            this.passBox.Text = "123";
+            this.passBox.Text = "1234";
             // 
             // LogForm
             // 
