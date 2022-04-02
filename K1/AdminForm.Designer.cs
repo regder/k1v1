@@ -288,7 +288,7 @@ namespace K1
             this.Savebtn.Name = "Savebtn";
             this.Savebtn.Size = new System.Drawing.Size(107, 32);
             this.Savebtn.TabIndex = 18;
-            this.Savebtn.Text = "Сохранить";
+            this.Savebtn.Text = "Обновить";
             this.Savebtn.UseVisualStyleBackColor = true;
             this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
             // 

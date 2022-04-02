@@ -178,7 +178,21 @@ namespace K1
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
+            var db = new DataClasses1DataContext();
+            var query =
+                from user in db.Users
+                where user.login == logbox.Text
+                select user;
+            foreach (Users user in query)
+            {
 
+                user.login = logbox.Text;
+                user.password = passbox.Text;
+                user.Name = namebox.Text;
+                db.SubmitChanges();
+                dataGridView1.DataSource = from n in db.Users select n;
+                
+            }
         }
     }
 }
