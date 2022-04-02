@@ -78,7 +78,24 @@ namespace K1
 
         private void btnde_Click(object sender, EventArgs e)
         {
+            var db = new DataClasses1DataContext();
+            var ids = new List<string>();
+            var selected = dataGridView1.SelectedRows;
+            foreach (DataGridViewRow row in selected)
+            {
+                ids.Add((string)row.Cells["login"].Value);
+            }
+            var query = from n in db.Users
+                        where ids.Contains(n.login)
+                        select n;
+            foreach (var q in query)
+            {
+                db.Users.DeleteOnSubmit(q);
 
+            }
+            db.SubmitChanges();
+
+            dataGridView1.DataSource = from n in db.Users select n;
         }
 
         private void btnCl_Click(object sender, EventArgs e)
@@ -140,7 +157,7 @@ namespace K1
                 btnde.BackColor = Color.FromArgb(73, 101, 214);
                 btnview.BackColor = Color.FromArgb(73, 101, 214);
                 lightBtn.BackColor = Color.FromArgb(73, 101, 214);
-                Savebtn.ForeColor = Color.FromArgb(73, 101, 214);
+                Savebtn.BackColor = Color.FromArgb(73, 101, 214);
             }
             else if (i >= 1)
             {
