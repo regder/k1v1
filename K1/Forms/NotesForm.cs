@@ -115,5 +115,18 @@ namespace K1.Forms
 
             }           
         }
+
+        private void Searchbtn_Click(object sender, EventArgs e)
+        {
+            var db = new DataClasses1DataContext();
+
+            var query =
+                 from note in db.Notes
+                 where note.Заголовок == titleBox.Text
+                 select note;
+
+            dataGridView1.DataSource = query;
+
+        }
     }
 }

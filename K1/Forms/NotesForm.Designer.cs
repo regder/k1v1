@@ -43,6 +43,7 @@ namespace K1.Forms
             this.ordersDataSet = new K1.OrderDataSet();
             this.ordersDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.updateBtn = new System.Windows.Forms.Button();
+            this.Searchbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataSetBindingSource)).BeginInit();
@@ -178,11 +179,24 @@ namespace K1.Forms
             this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
+            // Searchbtn
+            // 
+            this.Searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Searchbtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Searchbtn.Location = new System.Drawing.Point(393, 44);
+            this.Searchbtn.Name = "Searchbtn";
+            this.Searchbtn.Size = new System.Drawing.Size(101, 31);
+            this.Searchbtn.TabIndex = 11;
+            this.Searchbtn.Text = "Найти";
+            this.Searchbtn.UseVisualStyleBackColor = true;
+            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
+            // 
             // NotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Searchbtn);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox);
@@ -220,5 +234,6 @@ namespace K1.Forms
         private OrderDataSet ordersDataSet;
         private System.Windows.Forms.BindingSource ordersDataSetBindingSource;
         private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button Searchbtn;
     }
 }

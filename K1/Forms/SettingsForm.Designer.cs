@@ -36,14 +36,14 @@ namespace K1.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.btnDEL = new System.Windows.Forms.Button();
             this.delPanel = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.LOGBox = new System.Windows.Forms.TextBox();
-            this.PASSBox = new System.Windows.Forms.TextBox();
+            this.acceptbtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.PASSBox = new System.Windows.Forms.TextBox();
+            this.LOGBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.acceptbtn = new System.Windows.Forms.Button();
             this.delPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,9 +54,9 @@ namespace K1.Forms
             this.label1.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(37, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 24);
+            this.label1.Size = new System.Drawing.Size(201, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Включить темную тему:";
+            this.label1.Text = "Вкл/Откл темную тему:";
             // 
             // label2
             // 
@@ -124,15 +124,41 @@ namespace K1.Forms
             this.delPanel.Size = new System.Drawing.Size(313, 166);
             this.delPanel.TabIndex = 7;
             // 
-            // label4
+            // acceptbtn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(42, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Логин:";
+            this.acceptbtn.Location = new System.Drawing.Point(129, 120);
+            this.acceptbtn.Name = "acceptbtn";
+            this.acceptbtn.Size = new System.Drawing.Size(134, 33);
+            this.acceptbtn.TabIndex = 5;
+            this.acceptbtn.Text = "Подтвердить";
+            this.acceptbtn.UseVisualStyleBackColor = true;
+            this.acceptbtn.Click += new System.EventHandler(this.acceptbtn_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(67, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(179, 20);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Удаление учетной записи";
+            // 
+            // PASSBox
+            // 
+            this.PASSBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PASSBox.Location = new System.Drawing.Point(129, 78);
+            this.PASSBox.Name = "PASSBox";
+            this.PASSBox.Size = new System.Drawing.Size(134, 27);
+            this.PASSBox.TabIndex = 3;
+            // 
+            // LOGBox
+            // 
+            this.LOGBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LOGBox.Location = new System.Drawing.Point(129, 45);
+            this.LOGBox.Name = "LOGBox";
+            this.LOGBox.Size = new System.Drawing.Size(134, 27);
+            this.LOGBox.TabIndex = 2;
             // 
             // label5
             // 
@@ -144,31 +170,15 @@ namespace K1.Forms
             this.label5.TabIndex = 1;
             this.label5.Text = "Пароль:";
             // 
-            // LOGBox
+            // label4
             // 
-            this.LOGBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LOGBox.Location = new System.Drawing.Point(129, 45);
-            this.LOGBox.Name = "LOGBox";
-            this.LOGBox.Size = new System.Drawing.Size(134, 27);
-            this.LOGBox.TabIndex = 2;
-            // 
-            // PASSBox
-            // 
-            this.PASSBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PASSBox.Location = new System.Drawing.Point(129, 78);
-            this.PASSBox.Name = "PASSBox";
-            this.PASSBox.Size = new System.Drawing.Size(134, 27);
-            this.PASSBox.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(67, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Удаление учетной записи";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(42, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Логин:";
             // 
             // panel1
             // 
@@ -189,16 +199,6 @@ namespace K1.Forms
             this.label7.Size = new System.Drawing.Size(56, 24);
             this.label7.TabIndex = 0;
             this.label7.Text = "label7";
-            // 
-            // acceptbtn
-            // 
-            this.acceptbtn.Location = new System.Drawing.Point(129, 120);
-            this.acceptbtn.Name = "acceptbtn";
-            this.acceptbtn.Size = new System.Drawing.Size(134, 33);
-            this.acceptbtn.TabIndex = 5;
-            this.acceptbtn.Text = "Подтвердить";
-            this.acceptbtn.UseVisualStyleBackColor = true;
-            this.acceptbtn.Click += new System.EventHandler(this.acceptbtn_Click);
             // 
             // SettingsForm
             // 
