@@ -29,7 +29,6 @@ namespace K1
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFill = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnHide = new System.Windows.Forms.Button();
             this.btnEnter = new System.Windows.Forms.Button();
@@ -39,26 +38,14 @@ namespace K1
             this.label2 = new System.Windows.Forms.Label();
             this.logBox = new System.Windows.Forms.TextBox();
             this.passBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnFill
-            // 
-            this.btnFill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFill.FlatAppearance.BorderSize = 0;
-            this.btnFill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFill.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnFill.Location = new System.Drawing.Point(343, 0);
-            this.btnFill.Name = "btnFill";
-            this.btnFill.Size = new System.Drawing.Size(31, 34);
-            this.btnFill.TabIndex = 0;
-            this.btnFill.Text = "o";
-            this.btnFill.UseVisualStyleBackColor = true;
-            this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -73,10 +60,11 @@ namespace K1
             // btnHide
             // 
             this.btnHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHide.FlatAppearance.BorderSize = 0;
             this.btnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHide.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnHide.Location = new System.Drawing.Point(306, 0);
+            this.btnHide.Location = new System.Drawing.Point(343, 0);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(31, 34);
             this.btnHide.TabIndex = 2;
@@ -86,6 +74,7 @@ namespace K1
             // 
             // btnEnter
             // 
+            this.btnEnter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnter.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEnter.Location = new System.Drawing.Point(235, 289);
@@ -99,7 +88,6 @@ namespace K1
             // panel1
             // 
             this.panel1.Controls.Add(this.btnHide);
-            this.panel1.Controls.Add(this.btnFill);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -110,6 +98,7 @@ namespace K1
             // 
             // btnReg
             // 
+            this.btnReg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReg.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnReg.Location = new System.Drawing.Point(79, 289);
@@ -159,11 +148,22 @@ namespace K1
             this.passBox.TabIndex = 9;
             this.passBox.Text = "1234";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Meiryo UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(158, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 24);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Компас-1";
+            // 
             // LogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 384);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.passBox);
             this.Controls.Add(this.logBox);
             this.Controls.Add(this.label2);
@@ -180,8 +180,6 @@ namespace K1
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnFill;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnHide;
         private System.Windows.Forms.Button btnEnter;
@@ -191,5 +189,6 @@ namespace K1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox logBox;
         private System.Windows.Forms.TextBox passBox;
+        private System.Windows.Forms.Label label3;
     }
 }

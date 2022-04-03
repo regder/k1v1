@@ -17,10 +17,13 @@ namespace K1
         public LogForm()
         {
             InitializeComponent();
-            panel1.BackColor = Color.FromArgb(255, 160, 64);
+            panel1.BackColor = Color.FromArgb(73, 101, 214);
             btnEnter.BackColor = Color.FromArgb(73, 101, 214);
             btnReg.BackColor = Color.FromArgb(73, 101, 214);
-
+            btnReg.ForeColor = Color.FromArgb(255, 255, 255);
+            btnEnter.ForeColor = Color.FromArgb(255, 255, 255);
+            btnClose.ForeColor = Color.FromArgb(255, 255, 255);
+            btnHide.ForeColor = Color.FromArgb(255, 255, 255);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -47,6 +50,7 @@ namespace K1
                 db.Users.InsertOnSubmit(p);
                 db.SubmitChanges();
             }
+            
         }
         private void btnEnter_Click(object sender, EventArgs e)
         {
@@ -82,7 +86,7 @@ namespace K1
             }
             else
             {
-                MessageBox.Show("Ошибка авторизации");
+                MessageBox.Show("Ошибка авторизации!!!");
             }
         }
 

@@ -21,7 +21,7 @@ namespace K1
         public Form1()
         {
             InitializeComponent();
-            
+
             panel1.BackColor = Color.FromArgb(73, 101, 214);
             panelLogo.BackColor = Color.FromArgb(21, 51, 173);
             panelTitle.BackColor = Color.FromArgb(44, 61, 130);
@@ -57,6 +57,9 @@ namespace K1
             lbTitle.Text = childForm.Text;
             
         }
+
+        
+
         private void ActivateButton(object btnSender)
         {
             if(btnSender!=null)
@@ -88,6 +91,8 @@ namespace K1
             var query = from c in db.Users where c.login == usr select c.Name;
             labelhi.Text = "Добро пожаловать, " + query.First() + "!";
 
+            
+            
         }
 
         private void btnService_Click(object sender, EventArgs e)
@@ -204,6 +209,26 @@ namespace K1
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        int i = 0;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Темная тема
+            i++;
+            if (i == 1)
+            {
+                DesktopPanel.BackColor = Color.FromArgb(111, 131, 214);
+                labelhi.ForeColor = Color.FromArgb(255, 255, 255);
+
+            }
+            else if(i >=1)
+            {
+                i = 0;
+                DesktopPanel.BackColor = Color.FromArgb(255, 255, 255);
+                labelhi.ForeColor = Color.FromArgb(0, 0, 0);
+
+            }
+
         }
     }
 }

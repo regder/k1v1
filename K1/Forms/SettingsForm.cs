@@ -17,7 +17,7 @@ namespace K1.Forms
             InitializeComponent();
             // 254, 219, 0 желтый
             // 254, 128, 0 оранжевый
-            btnLight.BackColor = Color.FromArgb(254, 219, 0);
+            
             btnRelog.BackColor = Color.FromArgb(254, 128, 0);
             btnDEL.BackColor = Color.FromArgb(254, 128, 0);
             label7.ForeColor = Color.FromArgb(254, 128, 0);
@@ -28,13 +28,7 @@ namespace K1.Forms
 
         
 
-        private void btnLight_Click(object sender, EventArgs e)
-        {
-            
-            // 44, 61, 130
-            
-
-        }
+        
 
         private void btnRelog_Click(object sender, EventArgs e)
         {

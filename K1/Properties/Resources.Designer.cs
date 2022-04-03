@@ -83,6 +83,16 @@ namespace K1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap compass_PNG25581 {
+            get {
+                object obj = ResourceManager.GetObject("compass_PNG25581", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgonline_com_ua_Resize_1Ayj9JFJdVrD5tz {
             get {
                 object obj = ResourceManager.GetObject("imgonline-com-ua-Resize-1Ayj9JFJdVrD5tz", resourceCulture);

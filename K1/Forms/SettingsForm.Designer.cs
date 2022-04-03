@@ -29,10 +29,8 @@ namespace K1.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnRelog = new System.Windows.Forms.Button();
-            this.btnLight = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,21 +48,11 @@ namespace K1.Forms
             this.delPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(37, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Вкл/Откл темную тему:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(37, 126);
+            this.label2.Location = new System.Drawing.Point(41, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(221, 24);
             this.label2.TabIndex = 2;
@@ -73,24 +61,13 @@ namespace K1.Forms
             // btnRelog
             // 
             this.btnRelog.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRelog.Location = new System.Drawing.Point(264, 121);
+            this.btnRelog.Location = new System.Drawing.Point(268, 37);
             this.btnRelog.Name = "btnRelog";
             this.btnRelog.Size = new System.Drawing.Size(90, 34);
             this.btnRelog.TabIndex = 3;
             this.btnRelog.Text = "Выйти";
             this.btnRelog.UseVisualStyleBackColor = true;
             this.btnRelog.Click += new System.EventHandler(this.btnRelog_Click);
-            // 
-            // btnLight
-            // 
-            this.btnLight.Image = global::K1.Properties.Resources.imgonline_com_ua_Resize_dBCJ4MqitVy;
-            this.btnLight.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLight.Location = new System.Drawing.Point(264, 31);
-            this.btnLight.Name = "btnLight";
-            this.btnLight.Size = new System.Drawing.Size(40, 40);
-            this.btnLight.TabIndex = 4;
-            this.btnLight.UseVisualStyleBackColor = true;
-            this.btnLight.Click += new System.EventHandler(this.btnLight_Click);
             // 
             // panel1
             // 
@@ -116,7 +93,7 @@ namespace K1.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(37, 200);
+            this.label3.Location = new System.Drawing.Point(41, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 24);
             this.label3.TabIndex = 5;
@@ -125,7 +102,7 @@ namespace K1.Forms
             // btnDEL
             // 
             this.btnDEL.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDEL.Location = new System.Drawing.Point(264, 195);
+            this.btnDEL.Location = new System.Drawing.Point(268, 111);
             this.btnDEL.Name = "btnDEL";
             this.btnDEL.Size = new System.Drawing.Size(90, 34);
             this.btnDEL.TabIndex = 6;
@@ -158,6 +135,7 @@ namespace K1.Forms
             this.LOGBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LOGBox.Location = new System.Drawing.Point(129, 74);
             this.LOGBox.Name = "LOGBox";
+            this.LOGBox.PasswordChar = '*';
             this.LOGBox.Size = new System.Drawing.Size(134, 27);
             this.LOGBox.TabIndex = 2;
             // 
@@ -166,6 +144,7 @@ namespace K1.Forms
             this.PASSBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PASSBox.Location = new System.Drawing.Point(129, 110);
             this.PASSBox.Name = "PASSBox";
+            this.PASSBox.PasswordChar = '*';
             this.PASSBox.Size = new System.Drawing.Size(134, 27);
             this.PASSBox.TabIndex = 3;
             // 
@@ -199,7 +178,7 @@ namespace K1.Forms
             this.delPanel.Controls.Add(this.LOGBox);
             this.delPanel.Controls.Add(this.label5);
             this.delPanel.Controls.Add(this.label4);
-            this.delPanel.Location = new System.Drawing.Point(41, 253);
+            this.delPanel.Location = new System.Drawing.Point(45, 169);
             this.delPanel.Name = "delPanel";
             this.delPanel.Size = new System.Drawing.Size(313, 185);
             this.delPanel.TabIndex = 7;
@@ -231,10 +210,8 @@ namespace K1.Forms
             this.Controls.Add(this.delPanel);
             this.Controls.Add(this.btnDEL);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnLight);
             this.Controls.Add(this.btnRelog);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
@@ -248,10 +225,8 @@ namespace K1.Forms
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRelog;
-        private System.Windows.Forms.Button btnLight;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;

@@ -16,9 +16,11 @@ namespace K1
         public RegForm()
         {
             InitializeComponent();
-            panel1.BackColor = Color.FromArgb(255, 160, 64);
+            panel1.BackColor = Color.FromArgb(73, 101, 214);
             btnSave.BackColor = Color.FromArgb(73, 101, 214);
-
+            btnSave.ForeColor = Color.FromArgb(255, 255, 255);
+            btnHide.ForeColor = Color.FromArgb(255, 255, 255);
+            btnClose.ForeColor = Color.FromArgb(255, 255, 255);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -47,6 +49,15 @@ namespace K1
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(Namebox.Text != "" && logBoxReg.Text != "" && PassBoxReg.Text != "")
+            {
+                _ = ShowDialog() == DialogResult.OK;
+            }
+            else
+            {
+                DialogResult = DialogResult.None;
+                MessageBox.Show("Ошибка регистрации!!!");
+            }
 
         }
 
