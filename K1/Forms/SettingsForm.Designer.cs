@@ -33,19 +33,21 @@ namespace K1.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.btnRelog = new System.Windows.Forms.Button();
             this.btnLight = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnDEL = new System.Windows.Forms.Button();
-            this.delPanel = new System.Windows.Forms.Panel();
-            this.acceptbtn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.PASSBox = new System.Windows.Forms.TextBox();
-            this.LOGBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.delPanel.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnDEL = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.LOGBox = new System.Windows.Forms.TextBox();
+            this.PASSBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.acceptbtn = new System.Windows.Forms.Button();
+            this.delPanel = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            this.delPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -90,6 +92,26 @@ namespace K1.Forms
             this.btnLight.UseVisualStyleBackColor = true;
             this.btnLight.Click += new System.EventHandler(this.btnLight_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(425, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(375, 450);
+            this.panel1.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(24, 39);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(183, 24);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Описание программы";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -111,28 +133,41 @@ namespace K1.Forms
             this.btnDEL.UseVisualStyleBackColor = true;
             this.btnDEL.Click += new System.EventHandler(this.btnDEL_Click);
             // 
-            // delPanel
+            // label4
             // 
-            this.delPanel.Controls.Add(this.acceptbtn);
-            this.delPanel.Controls.Add(this.label6);
-            this.delPanel.Controls.Add(this.PASSBox);
-            this.delPanel.Controls.Add(this.LOGBox);
-            this.delPanel.Controls.Add(this.label5);
-            this.delPanel.Controls.Add(this.label4);
-            this.delPanel.Location = new System.Drawing.Point(41, 253);
-            this.delPanel.Name = "delPanel";
-            this.delPanel.Size = new System.Drawing.Size(313, 166);
-            this.delPanel.TabIndex = 7;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(8, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Старый пароль:";
             // 
-            // acceptbtn
+            // label5
             // 
-            this.acceptbtn.Location = new System.Drawing.Point(129, 120);
-            this.acceptbtn.Name = "acceptbtn";
-            this.acceptbtn.Size = new System.Drawing.Size(134, 33);
-            this.acceptbtn.TabIndex = 5;
-            this.acceptbtn.Text = "Подтвердить";
-            this.acceptbtn.UseVisualStyleBackColor = true;
-            this.acceptbtn.Click += new System.EventHandler(this.acceptbtn_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(8, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Новый пароль:";
+            // 
+            // LOGBox
+            // 
+            this.LOGBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LOGBox.Location = new System.Drawing.Point(129, 74);
+            this.LOGBox.Name = "LOGBox";
+            this.LOGBox.Size = new System.Drawing.Size(134, 27);
+            this.LOGBox.TabIndex = 2;
+            // 
+            // PASSBox
+            // 
+            this.PASSBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PASSBox.Location = new System.Drawing.Point(129, 110);
+            this.PASSBox.Name = "PASSBox";
+            this.PASSBox.Size = new System.Drawing.Size(134, 27);
+            this.PASSBox.TabIndex = 3;
             // 
             // label6
             // 
@@ -144,61 +179,48 @@ namespace K1.Forms
             this.label6.TabIndex = 4;
             this.label6.Text = "Смена пароля";
             // 
-            // PASSBox
+            // acceptbtn
             // 
-            this.PASSBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PASSBox.Location = new System.Drawing.Point(129, 81);
-            this.PASSBox.Name = "PASSBox";
-            this.PASSBox.Size = new System.Drawing.Size(134, 27);
-            this.PASSBox.TabIndex = 3;
+            this.acceptbtn.Location = new System.Drawing.Point(129, 149);
+            this.acceptbtn.Name = "acceptbtn";
+            this.acceptbtn.Size = new System.Drawing.Size(134, 33);
+            this.acceptbtn.TabIndex = 5;
+            this.acceptbtn.Text = "Подтвердить";
+            this.acceptbtn.UseVisualStyleBackColor = true;
+            this.acceptbtn.Click += new System.EventHandler(this.acceptbtn_Click);
             // 
-            // LOGBox
+            // delPanel
             // 
-            this.LOGBox.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LOGBox.Location = new System.Drawing.Point(129, 45);
-            this.LOGBox.Name = "LOGBox";
-            this.LOGBox.Size = new System.Drawing.Size(134, 27);
-            this.LOGBox.TabIndex = 2;
+            this.delPanel.Controls.Add(this.textBox1);
+            this.delPanel.Controls.Add(this.label8);
+            this.delPanel.Controls.Add(this.acceptbtn);
+            this.delPanel.Controls.Add(this.label6);
+            this.delPanel.Controls.Add(this.PASSBox);
+            this.delPanel.Controls.Add(this.LOGBox);
+            this.delPanel.Controls.Add(this.label5);
+            this.delPanel.Controls.Add(this.label4);
+            this.delPanel.Location = new System.Drawing.Point(41, 253);
+            this.delPanel.Name = "delPanel";
+            this.delPanel.Size = new System.Drawing.Size(313, 185);
+            this.delPanel.TabIndex = 7;
             // 
-            // label5
+            // label8
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(13, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Новый пароль:";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(64, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 20);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Логин:";
             // 
-            // label4
+            // textBox1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(13, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Старый пароль:";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(425, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 450);
-            this.panel1.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(24, 39);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(183, 24);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Описание программы";
+            this.textBox1.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(129, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(134, 27);
+            this.textBox1.TabIndex = 7;
             // 
             // SettingsForm
             // 
@@ -216,10 +238,10 @@ namespace K1.Forms
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
-            this.delPanel.ResumeLayout(false);
-            this.delPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.delPanel.ResumeLayout(false);
+            this.delPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,16 +252,18 @@ namespace K1.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRelog;
         private System.Windows.Forms.Button btnLight;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnDEL;
-        private System.Windows.Forms.Panel delPanel;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox PASSBox;
-        private System.Windows.Forms.TextBox LOGBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnDEL;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox LOGBox;
+        private System.Windows.Forms.TextBox PASSBox;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button acceptbtn;
+        private System.Windows.Forms.Panel delPanel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
     }
 }

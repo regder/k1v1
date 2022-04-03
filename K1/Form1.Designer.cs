@@ -235,6 +235,7 @@ namespace K1
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(220, 75);
             this.panelLogo.TabIndex = 0;
+            this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
             // label1
             // 
@@ -246,6 +247,7 @@ namespace K1
             this.label1.Size = new System.Drawing.Size(101, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Компас-1";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // panelTitle
             // 
@@ -337,6 +339,7 @@ namespace K1
             this.lbTitle.Size = new System.Drawing.Size(113, 31);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "ГЛАВНАЯ";
+            this.lbTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbTitle_MouseDown);
             // 
             // DesktopPanel
             // 
@@ -366,9 +369,8 @@ namespace K1
             // labelhi
             // 
             this.labelhi.AutoSize = true;
-            this.labelhi.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelhi.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelhi.Location = new System.Drawing.Point(740, 0);
+            this.labelhi.Location = new System.Drawing.Point(3, 0);
             this.labelhi.Name = "labelhi";
             this.labelhi.Size = new System.Drawing.Size(24, 24);
             this.labelhi.TabIndex = 1;

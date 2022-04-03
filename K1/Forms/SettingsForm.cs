@@ -65,18 +65,25 @@ namespace K1.Forms
         private void acceptbtn_Click(object sender, EventArgs e)
         {
             var db = new DataClasses1DataContext();
-            
+
             var query = from c in db.Users
-                        where (c.login == LOGBox.Text && c.password == PASSBox.Text)
+                        where (c.login == textBox1.Text && c.password == LOGBox.Text)
                         select c;
 
-            if (query.Count() == 1 && LOGBox.Text != "admin" && PASSBox.Text != "123")
-            {
+            if (query.Count() == 1)
+            {                
                 var q = new Users();
-                q.login = LOGBox.Text;
-                q.password = PASSBox.Text;
+                q.login = textBox1.Text;
+                q.password = LOGBox.Text;
+                
+                                                
+                foreach (Users user in query)
+                {
 
-                db.Users.DeleteOnSubmit(q);
+                    user.password = PASSBox.Text;
+                    db.SubmitChanges();
+                    
+                }
 
                 Form1.ActiveForm.Hide();  //Скрываем первую форму
                 LogForm MyForm2 = new LogForm(); //Инициализируем 2 форму
