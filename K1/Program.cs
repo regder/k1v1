@@ -18,5 +18,9 @@ namespace K1
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LogForm());
         }
+        public static class AppData
+        {
+            public static string CurrentUser { get; set; }
+        }
     }
 }

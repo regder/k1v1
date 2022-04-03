@@ -83,7 +83,11 @@ namespace K1
         
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            string usr = Convert.ToString(Program.AppData.CurrentUser);
+            var db = new DataClasses1DataContext();
+            var query = from c in db.Users where c.login == usr select c.Name;
+            labelhi.Text = "Hi, " + query.First() + "!";
+
 
         }
 
@@ -178,6 +182,11 @@ namespace K1
         private void btnhide_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void labelhi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

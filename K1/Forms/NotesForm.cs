@@ -30,7 +30,7 @@ namespace K1.Forms
             
             dataGridView1.Columns["Текст"].Visible = false;
             dataGridView1.Columns["Заголовок"].Width = 197;
-            btnSave.Visible = false;
+            btnSave.Visible = true;
             updateBtn.Visible = false;
         }
 

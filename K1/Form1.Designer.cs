@@ -47,6 +47,7 @@ namespace K1
             this.lbTitle = new System.Windows.Forms.Label();
             this.DesktopPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelhi = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitle.SuspendLayout();
@@ -340,6 +341,7 @@ namespace K1
             // DesktopPanel
             // 
             this.DesktopPanel.BackColor = System.Drawing.Color.White;
+            this.DesktopPanel.Controls.Add(this.labelhi);
             this.DesktopPanel.Controls.Add(this.pictureBox1);
             this.DesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DesktopPanel.Location = new System.Drawing.Point(220, 75);
@@ -361,6 +363,20 @@ namespace K1
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // labelhi
+            // 
+            this.labelhi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelhi.AutoSize = true;
+            this.labelhi.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelhi.Location = new System.Drawing.Point(350, 346);
+            this.labelhi.Name = "labelhi";
+            this.labelhi.Size = new System.Drawing.Size(56, 24);
+            this.labelhi.TabIndex = 1;
+            this.labelhi.Text = "label2";
+            this.labelhi.Click += new System.EventHandler(this.labelhi_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +395,7 @@ namespace K1
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
             this.DesktopPanel.ResumeLayout(false);
+            this.DesktopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -404,6 +421,7 @@ namespace K1
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnFill;
         private System.Windows.Forms.Button btnhide;
+        private System.Windows.Forms.Label labelhi;
     }
 }
 
