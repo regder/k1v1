@@ -30,10 +30,10 @@ namespace K1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnFill = new System.Windows.Forms.Button();
-            this.btnHide = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnHide = new System.Windows.Forms.Button();
+            this.btnFill = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnde = new System.Windows.Forms.Button();
             this.btnCl = new System.Windows.Forms.Button();
@@ -51,12 +51,14 @@ namespace K1
             this.lightBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.Savebtn = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnHide);
             this.panel1.Controls.Add(this.btnFill);
@@ -69,32 +71,23 @@ namespace K1
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // label1
+            // btnClose
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(268, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Панель администратора";
-            // 
-            // btnFill
-            // 
-            this.btnFill.FlatAppearance.BorderSize = 0;
-            this.btnFill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFill.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnFill.Location = new System.Drawing.Point(734, 0);
-            this.btnFill.Name = "btnFill";
-            this.btnFill.Size = new System.Drawing.Size(30, 30);
-            this.btnFill.TabIndex = 1;
-            this.btnFill.Text = "O";
-            this.btnFill.UseVisualStyleBackColor = true;
-            this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnClose.Location = new System.Drawing.Point(770, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.Text = "O";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnHide
             // 
+            this.btnHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHide.FlatAppearance.BorderSize = 0;
             this.btnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHide.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -106,18 +99,31 @@ namespace K1
             this.btnHide.UseVisualStyleBackColor = true;
             this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
             // 
-            // btnClose
+            // btnFill
             // 
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnClose.Location = new System.Drawing.Point(770, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "O";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnFill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFill.FlatAppearance.BorderSize = 0;
+            this.btnFill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFill.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnFill.Location = new System.Drawing.Point(734, 0);
+            this.btnFill.Name = "btnFill";
+            this.btnFill.Size = new System.Drawing.Size(30, 30);
+            this.btnFill.TabIndex = 1;
+            this.btnFill.Text = "O";
+            this.btnFill.UseVisualStyleBackColor = true;
+            this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Meiryo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(268, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(245, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Панель администратора";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // dataGridView1
             // 
@@ -292,6 +298,18 @@ namespace K1
             this.Savebtn.UseVisualStyleBackColor = true;
             this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(12, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(27, 20);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "---";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label9_MouseDown);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,5 +368,6 @@ namespace K1
         private System.Windows.Forms.Button lightBtn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Savebtn;
+        private System.Windows.Forms.Label label9;
     }
 }

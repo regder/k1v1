@@ -365,16 +365,14 @@ namespace K1
             // 
             // labelhi
             // 
-            this.labelhi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelhi.AutoSize = true;
+            this.labelhi.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelhi.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelhi.Location = new System.Drawing.Point(350, 346);
+            this.labelhi.Location = new System.Drawing.Point(740, 0);
             this.labelhi.Name = "labelhi";
-            this.labelhi.Size = new System.Drawing.Size(56, 24);
+            this.labelhi.Size = new System.Drawing.Size(24, 24);
             this.labelhi.TabIndex = 1;
-            this.labelhi.Text = "label2";
+            this.labelhi.Text = "--";
             this.labelhi.Click += new System.EventHandler(this.labelhi_Click);
             // 
             // Form1

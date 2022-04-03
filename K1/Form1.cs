@@ -86,8 +86,7 @@ namespace K1
             string usr = Convert.ToString(Program.AppData.CurrentUser);
             var db = new DataClasses1DataContext();
             var query = from c in db.Users where c.login == usr select c.Name;
-            labelhi.Text = "Hi, " + query.First() + "!";
-
+            labelhi.Text = "Добро пожаловать, " + query.First() + "!";
 
         }
 

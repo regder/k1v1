@@ -45,6 +45,9 @@ namespace K1
             dataGridView1.Columns["role"].Visible = false;
             dataGridView1.Columns["Roles"].Visible = false;
             dataGridView1.Columns["Name"].Width = 197;
+            string usr = Convert.ToString(Program.AppData.CurrentUser);
+            var query = from c in db.Users where c.login == usr select c.Name;
+            label9.Text = "Добро пожаловать, " + query.First() + "!";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -142,6 +145,8 @@ namespace K1
                 label6.ForeColor = Color.FromArgb(255, 255, 255);
                 label7.ForeColor = Color.FromArgb(255, 255, 255);
                 label8.ForeColor = Color.FromArgb(255, 255, 255);
+                label9.ForeColor = Color.FromArgb(255, 255, 255);
+
                 btnCl.ForeColor = Color.FromArgb(255, 255, 255);
                 btnClose.ForeColor = Color.FromArgb(255, 255, 255);
                 btnde.ForeColor = Color.FromArgb(255, 255, 255);
@@ -172,6 +177,8 @@ namespace K1
                 label6.ForeColor = Color.FromArgb(0, 0, 0);
                 label7.ForeColor = Color.FromArgb(0, 0, 0);
                 label8.ForeColor = Color.FromArgb(0, 0, 0);
+                label9.ForeColor = Color.FromArgb(0, 0, 0);
+
                 this.BackColor = Color.FromArgb(255, 255, 255);
                 btnCl.ForeColor = Color.FromArgb(0, 0, 0);
                 btnClose.ForeColor = Color.FromArgb(0, 0, 0);
@@ -195,6 +202,7 @@ namespace K1
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
+            
             var db = new DataClasses1DataContext();
             var query =
                 from user in db.Users
@@ -210,6 +218,23 @@ namespace K1
                 dataGridView1.DataSource = from n in db.Users select n;
                 
             }
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
