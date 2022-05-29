@@ -30,6 +30,7 @@ namespace K1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnHide = new System.Windows.Forms.Button();
             this.btnFill = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace K1
             this.lightBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.Savebtn = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,18 @@ namespace K1
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(12, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(27, 20);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "---";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label9_MouseDown);
             // 
             // btnClose
             // 
@@ -130,6 +142,8 @@ namespace K1
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(342, 102);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(446, 255);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -297,18 +311,6 @@ namespace K1
             this.Savebtn.Text = "Обновить";
             this.Savebtn.UseVisualStyleBackColor = true;
             this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(12, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 20);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "---";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            this.label9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label9_MouseDown);
             // 
             // AdminForm
             // 

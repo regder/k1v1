@@ -15,6 +15,37 @@ namespace K1.Forms
         public ClientsForm()
         {
             InitializeComponent();
+            
+        }
+        
+        private void ClientsForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void delBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

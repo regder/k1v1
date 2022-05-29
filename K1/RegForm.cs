@@ -51,7 +51,7 @@ namespace K1
         {
             if(Namebox.Text != "" && logBoxReg.Text != "" && PassBoxReg.Text != "")
             {
-                _ = ShowDialog() == DialogResult.OK;
+                DialogResult = DialogResult.OK;
             }
             else
             {

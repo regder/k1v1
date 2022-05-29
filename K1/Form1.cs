@@ -31,6 +31,9 @@ namespace K1
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            
+
         }
 
         
@@ -211,7 +214,7 @@ namespace K1
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         int i = 0;
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             //Темная тема
             i++;
@@ -219,6 +222,7 @@ namespace K1
             {
                 DesktopPanel.BackColor = Color.FromArgb(111, 131, 214);
                 labelhi.ForeColor = Color.FromArgb(255, 255, 255);
+                
 
             }
             else if(i >=1)
@@ -226,8 +230,14 @@ namespace K1
                 i = 0;
                 DesktopPanel.BackColor = Color.FromArgb(255, 255, 255);
                 labelhi.ForeColor = Color.FromArgb(0, 0, 0);
-
+                Forms.ClientsForm f = new Forms.ClientsForm();
+                f.BackColor = Color.FromArgb(255, 255, 255);
             }
+
+        }
+
+        private void DesktopPanel_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

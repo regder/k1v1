@@ -80,6 +80,8 @@ namespace K1
             }
             else if (query.Count() == 1 && logBox.Text != "admin" && passBox.Text == "123")
             {
+                Program.AppData.CurrentUser = logBox.Text;
+
                 Form1 u = new Form1();
                 u.Show();
                 this.Hide();

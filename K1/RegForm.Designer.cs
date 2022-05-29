@@ -172,7 +172,6 @@ namespace K1
             this.Namebox.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Namebox.Location = new System.Drawing.Point(180, 94);
             this.Namebox.Name = "Namebox";
-            this.Namebox.PasswordChar = '*';
             this.Namebox.Size = new System.Drawing.Size(137, 31);
             this.Namebox.TabIndex = 15;
             // 
@@ -204,7 +203,6 @@ namespace K1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnHide;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -213,5 +211,6 @@ namespace K1
         public System.Windows.Forms.TextBox logBoxReg;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox Namebox;
+        public System.Windows.Forms.Button btnSave;
     }
 }
