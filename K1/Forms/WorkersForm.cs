@@ -16,5 +16,41 @@ namespace K1.Forms
         {
             InitializeComponent();
         }
+
+        private void WorkersForm_Load(object sender, EventArgs e)
+        {
+            var db = new DataClasses1DataContext();
+            dataGridView1.DataSource = from n in db.Workers select n;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,14 +36,51 @@ namespace K1.Forms
 
         private void UpBtn_Click(object sender, EventArgs e)
         {
-            
-            
+            var db = new DataClasses1DataContext();
+            var query =
+                from serv in db.Services
+                where serv.title == titlebx.Text
+                select serv;
+            foreach (Services serv in query)
+            {
+
+                serv.title = titlebx.Text;
+                decimal c = serv.cost;
+                c.ToString(pricebx.Text);
+                serv.cost = c;
+                
+                db.SubmitChanges();
+                dataGridView1.DataSource = from n in db.Services select n;
+
+            }
+
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            
-            
+            var db = new DataClasses1DataContext();
+
+            if (titlebx.Text != "" && pricebx.Text != "" )
+            {
+                var n = new Services();
+                n.title = titlebx.Text;
+                decimal c = n.cost;
+                c.ToString(pricebx.Text);
+                n.cost = c;
+
+
+                db.Services.InsertOnSubmit(n);
+
+            }
+            else if (titlebx.Text == "" && pricebx.Text == "")
+            {
+                MessageBox.Show("Ошибка!");
+            }
+            db.SubmitChanges();
+            dataGridView1.DataSource = from n in db.Services select n;
+            titlebx.Clear();
+            pricebx.Clear();
+
         }
 
         private void ViewBtn_Click(object sender, EventArgs e)

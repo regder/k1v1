@@ -34,14 +34,12 @@ namespace K1.Forms
             this.pricebx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.delBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.UpBtn = new System.Windows.Forms.Button();
             this.ViewBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,27 +90,13 @@ namespace K1.Forms
             this.label4.TabIndex = 10;
             this.label4.Text = "Цена:";
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.delBtn);
-            this.panel1.Controls.Add(this.SaveBtn);
-            this.panel1.Controls.Add(this.closeBtn);
-            this.panel1.Controls.Add(this.UpBtn);
-            this.panel1.Controls.Add(this.ViewBtn);
-            this.panel1.Location = new System.Drawing.Point(0, 394);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(808, 65);
-            this.panel1.TabIndex = 11;
-            // 
             // delBtn
             // 
             this.delBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delBtn.Location = new System.Drawing.Point(660, 15);
+            this.delBtn.Location = new System.Drawing.Point(655, 409);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(93, 38);
             this.delBtn.TabIndex = 7;
@@ -126,7 +110,7 @@ namespace K1.Forms
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveBtn.Location = new System.Drawing.Point(47, 15);
+            this.SaveBtn.Location = new System.Drawing.Point(42, 409);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(106, 38);
             this.SaveBtn.TabIndex = 8;
@@ -140,7 +124,7 @@ namespace K1.Forms
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.closeBtn.Location = new System.Drawing.Point(546, 15);
+            this.closeBtn.Location = new System.Drawing.Point(541, 409);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(93, 38);
             this.closeBtn.TabIndex = 6;
@@ -154,7 +138,7 @@ namespace K1.Forms
             this.UpBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UpBtn.Location = new System.Drawing.Point(180, 15);
+            this.UpBtn.Location = new System.Drawing.Point(175, 409);
             this.UpBtn.Name = "UpBtn";
             this.UpBtn.Size = new System.Drawing.Size(108, 38);
             this.UpBtn.TabIndex = 4;
@@ -168,7 +152,7 @@ namespace K1.Forms
             this.ViewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ViewBtn.Location = new System.Drawing.Point(416, 15);
+            this.ViewBtn.Location = new System.Drawing.Point(411, 409);
             this.ViewBtn.Name = "ViewBtn";
             this.ViewBtn.Size = new System.Drawing.Size(111, 38);
             this.ViewBtn.TabIndex = 5;
@@ -204,9 +188,13 @@ namespace K1.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 459);
+            this.Controls.Add(this.delBtn);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.SaveBtn);
+            this.Controls.Add(this.closeBtn);
+            this.Controls.Add(this.UpBtn);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.ViewBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pricebx);
             this.Controls.Add(this.titlebx);
@@ -214,7 +202,6 @@ namespace K1.Forms
             this.Name = "servicesForm";
             this.Text = "servicesForm";
             this.Load += new System.EventHandler(this.servicesForm_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,16 +210,15 @@ namespace K1.Forms
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox titlebx;
-        private System.Windows.Forms.TextBox pricebx;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button delBtn;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Button UpBtn;
         private System.Windows.Forms.Button ViewBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.TextBox titlebx;
+        public System.Windows.Forms.TextBox pricebx;
     }
 }

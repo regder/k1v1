@@ -44,7 +44,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.235cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1158,19 +1158,15 @@
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
           <TablixMembers>
-            <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
+            <TablixMember />
             <TablixMember>
               <Group Name="Подробности" />
             </TablixMember>
-            <TablixMember>
-              <KeepWithGroup>Before</KeepWithGroup>
-            </TablixMember>
+            <TablixMember />
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>1.8cm</Height>
+        <Height>2.435cm</Height>
         <Width>30cm</Width>
         <Style>
           <Border>
@@ -1182,7 +1178,7 @@
     <Height>2.00125in</Height>
     <Style />
   </Body>
-  <Width>11.84736in</Width>
+  <Width>13.77953in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
