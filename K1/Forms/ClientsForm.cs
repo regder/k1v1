@@ -41,24 +41,27 @@ namespace K1.Forms
         private void delBtn_Click(object sender, EventArgs e)
         {
 
-            var db = new DataClasses1DataContext();
-            var ids = new List<int>();
-            var selected = dataGridView1.SelectedRows;
-            foreach (DataGridViewRow row in selected)
+            if (MessageBox.Show("Вы уверены?", "Attantion", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                ids.Add((int)row.Cells["id_client"].Value);
-            }
-            var query = from n in db.Clients
-                        where ids.Contains(n.id_client)
-                        select n;
-            foreach (var q in query)
-            {
-                db.Clients.DeleteOnSubmit(q);
+                var db = new DataClasses1DataContext();
+                var ids = new List<int>();
+                var selected = dataGridView1.SelectedRows;
+                foreach (DataGridViewRow row in selected)
+                {
+                    ids.Add((int)row.Cells["id_client"].Value);
+                }
+                var query = from n in db.Clients
+                            where ids.Contains(n.id_client)
+                            select n;
+                foreach (var q in query)
+                {
+                    db.Clients.DeleteOnSubmit(q);
 
-            }
-            db.SubmitChanges();
+                }
+                db.SubmitChanges();
 
-            dataGridView1.DataSource = from n in db.Clients select n;
+                dataGridView1.DataSource = from n in db.Clients select n;
+            }
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

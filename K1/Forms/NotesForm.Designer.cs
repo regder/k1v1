@@ -40,7 +40,7 @@ namespace K1.Forms
             this.titleBox = new System.Windows.Forms.TextBox();
             this.textBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ordersDataSet = new K1.OrderDataSet();
+            this.ordersDataSet = new K1.OrdersDataSet();
             this.ordersDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.updateBtn = new System.Windows.Forms.Button();
             this.Searchbtn = new System.Windows.Forms.Button();
@@ -239,7 +239,7 @@ namespace K1.Forms
         private System.Windows.Forms.TextBox titleBox;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private OrderDataSet ordersDataSet;
+        private OrdersDataSet ordersDataSet;
         private System.Windows.Forms.BindingSource ordersDataSetBindingSource;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button Searchbtn;

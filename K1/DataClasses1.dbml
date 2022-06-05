@@ -8,7 +8,61 @@
       <Column Name="patronymic" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="telephone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="Clients_Orders" Member="Orders" ThisKey="id_client" OtherKey="client" Type="Orders" />
+      <Association Name="Clients_Orderi" Member="Orderi" ThisKey="id_client" OtherKey="Client" Type="Orderi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Notes" Member="Notes">
+    <Type Name="Notes">
+      <Column Name="Заголовок" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Текст" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orderi" Member="Orderi">
+    <Type Name="Orderi">
+      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="service" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Client" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Worker" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Discription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Clients_Orderi" Member="Clients" ThisKey="Client" OtherKey="id_client" Type="Clients" IsForeignKey="true" />
+      <Association Name="Status_Orderi" Member="Status1" ThisKey="Status" OtherKey="id_status" Type="Status" IsForeignKey="true" />
+      <Association Name="Services_Orderi" Member="Services" ThisKey="service" OtherKey="id_service" Type="Services" IsForeignKey="true" />
+      <Association Name="Workers_Orderi" Member="Workers" ThisKey="Worker" OtherKey="id_worker" Type="Workers" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Roles">
+      <Column Name="id_role" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Roles_Users" Member="Users" ThisKey="id_role" OtherKey="role" Type="Users" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Status" Member="Status">
+    <Type Name="Status">
+      <Column Name="id_status" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Status_Orderi" Member="Orderi" ThisKey="id_status" OtherKey="Status" Type="Orderi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Services" Member="Services">
+    <Type Name="Services">
+      <Column Name="id_service" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="cost" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Services_Orderi" Member="Orderi" ThisKey="id_service" OtherKey="service" Type="Orderi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Roles_Users" Member="Roles" ThisKey="role" OtherKey="id_role" Type="Roles" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Workers" Member="Workers">
@@ -23,75 +77,23 @@
       <Column Name="experience" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="Workers_Orders" Member="Orders" ThisKey="id_worker" OtherKey="worker" Type="Orders" />
+      <Association Name="Workers_Orderi" Member="Orderi" ThisKey="id_worker" OtherKey="Worker" Type="Orderi" />
     </Type>
   </Table>
-  <Table Name="dbo.Status" Member="Status">
-    <Type Name="Status">
-      <Column Name="id_status" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="Status_Orders" Member="Orders" ThisKey="id_status" OtherKey="status" Type="Orders" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Services" Member="Services">
-    <Type Name="Services">
-      <Column Name="id_service" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Association Name="Services_Orders" Member="Orders" ThisKey="id_service" OtherKey="nameService" Type="Orders" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Orders" Member="Orders">
-    <Type Name="Orders">
-      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nameService" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="startTime" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="endTime" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="worker" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="client" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Clients_Orders" Member="Clients" ThisKey="client" OtherKey="id_client" Type="Clients" IsForeignKey="true" />
-      <Association Name="Services_Orders" Member="Services" ThisKey="nameService" OtherKey="id_service" Type="Services" IsForeignKey="true" />
-      <Association Name="Status_Orders" Member="Status1" ThisKey="status" OtherKey="id_status" Type="Status" IsForeignKey="true" />
-      <Association Name="Workers_Orders" Member="Workers" ThisKey="worker" OtherKey="id_worker" Type="Workers" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[Order]" Member="Order">
-    <Type Name="Order">
-      <Column Name="[Название услуги]" Member="Название_услуги" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="[Дата начала]" Member="Дата_начала" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="[Дата окочания]" Member="Дата_окочания" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Цена" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="[Имя клиента]" Member="Имя_клиента" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="[Фамилия клиента]" Member="Фамилия_клиента" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Телефон" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+  <Table Name="dbo.ReportOrder" Member="ReportOrder">
+    <Type Name="ReportOrder">
+      <Column Name="Название_услуги" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Дата_начала" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Дата_окончания" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Цена" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Имя_клиента" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Фамилия_клиента" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Телефон_клиента" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Адрес" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="[Состояние заказа]" Member="Состояние_заказа" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Имя сотрудника]" Member="Имя_сотрудника" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="[Фамилия сотрудника]" Member="Фамилия_сотрудника" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Users" Member="Users">
-    <Type Name="Users">
-      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Roles_Users" Member="Roles" ThisKey="role" OtherKey="id_role" Type="Roles" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Roles" Member="Roles">
-    <Type Name="Roles">
-      <Column Name="id_role" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="Roles_Users" Member="Users" ThisKey="id_role" OtherKey="role" Type="Users" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Notes" Member="Notes">
-    <Type Name="Notes">
-      <Column Name="Заголовок" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Текст" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Статус_заказа" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Имя_сотрудника" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Фамилия_сотрудника" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Описание_заказа" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -146,7 +146,7 @@ namespace K1.Forms
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.panel1.Controls.Add(this.delBtn);
             this.panel1.Controls.Add(this.SaveBtn);
             this.panel1.Controls.Add(this.closeBtn);

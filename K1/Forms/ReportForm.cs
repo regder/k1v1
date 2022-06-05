@@ -16,5 +16,14 @@ namespace K1.Forms
         {
             InitializeComponent();
         }
+
+        private void ReportForm_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "ordersDataSet.ReportOrder". При необходимости она может быть перемещена или удалена.
+            this.reportOrderTableAdapter.Fill(this.ordersDataSet.ReportOrder);
+            
+            this.reportViewer1.RefreshReport();
+            
+        }
     }
 }
