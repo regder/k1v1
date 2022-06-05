@@ -53,14 +53,31 @@ namespace K1.Forms
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.Location = new System.Drawing.Point(347, 56);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(441, 310);
             this.dataGridView1.TabIndex = 1;
             // 
             // UpBtn
             // 
+            this.UpBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.UpBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UpBtn.Location = new System.Drawing.Point(180, 15);
@@ -73,9 +90,11 @@ namespace K1.Forms
             // 
             // ViewBtn
             // 
+            this.ViewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ViewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ViewBtn.Location = new System.Drawing.Point(451, 15);
+            this.ViewBtn.Location = new System.Drawing.Point(416, 15);
             this.ViewBtn.Name = "ViewBtn";
             this.ViewBtn.Size = new System.Drawing.Size(111, 38);
             this.ViewBtn.TabIndex = 5;
@@ -85,9 +104,11 @@ namespace K1.Forms
             // 
             // closeBtn
             // 
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.closeBtn.Location = new System.Drawing.Point(581, 15);
+            this.closeBtn.Location = new System.Drawing.Point(546, 15);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(93, 38);
             this.closeBtn.TabIndex = 6;
@@ -97,9 +118,11 @@ namespace K1.Forms
             // 
             // delBtn
             // 
+            this.delBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delBtn.Location = new System.Drawing.Point(695, 15);
+            this.delBtn.Location = new System.Drawing.Point(660, 15);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(93, 38);
             this.delBtn.TabIndex = 7;
@@ -109,6 +132,8 @@ namespace K1.Forms
             // 
             // SaveBtn
             // 
+            this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveBtn.Location = new System.Drawing.Point(32, 15);
@@ -121,12 +146,12 @@ namespace K1.Forms
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.Controls.Add(this.delBtn);
             this.panel1.Controls.Add(this.SaveBtn);
             this.panel1.Controls.Add(this.closeBtn);
             this.panel1.Controls.Add(this.UpBtn);
             this.panel1.Controls.Add(this.ViewBtn);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 385);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 65);
@@ -195,41 +220,42 @@ namespace K1.Forms
             // Nameclient
             // 
             this.Nameclient.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Nameclient.Location = new System.Drawing.Point(148, 85);
+            this.Nameclient.Location = new System.Drawing.Point(118, 85);
             this.Nameclient.Name = "Nameclient";
-            this.Nameclient.Size = new System.Drawing.Size(193, 31);
+            this.Nameclient.Size = new System.Drawing.Size(223, 31);
             this.Nameclient.TabIndex = 16;
             // 
             // famClient
             // 
             this.famClient.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.famClient.Location = new System.Drawing.Point(148, 123);
+            this.famClient.Location = new System.Drawing.Point(118, 123);
             this.famClient.Name = "famClient";
-            this.famClient.Size = new System.Drawing.Size(193, 31);
+            this.famClient.Size = new System.Drawing.Size(223, 31);
             this.famClient.TabIndex = 17;
             // 
             // otchClient
             // 
             this.otchClient.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.otchClient.Location = new System.Drawing.Point(148, 162);
+            this.otchClient.Location = new System.Drawing.Point(118, 162);
             this.otchClient.Name = "otchClient";
-            this.otchClient.Size = new System.Drawing.Size(193, 31);
+            this.otchClient.Size = new System.Drawing.Size(223, 31);
             this.otchClient.TabIndex = 18;
             // 
             // telClient
             // 
             this.telClient.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.telClient.Location = new System.Drawing.Point(148, 202);
+            this.telClient.Location = new System.Drawing.Point(118, 202);
             this.telClient.Name = "telClient";
-            this.telClient.Size = new System.Drawing.Size(193, 31);
+            this.telClient.Size = new System.Drawing.Size(223, 31);
             this.telClient.TabIndex = 19;
             // 
             // addressClient
             // 
             this.addressClient.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addressClient.Location = new System.Drawing.Point(148, 240);
+            this.addressClient.Location = new System.Drawing.Point(118, 240);
+            this.addressClient.Multiline = true;
             this.addressClient.Name = "addressClient";
-            this.addressClient.Size = new System.Drawing.Size(193, 31);
+            this.addressClient.Size = new System.Drawing.Size(223, 126);
             this.addressClient.TabIndex = 20;
             // 
             // ClientsForm
