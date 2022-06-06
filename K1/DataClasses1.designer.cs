@@ -22,7 +22,7 @@ namespace K1
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Orders")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="OrdersK")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -39,15 +39,15 @@ namespace K1
     partial void InsertOrderi(Orderi instance);
     partial void UpdateOrderi(Orderi instance);
     partial void DeleteOrderi(Orderi instance);
+    partial void InsertServices(Services instance);
+    partial void UpdateServices(Services instance);
+    partial void DeleteServices(Services instance);
     partial void InsertRoles(Roles instance);
     partial void UpdateRoles(Roles instance);
     partial void DeleteRoles(Roles instance);
     partial void InsertStatus(Status instance);
     partial void UpdateStatus(Status instance);
     partial void DeleteStatus(Status instance);
-    partial void InsertServices(Services instance);
-    partial void UpdateServices(Services instance);
-    partial void DeleteServices(Services instance);
     partial void InsertUsers(Users instance);
     partial void UpdateUsers(Users instance);
     partial void DeleteUsers(Users instance);
@@ -57,7 +57,7 @@ namespace K1
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::K1.Properties.Settings.Default.OrdersConnectionString, mappingSource)
+				base(global::K1.Properties.Settings.Default.OrdersKConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -110,6 +110,14 @@ namespace K1
 			}
 		}
 		
+		public System.Data.Linq.Table<Services> Services
+		{
+			get
+			{
+				return this.GetTable<Services>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Roles> Roles
 		{
 			get
@@ -126,14 +134,6 @@ namespace K1
 			}
 		}
 		
-		public System.Data.Linq.Table<Services> Services
-		{
-			get
-			{
-				return this.GetTable<Services>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Users> Users
 		{
 			get
@@ -147,14 +147,6 @@ namespace K1
 			get
 			{
 				return this.GetTable<Workers>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ReportOrder> ReportOrder
-		{
-			get
-			{
-				return this.GetTable<ReportOrder>();
 			}
 		}
 	}
@@ -223,7 +215,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string firstName
 		{
 			get
@@ -243,7 +235,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string lastName
 		{
 			get
@@ -283,7 +275,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telephone", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telephone", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string telephone
 		{
 			get
@@ -303,7 +295,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string address
 		{
 			get
@@ -479,9 +471,9 @@ namespace K1
 		
 		private EntityRef<Clients> _Clients;
 		
-		private EntityRef<Status> _Status1;
-		
 		private EntityRef<Services> _Services;
+		
+		private EntityRef<Status> _Status1;
 		
 		private EntityRef<Workers> _Workers;
 		
@@ -510,8 +502,8 @@ namespace K1
 		public Orderi()
 		{
 			this._Clients = default(EntityRef<Clients>);
-			this._Status1 = default(EntityRef<Status>);
 			this._Services = default(EntityRef<Services>);
+			this._Status1 = default(EntityRef<Status>);
 			this._Workers = default(EntityRef<Workers>);
 			OnCreated();
 		}
@@ -726,40 +718,6 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Status_Orderi", Storage="_Status1", ThisKey="Status", OtherKey="id_status", IsForeignKey=true)]
-		public Status Status1
-		{
-			get
-			{
-				return this._Status1.Entity;
-			}
-			set
-			{
-				Status previousValue = this._Status1.Entity;
-				if (((previousValue != value) 
-							|| (this._Status1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Status1.Entity = null;
-						previousValue.Orderi.Remove(this);
-					}
-					this._Status1.Entity = value;
-					if ((value != null))
-					{
-						value.Orderi.Add(this);
-						this._Status = value.id_status;
-					}
-					else
-					{
-						this._Status = default(int);
-					}
-					this.SendPropertyChanged("Status1");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Services_Orderi", Storage="_Services", ThisKey="service", OtherKey="id_service", IsForeignKey=true)]
 		public Services Services
 		{
@@ -790,6 +748,40 @@ namespace K1
 						this._service = default(int);
 					}
 					this.SendPropertyChanged("Services");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Status_Orderi", Storage="_Status1", ThisKey="Status", OtherKey="id_status", IsForeignKey=true)]
+		public Status Status1
+		{
+			get
+			{
+				return this._Status1.Entity;
+			}
+			set
+			{
+				Status previousValue = this._Status1.Entity;
+				if (((previousValue != value) 
+							|| (this._Status1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Status1.Entity = null;
+						previousValue.Orderi.Remove(this);
+					}
+					this._Status1.Entity = value;
+					if ((value != null))
+					{
+						value.Orderi.Add(this);
+						this._Status = value.id_status;
+					}
+					else
+					{
+						this._Status = default(int);
+					}
+					this.SendPropertyChanged("Status1");
 				}
 			}
 		}
@@ -846,6 +838,144 @@ namespace K1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Services")]
+	public partial class Services : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_service;
+		
+		private string _title;
+		
+		private decimal _cost;
+		
+		private EntitySet<Orderi> _Orderi;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_serviceChanging(int value);
+    partial void Onid_serviceChanged();
+    partial void OntitleChanging(string value);
+    partial void OntitleChanged();
+    partial void OncostChanging(decimal value);
+    partial void OncostChanged();
+    #endregion
+		
+		public Services()
+		{
+			this._Orderi = new EntitySet<Orderi>(new Action<Orderi>(this.attach_Orderi), new Action<Orderi>(this.detach_Orderi));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_service", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_service
+		{
+			get
+			{
+				return this._id_service;
+			}
+			set
+			{
+				if ((this._id_service != value))
+				{
+					this.Onid_serviceChanging(value);
+					this.SendPropertyChanging();
+					this._id_service = value;
+					this.SendPropertyChanged("id_service");
+					this.Onid_serviceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string title
+		{
+			get
+			{
+				return this._title;
+			}
+			set
+			{
+				if ((this._title != value))
+				{
+					this.OntitleChanging(value);
+					this.SendPropertyChanging();
+					this._title = value;
+					this.SendPropertyChanged("title");
+					this.OntitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cost", DbType="Decimal(10,2) NOT NULL")]
+		public decimal cost
+		{
+			get
+			{
+				return this._cost;
+			}
+			set
+			{
+				if ((this._cost != value))
+				{
+					this.OncostChanging(value);
+					this.SendPropertyChanging();
+					this._cost = value;
+					this.SendPropertyChanged("cost");
+					this.OncostChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Services_Orderi", Storage="_Orderi", ThisKey="id_service", OtherKey="service")]
+		public EntitySet<Orderi> Orderi
+		{
+			get
+			{
+				return this._Orderi;
+			}
+			set
+			{
+				this._Orderi.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Orderi(Orderi entity)
+		{
+			this.SendPropertyChanging();
+			entity.Services = this;
+		}
+		
+		private void detach_Orderi(Orderi entity)
+		{
+			this.SendPropertyChanging();
+			entity.Services = null;
 		}
 	}
 	
@@ -1077,144 +1207,6 @@ namespace K1
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Services")]
-	public partial class Services : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_service;
-		
-		private string _title;
-		
-		private decimal _cost;
-		
-		private EntitySet<Orderi> _Orderi;
-		
-    #region Определения метода расширяемости
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_serviceChanging(int value);
-    partial void Onid_serviceChanged();
-    partial void OntitleChanging(string value);
-    partial void OntitleChanged();
-    partial void OncostChanging(decimal value);
-    partial void OncostChanged();
-    #endregion
-		
-		public Services()
-		{
-			this._Orderi = new EntitySet<Orderi>(new Action<Orderi>(this.attach_Orderi), new Action<Orderi>(this.detach_Orderi));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_service", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_service
-		{
-			get
-			{
-				return this._id_service;
-			}
-			set
-			{
-				if ((this._id_service != value))
-				{
-					this.Onid_serviceChanging(value);
-					this.SendPropertyChanging();
-					this._id_service = value;
-					this.SendPropertyChanged("id_service");
-					this.Onid_serviceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string title
-		{
-			get
-			{
-				return this._title;
-			}
-			set
-			{
-				if ((this._title != value))
-				{
-					this.OntitleChanging(value);
-					this.SendPropertyChanging();
-					this._title = value;
-					this.SendPropertyChanged("title");
-					this.OntitleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cost", DbType="Decimal(18,2) NOT NULL")]
-		public decimal cost
-		{
-			get
-			{
-				return this._cost;
-			}
-			set
-			{
-				if ((this._cost != value))
-				{
-					this.OncostChanging(value);
-					this.SendPropertyChanging();
-					this._cost = value;
-					this.SendPropertyChanged("cost");
-					this.OncostChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Services_Orderi", Storage="_Orderi", ThisKey="id_service", OtherKey="service")]
-		public EntitySet<Orderi> Orderi
-		{
-			get
-			{
-				return this._Orderi;
-			}
-			set
-			{
-				this._Orderi.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Orderi(Orderi entity)
-		{
-			this.SendPropertyChanging();
-			entity.Services = this;
-		}
-		
-		private void detach_Orderi(Orderi entity)
-		{
-			this.SendPropertyChanging();
-			entity.Services = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
 	public partial class Users : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1428,9 +1420,9 @@ namespace K1
 		
 		private string _patronymic;
 		
-		private System.Nullable<System.DateTime> _birthday;
+		private System.DateTime _birthday;
 		
-		private System.Nullable<decimal> _salary;
+		private decimal _salary;
 		
 		private string _telephone;
 		
@@ -1454,9 +1446,9 @@ namespace K1
     partial void OnlastNameChanged();
     partial void OnpatronymicChanging(string value);
     partial void OnpatronymicChanged();
-    partial void OnbirthdayChanging(System.Nullable<System.DateTime> value);
+    partial void OnbirthdayChanging(System.DateTime value);
     partial void OnbirthdayChanged();
-    partial void OnsalaryChanging(System.Nullable<decimal> value);
+    partial void OnsalaryChanging(decimal value);
     partial void OnsalaryChanged();
     partial void OntelephoneChanging(string value);
     partial void OntelephoneChanged();
@@ -1494,7 +1486,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string firstName
 		{
 			get
@@ -1514,7 +1506,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string lastName
 		{
 			get
@@ -1554,8 +1546,8 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_birthday", DbType="Date")]
-		public System.Nullable<System.DateTime> birthday
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_birthday", DbType="Date NOT NULL")]
+		public System.DateTime birthday
 		{
 			get
 			{
@@ -1574,8 +1566,8 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_salary", DbType="Money")]
-		public System.Nullable<decimal> salary
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_salary", DbType="Decimal(10,2) NOT NULL")]
+		public decimal salary
 		{
 			get
 			{
@@ -1594,7 +1586,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telephone", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telephone", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string telephone
 		{
 			get
@@ -1614,7 +1606,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_experience", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_experience", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string experience
 		{
 			get
@@ -1634,7 +1626,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_position", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_position", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string position
 		{
 			get
@@ -1654,7 +1646,7 @@ namespace K1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string address
 		{
 			get
@@ -1717,231 +1709,6 @@ namespace K1
 		{
 			this.SendPropertyChanging();
 			entity.Workers = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReportOrder")]
-	public partial class ReportOrder
-	{
-		
-		private string _Название_услуги;
-		
-		private System.DateTime _Дата_начала;
-		
-		private System.DateTime _Дата_окончания;
-		
-		private decimal _Цена;
-		
-		private string _Имя_клиента;
-		
-		private string _Фамилия_клиента;
-		
-		private string _Телефон_клиента;
-		
-		private string _Адрес;
-		
-		private string _Статус_заказа;
-		
-		private string _Имя_сотрудника;
-		
-		private string _Фамилия_сотрудника;
-		
-		private string _Описание_заказа;
-		
-		public ReportOrder()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Название_услуги", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Название_услуги
-		{
-			get
-			{
-				return this._Название_услуги;
-			}
-			set
-			{
-				if ((this._Название_услуги != value))
-				{
-					this._Название_услуги = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_начала", DbType="DateTime NOT NULL")]
-		public System.DateTime Дата_начала
-		{
-			get
-			{
-				return this._Дата_начала;
-			}
-			set
-			{
-				if ((this._Дата_начала != value))
-				{
-					this._Дата_начала = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_окончания", DbType="DateTime NOT NULL")]
-		public System.DateTime Дата_окончания
-		{
-			get
-			{
-				return this._Дата_окончания;
-			}
-			set
-			{
-				if ((this._Дата_окончания != value))
-				{
-					this._Дата_окончания = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Цена", DbType="Decimal(18,2) NOT NULL")]
-		public decimal Цена
-		{
-			get
-			{
-				return this._Цена;
-			}
-			set
-			{
-				if ((this._Цена != value))
-				{
-					this._Цена = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Имя_клиента", DbType="NVarChar(100)")]
-		public string Имя_клиента
-		{
-			get
-			{
-				return this._Имя_клиента;
-			}
-			set
-			{
-				if ((this._Имя_клиента != value))
-				{
-					this._Имя_клиента = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Фамилия_клиента", DbType="NVarChar(100)")]
-		public string Фамилия_клиента
-		{
-			get
-			{
-				return this._Фамилия_клиента;
-			}
-			set
-			{
-				if ((this._Фамилия_клиента != value))
-				{
-					this._Фамилия_клиента = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Телефон_клиента", DbType="NVarChar(50)")]
-		public string Телефон_клиента
-		{
-			get
-			{
-				return this._Телефон_клиента;
-			}
-			set
-			{
-				if ((this._Телефон_клиента != value))
-				{
-					this._Телефон_клиента = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Адрес", DbType="NVarChar(100)")]
-		public string Адрес
-		{
-			get
-			{
-				return this._Адрес;
-			}
-			set
-			{
-				if ((this._Адрес != value))
-				{
-					this._Адрес = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Статус_заказа", DbType="NVarChar(50)")]
-		public string Статус_заказа
-		{
-			get
-			{
-				return this._Статус_заказа;
-			}
-			set
-			{
-				if ((this._Статус_заказа != value))
-				{
-					this._Статус_заказа = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Имя_сотрудника", DbType="NVarChar(100)")]
-		public string Имя_сотрудника
-		{
-			get
-			{
-				return this._Имя_сотрудника;
-			}
-			set
-			{
-				if ((this._Имя_сотрудника != value))
-				{
-					this._Имя_сотрудника = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Фамилия_сотрудника", DbType="NVarChar(100)")]
-		public string Фамилия_сотрудника
-		{
-			get
-			{
-				return this._Фамилия_сотрудника;
-			}
-			set
-			{
-				if ((this._Фамилия_сотрудника != value))
-				{
-					this._Фамилия_сотрудника = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Описание_заказа", DbType="NVarChar(MAX)")]
-		public string Описание_заказа
-		{
-			get
-			{
-				return this._Описание_заказа;
-			}
-			set
-			{
-				if ((this._Описание_заказа != value))
-				{
-					this._Описание_заказа = value;
-				}
-			}
 		}
 	}
 }

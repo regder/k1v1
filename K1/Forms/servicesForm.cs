@@ -45,15 +45,13 @@ namespace K1.Forms
             {
 
                 serv.title = titlebx.Text;
-                decimal c = serv.cost;
-                c.ToString(pricebx.Text);
-                serv.cost = c;
-                
+                serv.cost = Convert.ToDecimal(pricebx.Text);
                 db.SubmitChanges();
                 dataGridView1.DataSource = from n in db.Services select n;
-
+                
             }
-
+            titlebx.Clear();
+            pricebx.Clear();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -64,19 +62,16 @@ namespace K1.Forms
             {
                 var n = new Services();
                 n.title = titlebx.Text;
-                decimal c = n.cost;
-                c.ToString(pricebx.Text);
-                n.cost = c;
-
+                n.cost = Convert.ToDecimal(pricebx.Text);
 
                 db.Services.InsertOnSubmit(n);
-
+                MessageBox.Show("=Данные успешно сохранены!=");
             }
             else if (titlebx.Text == "" && pricebx.Text == "")
             {
                 MessageBox.Show("Ошибка!");
             }
-            db.SubmitChanges();
+            db.SubmitChanges();    
             dataGridView1.DataSource = from n in db.Services select n;
             titlebx.Clear();
             pricebx.Clear();
