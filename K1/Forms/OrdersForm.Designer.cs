@@ -51,15 +51,15 @@ namespace K1.Forms
             this.workerbx = new System.Windows.Forms.ComboBox();
             this.statusbx = new System.Windows.Forms.ComboBox();
             this.servbx = new System.Windows.Forms.ComboBox();
-            this.ordersDataSet = new K1.OrdersDataSet();
+            this.ordersDataSet = new K1.OrdersKDataSet();
             this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.servicesTableAdapter = new K1.OrdersDataSetTableAdapters.ServicesTableAdapter();
+            this.servicesTableAdapter = new K1.OrdersKDataSetTableAdapters.ServicesTableAdapter();
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientsTableAdapter = new K1.OrdersDataSetTableAdapters.ClientsTableAdapter();
+            this.clientsTableAdapter = new K1.OrdersKDataSetTableAdapters.ClientsTableAdapter();
             this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.statusTableAdapter = new K1.OrdersDataSetTableAdapters.StatusTableAdapter();
+            this.statusTableAdapter = new K1.OrdersKDataSetTableAdapters.StatusTableAdapter();
             this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.workersTableAdapter = new K1.OrdersDataSetTableAdapters.WorkersTableAdapter();
+            this.workersTableAdapter = new K1.OrdersKDataSetTableAdapters.WorkersTableAdapter();
             this.idbx = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).BeginInit();
@@ -423,15 +423,15 @@ namespace K1.Forms
         private System.Windows.Forms.ComboBox workerbx;
         private System.Windows.Forms.ComboBox statusbx;
         private System.Windows.Forms.ComboBox servbx;
-        private OrdersDataSet ordersDataSet;
+        private OrdersKDataSet ordersDataSet;
         private System.Windows.Forms.BindingSource servicesBindingSource;
-        private OrdersDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter;
+        private OrdersKDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter;
         private System.Windows.Forms.BindingSource clientsBindingSource;
-        private OrdersDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
+        private OrdersKDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
         private System.Windows.Forms.BindingSource statusBindingSource;
-        private OrdersDataSetTableAdapters.StatusTableAdapter statusTableAdapter;
+        private OrdersKDataSetTableAdapters.StatusTableAdapter statusTableAdapter;
         private System.Windows.Forms.BindingSource workersBindingSource;
-        private OrdersDataSetTableAdapters.WorkersTableAdapter workersTableAdapter;
+        private OrdersKDataSetTableAdapters.WorkersTableAdapter workersTableAdapter;
         private System.Windows.Forms.TextBox idbx;
     }
 }

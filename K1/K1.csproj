@@ -131,10 +131,10 @@
     <Compile Include="LogForm.Designer.cs">
       <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdersDataSet.Designer.cs">
+    <Compile Include="OrdersKDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OrdersDataSet.xsd</DependentUpon>
+      <DependentUpon>OrdersKDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,16 +197,16 @@
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
-    <None Include="OrdersDataSet.xsc">
-      <DependentUpon>OrdersDataSet.xsd</DependentUpon>
+    <None Include="OrdersKDataSet.xsc">
+      <DependentUpon>OrdersKDataSet.xsd</DependentUpon>
     </None>
-    <None Include="OrdersDataSet.xsd">
+    <None Include="OrdersKDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OrdersDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>OrdersKDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="OrdersDataSet.xss">
-      <DependentUpon>OrdersDataSet.xsd</DependentUpon>
+    <None Include="OrdersKDataSet.xss">
+      <DependentUpon>OrdersKDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

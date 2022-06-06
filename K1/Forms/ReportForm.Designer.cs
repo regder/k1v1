@@ -31,13 +31,23 @@ namespace K1.Forms
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ordersDataSet = new K1.OrdersDataSet();
             this.reportOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportOrderTableAdapter = new K1.OrdersDataSetTableAdapters.ReportOrderTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).BeginInit();
+            this.ordersDataSet = new K1.OrdersKDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportOrderTableAdapter = new K1.OrdersKDataSetTableAdapters.ReportOrderTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.reportOrderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reportOrderBindingSource
+            // 
+            this.reportOrderBindingSource.DataMember = "ReportOrder";
+            this.reportOrderBindingSource.DataSource = this.ordersDataSet;
+            // 
+            // ordersDataSet
+            // 
+            this.ordersDataSet.DataSetName = "OrdersDataSet";
+            this.ordersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -45,22 +55,12 @@ namespace K1.Forms
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.reportOrderBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "K1.Report.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "K1.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // ordersDataSet
-            // 
-            this.ordersDataSet.DataSetName = "OrdersDataSet";
-            this.ordersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportOrderBindingSource
-            // 
-            this.reportOrderBindingSource.DataMember = "ReportOrder";
-            this.reportOrderBindingSource.DataSource = this.ordersDataSet;
             // 
             // reportOrderTableAdapter
             // 
@@ -75,8 +75,8 @@ namespace K1.Forms
             this.Name = "ReportForm";
             this.Text = "ReportForm";
             this.Load += new System.EventHandler(this.ReportForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportOrderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,8 +84,8 @@ namespace K1.Forms
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private OrdersDataSet ordersDataSet;
+        private OrdersKDataSet ordersDataSet;
         private System.Windows.Forms.BindingSource reportOrderBindingSource;
-        private OrdersDataSetTableAdapters.ReportOrderTableAdapter reportOrderTableAdapter;
+        private OrdersKDataSetTableAdapters.ReportOrderTableAdapter reportOrderTableAdapter;
     }
 }
