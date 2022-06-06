@@ -21,6 +21,18 @@ namespace K1.Forms
         {
             var db = new DataClasses1DataContext();
             dataGridView1.DataSource = from n in db.Workers select n;
+            SaveBtn.Visible = true;
+            UpBtn.Visible = false;
+            dataGridView1.Columns["id_worker"].HeaderText = "код сотрудника";
+            dataGridView1.Columns["firstName"].HeaderText = "Имя";
+            dataGridView1.Columns["lastName"].HeaderText = "Фамилия";
+            dataGridView1.Columns["patronymic"].HeaderText = "Отчество";
+            dataGridView1.Columns["birthday"].HeaderText = "Дата рождения";
+            dataGridView1.Columns["salary"].HeaderText = "Зарплата";
+            dataGridView1.Columns["experience"].HeaderText = "Стаж";
+            dataGridView1.Columns["telephone"].HeaderText = "Телефон";
+            dataGridView1.Columns["position"].HeaderText = "Должность";
+            dataGridView1.Columns["address"].HeaderText = "Адрес";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
