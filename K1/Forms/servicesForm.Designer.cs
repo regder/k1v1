@@ -92,7 +92,7 @@ namespace K1.Forms
             // 
             // delBtn
             // 
-            this.delBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.delBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -106,7 +106,7 @@ namespace K1.Forms
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SaveBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -120,7 +120,7 @@ namespace K1.Forms
             // 
             // closeBtn
             // 
-            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -134,7 +134,7 @@ namespace K1.Forms
             // 
             // UpBtn
             // 
-            this.UpBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.UpBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.UpBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -148,7 +148,7 @@ namespace K1.Forms
             // 
             // ViewBtn
             // 
-            this.ViewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ViewBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ViewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

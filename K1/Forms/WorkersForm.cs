@@ -15,6 +15,11 @@ namespace K1.Forms
         public WorkersForm()
         {
             InitializeComponent();
+            UpBtn.BackColor = Color.FromArgb(254, 128, 0);
+            SaveBtn.BackColor = Color.FromArgb(254, 128, 0);
+            closeBtn.BackColor = Color.FromArgb(254, 128, 0);
+            ViewBtn.BackColor = Color.FromArgb(254, 128, 0);
+            delBtn.BackColor = Color.FromArgb(254, 128, 0);
         }
 
         private void WorkersForm_Load(object sender, EventArgs e)
