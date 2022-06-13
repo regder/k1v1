@@ -27,11 +27,14 @@ namespace K1.Forms
             
 
             var db = new DataClasses1DataContext();
+            
+
             servbx.DataSource = db.Services;
             servbx.ValueMember = "id_service";
             servbx.DisplayMember = "title";
             
-            
+
+
             clientbx.DataSource = db.Clients;
             clientbx.ValueMember = "id_client";
             clientbx.DisplayMember = "firstName";
@@ -47,24 +50,31 @@ namespace K1.Forms
             dataGridView1.DataSource = from n in db.Orderi select n;
             SaveBtn.Visible = true;
             UpBtn.Visible = false;
-            dataGridView1.Columns["id_order"].HeaderText = "код заказа";
-            dataGridView1.Columns["service"].HeaderText = "Услуга";
+            //   dataGridView1.Columns["Имя_клиента"].HeaderText = "Имя клиента";
+            //   dataGridView1.Columns["Фамилия_клиента"].HeaderText = "Фамилия клиента";
+            //   dataGridView1.Columns["Название_услуги"].HeaderText = "Название услуги";
+            //  dataGridView1.Columns["Дата_начала"].HeaderText = "Дата начала";
+            //  dataGridView1.Columns["Дата_окончания"].HeaderText = "Дата окончания";
+            //    dataGridView1.Columns["Цена"].HeaderText = "Цена";
+            //   dataGridView1.Columns["Статус_заказа"].HeaderText = "Статус заказа";
+            //   dataGridView1.Columns["Телефон_клиента"].HeaderText = "Телефон клиента";
+            //    dataGridView1.Columns["Адрес"].HeaderText = "Адрес";
+            //   dataGridView1.Columns["Имя_сотрудника"].HeaderText = "Имя сотрудника";
+            //   dataGridView1.Columns["Фамилия_сотрудника"].HeaderText = "Фамилия сотрудника";
+            //   dataGridView1.Columns["Описание_заказа"].HeaderText = "Описание";
+            dataGridView1.Columns["id_order"].HeaderText = "Код заказа";
+            dataGridView1.Columns["service"].HeaderText = "Название услуги";
             dataGridView1.Columns["StartTime"].HeaderText = "Дата начала";
-            dataGridView1.Columns["EndTime"].HeaderText = "Дата окончания";
-            dataGridView1.Columns["Client"].HeaderText = "Код клиента";
+            dataGridView1.Columns["EndTime"].HeaderText = "Дата Окончания";
+            dataGridView1.Columns["Client"].HeaderText = "Клиент";
             dataGridView1.Columns["Status"].HeaderText = "Статус заказа";
-            dataGridView1.Columns["Worker"].HeaderText = "Код сотрудника";
+            dataGridView1.Columns["Worker"].HeaderText = "Сотрудник";
             dataGridView1.Columns["Discription"].HeaderText = "Описание";
 
-            dataGridView1.Columns["services"].HeaderText = "Услуга";
-            dataGridView1.Columns["Clients"].HeaderText = "Код клиента";
-            dataGridView1.Columns["Status1"].HeaderText = "Статус заказа";
-            dataGridView1.Columns["Workers"].HeaderText = "Код сотрудника";
-                 dataGridView1.Columns["services"].Visible = false;
-                 dataGridView1.Columns["Clients"].Visible = false;
-                 dataGridView1.Columns["Status1"].Visible = false;
-                 dataGridView1.Columns["Workers"].Visible = false;
-            
+            dataGridView1.Columns["Clients"].Visible = false;
+            dataGridView1.Columns["Status1"].Visible = false;
+            dataGridView1.Columns["Workers"].Visible = false;
+            dataGridView1.Columns["services"].Visible = false;
         }
 
         private void delBtn_Click(object sender, EventArgs e)
@@ -131,12 +141,12 @@ namespace K1.Forms
                 select work;
             foreach (Orderi work in query)
             {
-                work.service = Convert.ToInt32(servbx.SelectedItem);
+                work.service = Convert.ToInt32(servbx.GetItemText(servbx.SelectedValue));
                 work.StartTime = startPicker.Value;
                 work.EndTime = endPicker.Value;
-                work.Client = Convert.ToInt32(clientbx.SelectedItem);
-                work.Status = Convert.ToInt32(statusbx.SelectedItem);
-                work.Worker = Convert.ToInt32(workerbx.SelectedItem);
+                work.Client = Convert.ToInt32(servbx.GetItemText(clientbx.SelectedValue));
+                work.Status = Convert.ToInt32(servbx.GetItemText(statusbx.SelectedValue));
+                work.Worker = Convert.ToInt32(servbx.GetItemText(workerbx.SelectedValue));
                 work.Discription = discbx.Text;
 
                 db.SubmitChanges();
@@ -156,14 +166,14 @@ namespace K1.Forms
             if (servbx.Text != "")
             {
                 var n = new Orderi();
-                n.service = servbx.SelectedIndex;
+                n.service = Convert.ToInt32(servbx.GetItemText(servbx.SelectedValue));
                 n.StartTime = startPicker.Value;
                 n.EndTime = endPicker.Value;
-                n.Client = clientbx.SelectedIndex;
-                n.Status = statusbx.SelectedIndex;
-                n.Worker = workerbx.SelectedIndex;
+                n.Client = Convert.ToInt32(servbx.GetItemText(clientbx.SelectedValue));
+                n.Status = Convert.ToInt32(servbx.GetItemText(statusbx.SelectedValue));
+                n.Worker = Convert.ToInt32(servbx.GetItemText(workerbx.SelectedValue));
                 n.Discription = discbx.Text;
-
+                
                 db.Orderi.InsertOnSubmit(n);
 
             }

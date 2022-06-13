@@ -39,21 +39,21 @@ namespace K1
     partial void InsertOrderi(Orderi instance);
     partial void UpdateOrderi(Orderi instance);
     partial void DeleteOrderi(Orderi instance);
-    partial void InsertServices(Services instance);
-    partial void UpdateServices(Services instance);
-    partial void DeleteServices(Services instance);
     partial void InsertRoles(Roles instance);
     partial void UpdateRoles(Roles instance);
     partial void DeleteRoles(Roles instance);
+    partial void InsertServices(Services instance);
+    partial void UpdateServices(Services instance);
+    partial void DeleteServices(Services instance);
     partial void InsertStatus(Status instance);
     partial void UpdateStatus(Status instance);
     partial void DeleteStatus(Status instance);
-    partial void InsertUsers(Users instance);
-    partial void UpdateUsers(Users instance);
-    partial void DeleteUsers(Users instance);
     partial void InsertWorkers(Workers instance);
     partial void UpdateWorkers(Workers instance);
     partial void DeleteWorkers(Workers instance);
+    partial void InsertUsers(Users instance);
+    partial void UpdateUsers(Users instance);
+    partial void DeleteUsers(Users instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -110,19 +110,19 @@ namespace K1
 			}
 		}
 		
-		public System.Data.Linq.Table<Services> Services
-		{
-			get
-			{
-				return this.GetTable<Services>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Roles> Roles
 		{
 			get
 			{
 				return this.GetTable<Roles>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Services> Services
+		{
+			get
+			{
+				return this.GetTable<Services>();
 			}
 		}
 		
@@ -134,6 +134,14 @@ namespace K1
 			}
 		}
 		
+		public System.Data.Linq.Table<Workers> Workers
+		{
+			get
+			{
+				return this.GetTable<Workers>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Users> Users
 		{
 			get
@@ -142,11 +150,11 @@ namespace K1
 			}
 		}
 		
-		public System.Data.Linq.Table<Workers> Workers
+		public System.Data.Linq.Table<ReportOrder> ReportOrder
 		{
 			get
 			{
-				return this.GetTable<Workers>();
+				return this.GetTable<ReportOrder>();
 			}
 		}
 	}
@@ -841,6 +849,120 @@ namespace K1
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Roles")]
+	public partial class Roles : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_role;
+		
+		private string _name;
+		
+		private EntitySet<Users> _Users;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_roleChanging(int value);
+    partial void Onid_roleChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    #endregion
+		
+		public Roles()
+		{
+			this._Users = new EntitySet<Users>(new Action<Users>(this.attach_Users), new Action<Users>(this.detach_Users));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_role", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_role
+		{
+			get
+			{
+				return this._id_role;
+			}
+			set
+			{
+				if ((this._id_role != value))
+				{
+					this.Onid_roleChanging(value);
+					this.SendPropertyChanging();
+					this._id_role = value;
+					this.SendPropertyChanged("id_role");
+					this.Onid_roleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(50)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Roles_Users", Storage="_Users", ThisKey="id_role", OtherKey="role")]
+		public EntitySet<Users> Users
+		{
+			get
+			{
+				return this._Users;
+			}
+			set
+			{
+				this._Users.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Users(Users entity)
+		{
+			this.SendPropertyChanging();
+			entity.Roles = this;
+		}
+		
+		private void detach_Users(Users entity)
+		{
+			this.SendPropertyChanging();
+			entity.Roles = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Services")]
 	public partial class Services : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -979,120 +1101,6 @@ namespace K1
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Roles")]
-	public partial class Roles : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_role;
-		
-		private string _name;
-		
-		private EntitySet<Users> _Users;
-		
-    #region Определения метода расширяемости
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_roleChanging(int value);
-    partial void Onid_roleChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    #endregion
-		
-		public Roles()
-		{
-			this._Users = new EntitySet<Users>(new Action<Users>(this.attach_Users), new Action<Users>(this.detach_Users));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_role", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_role
-		{
-			get
-			{
-				return this._id_role;
-			}
-			set
-			{
-				if ((this._id_role != value))
-				{
-					this.Onid_roleChanging(value);
-					this.SendPropertyChanging();
-					this._id_role = value;
-					this.SendPropertyChanged("id_role");
-					this.Onid_roleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(50)")]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Roles_Users", Storage="_Users", ThisKey="id_role", OtherKey="role")]
-		public EntitySet<Users> Users
-		{
-			get
-			{
-				return this._Users;
-			}
-			set
-			{
-				this._Users.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Users(Users entity)
-		{
-			this.SendPropertyChanging();
-			entity.Roles = this;
-		}
-		
-		private void detach_Users(Users entity)
-		{
-			this.SendPropertyChanging();
-			entity.Roles = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Status")]
 	public partial class Status : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1204,205 +1212,6 @@ namespace K1
 		{
 			this.SendPropertyChanging();
 			entity.Status1 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
-	public partial class Users : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_user;
-		
-		private string _login;
-		
-		private string _password;
-		
-		private string _Name;
-		
-		private int _role;
-		
-		private EntityRef<Roles> _Roles;
-		
-    #region Определения метода расширяемости
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_userChanging(int value);
-    partial void Onid_userChanged();
-    partial void OnloginChanging(string value);
-    partial void OnloginChanged();
-    partial void OnpasswordChanging(string value);
-    partial void OnpasswordChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnroleChanging(int value);
-    partial void OnroleChanged();
-    #endregion
-		
-		public Users()
-		{
-			this._Roles = default(EntityRef<Roles>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_user", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_user
-		{
-			get
-			{
-				return this._id_user;
-			}
-			set
-			{
-				if ((this._id_user != value))
-				{
-					this.Onid_userChanging(value);
-					this.SendPropertyChanging();
-					this._id_user = value;
-					this.SendPropertyChanged("id_user");
-					this.Onid_userChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_login", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string login
-		{
-			get
-			{
-				return this._login;
-			}
-			set
-			{
-				if ((this._login != value))
-				{
-					this.OnloginChanging(value);
-					this.SendPropertyChanging();
-					this._login = value;
-					this.SendPropertyChanged("login");
-					this.OnloginChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string password
-		{
-			get
-			{
-				return this._password;
-			}
-			set
-			{
-				if ((this._password != value))
-				{
-					this.OnpasswordChanging(value);
-					this.SendPropertyChanging();
-					this._password = value;
-					this.SendPropertyChanged("password");
-					this.OnpasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="Int NOT NULL")]
-		public int role
-		{
-			get
-			{
-				return this._role;
-			}
-			set
-			{
-				if ((this._role != value))
-				{
-					if (this._Roles.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnroleChanging(value);
-					this.SendPropertyChanging();
-					this._role = value;
-					this.SendPropertyChanged("role");
-					this.OnroleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Roles_Users", Storage="_Roles", ThisKey="role", OtherKey="id_role", IsForeignKey=true)]
-		public Roles Roles
-		{
-			get
-			{
-				return this._Roles.Entity;
-			}
-			set
-			{
-				Roles previousValue = this._Roles.Entity;
-				if (((previousValue != value) 
-							|| (this._Roles.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Roles.Entity = null;
-						previousValue.Users.Remove(this);
-					}
-					this._Roles.Entity = value;
-					if ((value != null))
-					{
-						value.Users.Add(this);
-						this._role = value.id_role;
-					}
-					else
-					{
-						this._role = default(int);
-					}
-					this.SendPropertyChanged("Roles");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -1709,6 +1518,430 @@ namespace K1
 		{
 			this.SendPropertyChanging();
 			entity.Workers = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
+	public partial class Users : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_user;
+		
+		private string _login;
+		
+		private string _password;
+		
+		private string _Name;
+		
+		private int _role;
+		
+		private EntityRef<Roles> _Roles;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_userChanging(int value);
+    partial void Onid_userChanged();
+    partial void OnloginChanging(string value);
+    partial void OnloginChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnroleChanging(int value);
+    partial void OnroleChanged();
+    #endregion
+		
+		public Users()
+		{
+			this._Roles = default(EntityRef<Roles>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_user", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_user
+		{
+			get
+			{
+				return this._id_user;
+			}
+			set
+			{
+				if ((this._id_user != value))
+				{
+					this.Onid_userChanging(value);
+					this.SendPropertyChanging();
+					this._id_user = value;
+					this.SendPropertyChanged("id_user");
+					this.Onid_userChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_login", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string login
+		{
+			get
+			{
+				return this._login;
+			}
+			set
+			{
+				if ((this._login != value))
+				{
+					this.OnloginChanging(value);
+					this.SendPropertyChanging();
+					this._login = value;
+					this.SendPropertyChanged("login");
+					this.OnloginChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="Int NOT NULL")]
+		public int role
+		{
+			get
+			{
+				return this._role;
+			}
+			set
+			{
+				if ((this._role != value))
+				{
+					if (this._Roles.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnroleChanging(value);
+					this.SendPropertyChanging();
+					this._role = value;
+					this.SendPropertyChanged("role");
+					this.OnroleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Roles_Users", Storage="_Roles", ThisKey="role", OtherKey="id_role", IsForeignKey=true)]
+		public Roles Roles
+		{
+			get
+			{
+				return this._Roles.Entity;
+			}
+			set
+			{
+				Roles previousValue = this._Roles.Entity;
+				if (((previousValue != value) 
+							|| (this._Roles.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Roles.Entity = null;
+						previousValue.Users.Remove(this);
+					}
+					this._Roles.Entity = value;
+					if ((value != null))
+					{
+						value.Users.Add(this);
+						this._role = value.id_role;
+					}
+					else
+					{
+						this._role = default(int);
+					}
+					this.SendPropertyChanged("Roles");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReportOrder")]
+	public partial class ReportOrder
+	{
+		
+		private string _Имя_клиента;
+		
+		private string _Фамилия_клиента;
+		
+		private string _Название_услуги;
+		
+		private System.DateTime _Дата_начала;
+		
+		private System.DateTime _Дата_окончания;
+		
+		private decimal _Цена;
+		
+		private string _Статус_заказа;
+		
+		private string _Телефон_клиента;
+		
+		private string _Адрес;
+		
+		private string _Имя_сотрудника;
+		
+		private string _Фамилия_сотрудника;
+		
+		private string _Описание_заказа;
+		
+		public ReportOrder()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Имя_клиента", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Имя_клиента
+		{
+			get
+			{
+				return this._Имя_клиента;
+			}
+			set
+			{
+				if ((this._Имя_клиента != value))
+				{
+					this._Имя_клиента = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Фамилия_клиента", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Фамилия_клиента
+		{
+			get
+			{
+				return this._Фамилия_клиента;
+			}
+			set
+			{
+				if ((this._Фамилия_клиента != value))
+				{
+					this._Фамилия_клиента = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Название_услуги", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Название_услуги
+		{
+			get
+			{
+				return this._Название_услуги;
+			}
+			set
+			{
+				if ((this._Название_услуги != value))
+				{
+					this._Название_услуги = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_начала", DbType="Date NOT NULL")]
+		public System.DateTime Дата_начала
+		{
+			get
+			{
+				return this._Дата_начала;
+			}
+			set
+			{
+				if ((this._Дата_начала != value))
+				{
+					this._Дата_начала = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_окончания", DbType="Date NOT NULL")]
+		public System.DateTime Дата_окончания
+		{
+			get
+			{
+				return this._Дата_окончания;
+			}
+			set
+			{
+				if ((this._Дата_окончания != value))
+				{
+					this._Дата_окончания = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Цена", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Цена
+		{
+			get
+			{
+				return this._Цена;
+			}
+			set
+			{
+				if ((this._Цена != value))
+				{
+					this._Цена = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Статус_заказа", DbType="NVarChar(50)")]
+		public string Статус_заказа
+		{
+			get
+			{
+				return this._Статус_заказа;
+			}
+			set
+			{
+				if ((this._Статус_заказа != value))
+				{
+					this._Статус_заказа = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Телефон_клиента", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Телефон_клиента
+		{
+			get
+			{
+				return this._Телефон_клиента;
+			}
+			set
+			{
+				if ((this._Телефон_клиента != value))
+				{
+					this._Телефон_клиента = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Адрес", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Адрес
+		{
+			get
+			{
+				return this._Адрес;
+			}
+			set
+			{
+				if ((this._Адрес != value))
+				{
+					this._Адрес = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Имя_сотрудника", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Имя_сотрудника
+		{
+			get
+			{
+				return this._Имя_сотрудника;
+			}
+			set
+			{
+				if ((this._Имя_сотрудника != value))
+				{
+					this._Имя_сотрудника = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Фамилия_сотрудника", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Фамилия_сотрудника
+		{
+			get
+			{
+				return this._Фамилия_сотрудника;
+			}
+			set
+			{
+				if ((this._Фамилия_сотрудника != value))
+				{
+					this._Фамилия_сотрудника = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Описание_заказа", DbType="NVarChar(MAX)")]
+		public string Описание_заказа
+		{
+			get
+			{
+				return this._Описание_заказа;
+			}
+			set
+			{
+				if ((this._Описание_заказа != value))
+				{
+					this._Описание_заказа = value;
+				}
+			}
 		}
 	}
 }

@@ -63,7 +63,7 @@ namespace K1.Forms
             this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delBtn.Location = new System.Drawing.Point(663, 400);
+            this.delBtn.Location = new System.Drawing.Point(663, 485);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(93, 38);
             this.delBtn.TabIndex = 12;
@@ -77,7 +77,7 @@ namespace K1.Forms
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveBtn.Location = new System.Drawing.Point(50, 400);
+            this.SaveBtn.Location = new System.Drawing.Point(50, 485);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(106, 38);
             this.SaveBtn.TabIndex = 13;
@@ -91,7 +91,7 @@ namespace K1.Forms
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.closeBtn.Location = new System.Drawing.Point(549, 400);
+            this.closeBtn.Location = new System.Drawing.Point(549, 485);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(93, 38);
             this.closeBtn.TabIndex = 11;
@@ -105,7 +105,7 @@ namespace K1.Forms
             this.UpBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UpBtn.Location = new System.Drawing.Point(203, 400);
+            this.UpBtn.Location = new System.Drawing.Point(203, 485);
             this.UpBtn.Name = "UpBtn";
             this.UpBtn.Size = new System.Drawing.Size(108, 38);
             this.UpBtn.TabIndex = 9;
@@ -119,7 +119,7 @@ namespace K1.Forms
             this.ViewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ViewBtn.Location = new System.Drawing.Point(419, 400);
+            this.ViewBtn.Location = new System.Drawing.Point(419, 485);
             this.ViewBtn.Name = "ViewBtn";
             this.ViewBtn.Size = new System.Drawing.Size(111, 38);
             this.ViewBtn.TabIndex = 10;
@@ -145,7 +145,7 @@ namespace K1.Forms
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(415, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(415, 464);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -251,7 +251,7 @@ namespace K1.Forms
             this.addressbx.Location = new System.Drawing.Point(142, 334);
             this.addressbx.Multiline = true;
             this.addressbx.Name = "addressbx";
-            this.addressbx.Size = new System.Drawing.Size(223, 60);
+            this.addressbx.Size = new System.Drawing.Size(223, 145);
             this.addressbx.TabIndex = 28;
             // 
             // label4
@@ -327,7 +327,7 @@ namespace K1.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 535);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);

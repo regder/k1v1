@@ -65,7 +65,7 @@ namespace K1.Forms
                 n.cost = Convert.ToDecimal(pricebx.Text);
 
                 db.Services.InsertOnSubmit(n);
-                MessageBox.Show("=Данные успешно сохранены!=");
+                MessageBox.Show("=Данные успешно сохранены=");
             }
             else if (titlebx.Text == "" && pricebx.Text == "")
             {

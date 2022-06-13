@@ -29,7 +29,6 @@ namespace K1.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.delBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -51,22 +50,8 @@ namespace K1.Forms
             this.workerbx = new System.Windows.Forms.ComboBox();
             this.statusbx = new System.Windows.Forms.ComboBox();
             this.servbx = new System.Windows.Forms.ComboBox();
-            this.ordersDataSet = new K1.OrdersKDataSet();
-            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.servicesTableAdapter = new K1.OrdersKDataSetTableAdapters.ServicesTableAdapter();
-            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientsTableAdapter = new K1.OrdersKDataSetTableAdapters.ClientsTableAdapter();
-            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.statusTableAdapter = new K1.OrdersKDataSetTableAdapters.StatusTableAdapter();
-            this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.workersTableAdapter = new K1.OrdersKDataSetTableAdapters.WorkersTableAdapter();
             this.idbx = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -78,6 +63,7 @@ namespace K1.Forms
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -268,7 +254,6 @@ namespace K1.Forms
             // 
             // clientbx
             // 
-            this.clientbx.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.clientsBindingSource, "firstName", true));
             this.clientbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clientbx.FormattingEnabled = true;
             this.clientbx.Location = new System.Drawing.Point(156, 162);
@@ -278,7 +263,6 @@ namespace K1.Forms
             // 
             // workerbx
             // 
-            this.workerbx.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.workersBindingSource, "firstName", true));
             this.workerbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.workerbx.FormattingEnabled = true;
             this.workerbx.Location = new System.Drawing.Point(156, 238);
@@ -288,7 +272,6 @@ namespace K1.Forms
             // 
             // statusbx
             // 
-            this.statusbx.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.statusBindingSource, "name", true));
             this.statusbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.statusbx.FormattingEnabled = true;
             this.statusbx.Location = new System.Drawing.Point(156, 201);
@@ -298,54 +281,12 @@ namespace K1.Forms
             // 
             // servbx
             // 
-            this.servbx.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.servicesBindingSource, "title", true));
             this.servbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.servbx.FormattingEnabled = true;
             this.servbx.Location = new System.Drawing.Point(156, 56);
             this.servbx.Name = "servbx";
             this.servbx.Size = new System.Drawing.Size(247, 24);
             this.servbx.TabIndex = 33;
-            // 
-            // ordersDataSet
-            // 
-            this.ordersDataSet.DataSetName = "OrdersDataSet";
-            this.ordersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // servicesBindingSource
-            // 
-            this.servicesBindingSource.DataMember = "Services";
-            this.servicesBindingSource.DataSource = this.ordersDataSet;
-            // 
-            // servicesTableAdapter
-            // 
-            this.servicesTableAdapter.ClearBeforeFill = true;
-            // 
-            // clientsBindingSource
-            // 
-            this.clientsBindingSource.DataMember = "Clients";
-            this.clientsBindingSource.DataSource = this.ordersDataSet;
-            // 
-            // clientsTableAdapter
-            // 
-            this.clientsTableAdapter.ClearBeforeFill = true;
-            // 
-            // statusBindingSource
-            // 
-            this.statusBindingSource.DataMember = "Status";
-            this.statusBindingSource.DataSource = this.ordersDataSet;
-            // 
-            // statusTableAdapter
-            // 
-            this.statusTableAdapter.ClearBeforeFill = true;
-            // 
-            // workersBindingSource
-            // 
-            this.workersBindingSource.DataMember = "Workers";
-            this.workersBindingSource.DataSource = this.ordersDataSet;
-            // 
-            // workersTableAdapter
-            // 
-            this.workersTableAdapter.ClearBeforeFill = true;
             // 
             // idbx
             // 
@@ -390,11 +331,6 @@ namespace K1.Forms
             this.Text = "OrdersForm";
             this.Load += new System.EventHandler(this.OrdersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,15 +359,6 @@ namespace K1.Forms
         private System.Windows.Forms.ComboBox workerbx;
         private System.Windows.Forms.ComboBox statusbx;
         private System.Windows.Forms.ComboBox servbx;
-        private OrdersKDataSet ordersDataSet;
-        private System.Windows.Forms.BindingSource servicesBindingSource;
-        private OrdersKDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter;
-        private System.Windows.Forms.BindingSource clientsBindingSource;
-        private OrdersKDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
-        private System.Windows.Forms.BindingSource statusBindingSource;
-        private OrdersKDataSetTableAdapters.StatusTableAdapter statusTableAdapter;
-        private System.Windows.Forms.BindingSource workersBindingSource;
-        private OrdersKDataSetTableAdapters.WorkersTableAdapter workersTableAdapter;
         private System.Windows.Forms.TextBox idbx;
     }
 }

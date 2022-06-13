@@ -124,12 +124,13 @@ namespace K1.Forms
                 n.telephone = telClient.Text;
                 n.address = addressClient.Text;
                 db.Clients.InsertOnSubmit(n);
-
+                MessageBox.Show("=Клиент добавлен=");
             }
             else if (Nameclient.Text == "" && famClient.Text == "" && otchClient.Text == "" && telClient.Text == "" && addressClient.Text == "")
             {
                 MessageBox.Show("Ошибка!");
             }
+
             db.SubmitChanges();
             dataGridView1.DataSource = from n in db.Clients select n;
             Nameclient.Clear();

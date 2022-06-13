@@ -64,7 +64,7 @@ namespace K1.Forms
                 n.position = posBox.Text;
                 n.address = addressbx.Text;
                 db.Workers.InsertOnSubmit(n);
-
+                MessageBox.Show("=Сотрудник успешно добавлен=");
             }
             else if (nameworker.Text == "")
             {

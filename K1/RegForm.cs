@@ -52,6 +52,8 @@ namespace K1
             if(Namebox.Text != "" && logBoxReg.Text != "" && PassBoxReg.Text != "")
             {
                 DialogResult = DialogResult.OK;
+                MessageBox.Show("Новая учетная запись успешно создана!");
+
             }
             else
             {
