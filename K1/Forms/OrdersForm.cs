@@ -24,7 +24,11 @@ namespace K1.Forms
 
         private void OrdersForm_Load(object sender, EventArgs e)
         {
-            
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "ordersKDataSet.Services". При необходимости она может быть перемещена или удалена.
+            this.servicesTableAdapter.Fill(this.ordersKDataSet.Services);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "ordersKDataSet.Orderi". При необходимости она может быть перемещена или удалена.
+            this.orderiTableAdapter.Fill(this.ordersKDataSet.Orderi);
+
 
             var db = new DataClasses1DataContext();
             
@@ -32,7 +36,7 @@ namespace K1.Forms
             servbx.DataSource = db.Services;
             servbx.ValueMember = "id_service";
             servbx.DisplayMember = "title";
-            
+        //    servbx.Items.Add(db.Services["id_service"].ToString() + " | " + db.Services[1].ToString());
 
 
             clientbx.DataSource = db.Clients;
@@ -47,7 +51,7 @@ namespace K1.Forms
             statusbx.ValueMember = "id_status";
             statusbx.DisplayMember = "name";
 
-            dataGridView1.DataSource = from n in db.Orderi select n;
+            dataGridView1.DataSource = from n in db.ord select n;
             SaveBtn.Visible = true;
             UpBtn.Visible = false;
             //   dataGridView1.Columns["Имя_клиента"].HeaderText = "Имя клиента";
@@ -62,19 +66,16 @@ namespace K1.Forms
             //   dataGridView1.Columns["Имя_сотрудника"].HeaderText = "Имя сотрудника";
             //   dataGridView1.Columns["Фамилия_сотрудника"].HeaderText = "Фамилия сотрудника";
             //   dataGridView1.Columns["Описание_заказа"].HeaderText = "Описание";
-            dataGridView1.Columns["id_order"].HeaderText = "Код заказа";
-            dataGridView1.Columns["service"].HeaderText = "Название услуги";
-            dataGridView1.Columns["StartTime"].HeaderText = "Дата начала";
-            dataGridView1.Columns["EndTime"].HeaderText = "Дата Окончания";
-            dataGridView1.Columns["Client"].HeaderText = "Клиент";
-            dataGridView1.Columns["Status"].HeaderText = "Статус заказа";
-            dataGridView1.Columns["Worker"].HeaderText = "Сотрудник";
-            dataGridView1.Columns["Discription"].HeaderText = "Описание";
+            dataGridView1.Columns["Код_заказа"].HeaderText = "Код заказа";
+            dataGridView1.Columns["Услуга"].HeaderText = "Название услуги";
+            dataGridView1.Columns["Дата_начала"].HeaderText = "Дата начала";
+            dataGridView1.Columns["Дата_окончания"].HeaderText = "Дата Окончания";
+            dataGridView1.Columns["Клиент"].HeaderText = "Клиент";
+            dataGridView1.Columns["Статус"].HeaderText = "Статус заказа";
+            dataGridView1.Columns["Сотрудник"].HeaderText = "Сотрудник";
+            dataGridView1.Columns["Описание"].HeaderText = "Описание";
 
-            dataGridView1.Columns["Clients"].Visible = false;
-            dataGridView1.Columns["Status1"].Visible = false;
-            dataGridView1.Columns["Workers"].Visible = false;
-            dataGridView1.Columns["services"].Visible = false;
+            
         }
 
         private void delBtn_Click(object sender, EventArgs e)
@@ -96,7 +97,7 @@ namespace K1.Forms
                     db.Orderi.DeleteOnSubmit(q);
                 }
                 db.SubmitChanges();
-                dataGridView1.DataSource = from n in db.Orderi select n;
+                dataGridView1.DataSource = from n in db.ord select n;
             }
         }
 
@@ -108,7 +109,7 @@ namespace K1.Forms
             workerbx.Text = "";
             statusbx.Text = "";
             discbx.Clear();
-            dataGridView1.DataSource = from n in db.Orderi select n;
+            dataGridView1.DataSource = from n in db.ord select n;
             SaveBtn.Visible = true;
             UpBtn.Visible = false;
         }
@@ -116,8 +117,9 @@ namespace K1.Forms
         private void ViewBtn_Click(object sender, EventArgs e)
         {
             int index = dataGridView1.CurrentCell.RowIndex;
-
-            idbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[0].Value));
+            var db = new DataClasses1DataContext();
+            
+            idbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[0].Value));            
             servbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[1].Value));
             statusbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[5].Value));
             clientbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[4].Value));
@@ -151,7 +153,7 @@ namespace K1.Forms
 
                 db.SubmitChanges();
             }
-            dataGridView1.DataSource = from n in db.Orderi select n;
+            dataGridView1.DataSource = from n in db.ord select n;
             servbx.Text = "";
             clientbx.Text = "";
             workerbx.Text = "";
@@ -182,7 +184,7 @@ namespace K1.Forms
                 MessageBox.Show("Ошибка!");
             }
             db.SubmitChanges();
-            dataGridView1.DataSource = from n in db.Orderi select n;
+            dataGridView1.DataSource = from n in db.ord select n;
             servbx.Text = "";
             clientbx.Text = "";
             workerbx.Text = "";

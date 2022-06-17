@@ -29,6 +29,7 @@ namespace K1.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.delBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -51,7 +52,15 @@ namespace K1.Forms
             this.statusbx = new System.Windows.Forms.ComboBox();
             this.servbx = new System.Windows.Forms.ComboBox();
             this.idbx = new System.Windows.Forms.TextBox();
+            this.ordersKDataSet = new K1.OrdersKDataSet();
+            this.orderiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderiTableAdapter = new K1.OrdersKDataSetTableAdapters.OrderiTableAdapter();
+            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.servicesTableAdapter = new K1.OrdersKDataSetTableAdapters.ServicesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersKDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -299,6 +308,29 @@ namespace K1.Forms
             this.idbx.Size = new System.Drawing.Size(10, 13);
             this.idbx.TabIndex = 34;
             // 
+            // ordersKDataSet
+            // 
+            this.ordersKDataSet.DataSetName = "OrdersKDataSet";
+            this.ordersKDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // orderiBindingSource
+            // 
+            this.orderiBindingSource.DataMember = "Orderi";
+            this.orderiBindingSource.DataSource = this.ordersKDataSet;
+            // 
+            // orderiTableAdapter
+            // 
+            this.orderiTableAdapter.ClearBeforeFill = true;
+            // 
+            // servicesBindingSource
+            // 
+            this.servicesBindingSource.DataMember = "Services";
+            this.servicesBindingSource.DataSource = this.ordersKDataSet;
+            // 
+            // servicesTableAdapter
+            // 
+            this.servicesTableAdapter.ClearBeforeFill = true;
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,6 +363,9 @@ namespace K1.Forms
             this.Text = "OrdersForm";
             this.Load += new System.EventHandler(this.OrdersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersKDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,5 +395,10 @@ namespace K1.Forms
         private System.Windows.Forms.ComboBox statusbx;
         private System.Windows.Forms.ComboBox servbx;
         private System.Windows.Forms.TextBox idbx;
+        private OrdersKDataSet ordersKDataSet;
+        private System.Windows.Forms.BindingSource orderiBindingSource;
+        private OrdersKDataSetTableAdapters.OrderiTableAdapter orderiTableAdapter;
+        private System.Windows.Forms.BindingSource servicesBindingSource;
+        private OrdersKDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter;
     }
 }

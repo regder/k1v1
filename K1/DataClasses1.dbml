@@ -48,6 +48,16 @@
       <Association Name="Services_Orderi" Member="Orderi" ThisKey="id_service" OtherKey="service" Type="Orderi" />
     </Type>
   </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Roles_Users" Member="Roles" ThisKey="role" OtherKey="id_role" Type="Roles" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Status" Member="Status">
     <Type Name="Status">
       <Column Name="id_status" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -70,14 +80,16 @@
       <Association Name="Workers_Orderi" Member="Orderi" ThisKey="id_worker" OtherKey="Worker" Type="Orderi" />
     </Type>
   </Table>
-  <Table Name="dbo.Users" Member="Users">
-    <Type Name="Users">
-      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Roles_Users" Member="Roles" ThisKey="role" OtherKey="id_role" Type="Roles" IsForeignKey="true" />
+  <Table Name="dbo.ord" Member="ord">
+    <Type Name="ord">
+      <Column Name="Код_заказа" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Услуга" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Дата_начала" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Дата_окончания" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Клиент" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Статус" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Сотрудник" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Описание" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.ReportOrder" Member="ReportOrder">
