@@ -119,6 +119,12 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\statistics.Designer.cs">
+      <DependentUpon>statistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WorkersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\statistics.resx">
+      <DependentUpon>statistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkersForm.resx">
       <DependentUpon>WorkersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +198,7 @@
       <DependentUpon>RegForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <None Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>

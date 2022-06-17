@@ -240,5 +240,11 @@ namespace K1
         {
 
         }
+
+        private void statbtn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.statistics(), sender);
+            lbTitle.Text = "Статистика";
+        }
     }
 }
