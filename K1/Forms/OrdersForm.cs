@@ -221,5 +221,17 @@ namespace K1.Forms
         {
 
         }
+
+        private void Searchbtn_Click(object sender, EventArgs e)
+        {
+            var db = new DataClasses1DataContext();
+
+            var query =
+                 from n in db.ord
+                 where n.Статус == statusbx.Text
+                 select n;
+
+            dataGridView1.DataSource = query;
+        }
     }
 }

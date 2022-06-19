@@ -30,6 +30,7 @@ namespace K1.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdersForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.delBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@ namespace K1.Forms
             this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicesTableAdapter = new K1.OrdersKDataSetTableAdapters.ServicesTableAdapter();
             this.clientbox = new System.Windows.Forms.ComboBox();
+            this.Searchbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersKDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderiBindingSource)).BeginInit();
@@ -333,12 +335,26 @@ namespace K1.Forms
             this.clientbox.Size = new System.Drawing.Size(247, 24);
             this.clientbox.TabIndex = 35;
             // 
+            // Searchbtn
+            // 
+            this.Searchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Searchbtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Searchbtn.Image = ((System.Drawing.Image)(resources.GetObject("Searchbtn.Image")));
+            this.Searchbtn.Location = new System.Drawing.Point(392, 199);
+            this.Searchbtn.Name = "Searchbtn";
+            this.Searchbtn.Size = new System.Drawing.Size(25, 24);
+            this.Searchbtn.TabIndex = 36;
+            this.Searchbtn.UseVisualStyleBackColor = true;
+            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Searchbtn);
             this.Controls.Add(this.clientbox);
             this.Controls.Add(this.idbx);
             this.Controls.Add(this.servbx);
@@ -402,5 +418,6 @@ namespace K1.Forms
         private System.Windows.Forms.BindingSource servicesBindingSource;
         private OrdersKDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter;
         private System.Windows.Forms.ComboBox clientbox;
+        private System.Windows.Forms.Button Searchbtn;
     }
 }
