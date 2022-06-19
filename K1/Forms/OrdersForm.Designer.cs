@@ -47,7 +47,6 @@ namespace K1.Forms
             this.discbx = new System.Windows.Forms.TextBox();
             this.startPicker = new System.Windows.Forms.DateTimePicker();
             this.endPicker = new System.Windows.Forms.DateTimePicker();
-            this.clientbx = new System.Windows.Forms.ComboBox();
             this.workerbx = new System.Windows.Forms.ComboBox();
             this.statusbx = new System.Windows.Forms.ComboBox();
             this.servbx = new System.Windows.Forms.ComboBox();
@@ -264,15 +263,6 @@ namespace K1.Forms
             this.endPicker.Size = new System.Drawing.Size(247, 22);
             this.endPicker.TabIndex = 29;
             // 
-            // clientbx
-            // 
-            this.clientbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clientbx.FormattingEnabled = true;
-            this.clientbx.Location = new System.Drawing.Point(156, 161);
-            this.clientbx.Name = "clientbx";
-            this.clientbx.Size = new System.Drawing.Size(247, 24);
-            this.clientbx.TabIndex = 30;
-            // 
             // workerbx
             // 
             this.workerbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -338,7 +328,7 @@ namespace K1.Forms
             // 
             this.clientbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clientbox.FormattingEnabled = true;
-            this.clientbox.Location = new System.Drawing.Point(156, 23);
+            this.clientbox.Location = new System.Drawing.Point(156, 161);
             this.clientbox.Name = "clientbox";
             this.clientbox.Size = new System.Drawing.Size(247, 24);
             this.clientbox.TabIndex = 35;
@@ -354,7 +344,6 @@ namespace K1.Forms
             this.Controls.Add(this.servbx);
             this.Controls.Add(this.statusbx);
             this.Controls.Add(this.workerbx);
-            this.Controls.Add(this.clientbx);
             this.Controls.Add(this.endPicker);
             this.Controls.Add(this.startPicker);
             this.Controls.Add(this.discbx);
@@ -403,7 +392,6 @@ namespace K1.Forms
         private System.Windows.Forms.TextBox discbx;
         private System.Windows.Forms.DateTimePicker startPicker;
         private System.Windows.Forms.DateTimePicker endPicker;
-        private System.Windows.Forms.ComboBox clientbx;
         private System.Windows.Forms.ComboBox workerbx;
         private System.Windows.Forms.ComboBox statusbx;
         private System.Windows.Forms.ComboBox servbx;
