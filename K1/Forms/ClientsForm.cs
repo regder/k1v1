@@ -139,5 +139,17 @@ namespace K1.Forms
             telClient.Clear();
             addressClient.Clear();
         }
+
+        private void Searchbtn_Click(object sender, EventArgs e)
+        {
+            var db = new DataClasses1DataContext();
+
+            var query =
+                 from n in db.Clients
+                 where n.firstName == Nameclient.Text
+                 select n;
+
+            dataGridView1.DataSource = query;
+        }
     }
 }

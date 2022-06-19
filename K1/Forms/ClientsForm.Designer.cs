@@ -29,6 +29,7 @@ namespace K1.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.UpBtn = new System.Windows.Forms.Button();
             this.ViewBtn = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@ namespace K1.Forms
             this.otchClient = new System.Windows.Forms.TextBox();
             this.telClient = new System.Windows.Forms.TextBox();
             this.addressClient = new System.Windows.Forms.TextBox();
+            this.Searchbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,13 +67,13 @@ namespace K1.Forms
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.Location = new System.Drawing.Point(347, 56);
+            this.dataGridView1.Location = new System.Drawing.Point(416, 56);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(441, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(372, 310);
             this.dataGridView1.TabIndex = 1;
             // 
             // UpBtn
@@ -258,11 +260,25 @@ namespace K1.Forms
             this.addressClient.Size = new System.Drawing.Size(223, 126);
             this.addressClient.TabIndex = 20;
             // 
+            // Searchbtn
+            // 
+            this.Searchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Searchbtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Searchbtn.Image = ((System.Drawing.Image)(resources.GetObject("Searchbtn.Image")));
+            this.Searchbtn.Location = new System.Drawing.Point(347, 85);
+            this.Searchbtn.Name = "Searchbtn";
+            this.Searchbtn.Size = new System.Drawing.Size(35, 31);
+            this.Searchbtn.TabIndex = 37;
+            this.Searchbtn.UseVisualStyleBackColor = true;
+            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
+            // 
             // ClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Searchbtn);
             this.Controls.Add(this.addressClient);
             this.Controls.Add(this.telClient);
             this.Controls.Add(this.otchClient);
@@ -306,5 +322,6 @@ namespace K1.Forms
         public System.Windows.Forms.TextBox otchClient;
         public System.Windows.Forms.TextBox telClient;
         public System.Windows.Forms.TextBox addressClient;
+        private System.Windows.Forms.Button Searchbtn;
     }
 }

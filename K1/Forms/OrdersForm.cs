@@ -25,6 +25,7 @@ namespace K1.Forms
             closeBtn.BackColor = Color.FromArgb(254, 128, 0);
             ViewBtn.BackColor = Color.FromArgb(254, 128, 0);
             delBtn.BackColor = Color.FromArgb(254, 128, 0);
+            Searchbtn.BackColor = Color.FromArgb(254, 128, 0);
             connection = new SqlConnection("Server=DESKTOP-8847191\\SQL321;Database=OrdersK;Trusted_Connection=True;");
 
 
