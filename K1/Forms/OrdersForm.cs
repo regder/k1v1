@@ -115,6 +115,7 @@ namespace K1.Forms
                     db.Orderi.DeleteOnSubmit(q);
                 }
                 db.SubmitChanges();
+                MessageBox.Show("=Данные успешно удалены!=");
                 dataGridView1.DataSource = from n in db.ord select n;
             }
         }
@@ -172,6 +173,7 @@ namespace K1.Forms
                 work.Client = Convert.ToInt32(clientbox.SelectedValue);
 
                 db.SubmitChanges();
+                MessageBox.Show("=Данные успешно обновлены!=");
             }
             dataGridView1.DataSource = from n in db.ord select n;
             servbx.Text = "";
@@ -206,6 +208,7 @@ namespace K1.Forms
                 MessageBox.Show("Ошибка!");
             }
             db.SubmitChanges();
+            MessageBox.Show("=Данные успешно сохранены!=");
             dataGridView1.DataSource = from n in db.ord select n;
             servbx.Text = "";
             workerbx.Text = "";
