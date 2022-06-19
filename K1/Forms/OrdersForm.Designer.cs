@@ -57,6 +57,7 @@ namespace K1.Forms
             this.orderiTableAdapter = new K1.OrdersKDataSetTableAdapters.OrderiTableAdapter();
             this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicesTableAdapter = new K1.OrdersKDataSetTableAdapters.ServicesTableAdapter();
+            this.clientbox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersKDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderiBindingSource)).BeginInit();
@@ -249,23 +250,25 @@ namespace K1.Forms
             // 
             // startPicker
             // 
+            this.startPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.startPicker.Location = new System.Drawing.Point(156, 91);
             this.startPicker.Name = "startPicker";
-            this.startPicker.Size = new System.Drawing.Size(247, 20);
+            this.startPicker.Size = new System.Drawing.Size(247, 22);
             this.startPicker.TabIndex = 28;
             // 
             // endPicker
             // 
+            this.endPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.endPicker.Location = new System.Drawing.Point(156, 128);
             this.endPicker.Name = "endPicker";
-            this.endPicker.Size = new System.Drawing.Size(247, 20);
+            this.endPicker.Size = new System.Drawing.Size(247, 22);
             this.endPicker.TabIndex = 29;
             // 
             // clientbx
             // 
             this.clientbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clientbx.FormattingEnabled = true;
-            this.clientbx.Location = new System.Drawing.Point(156, 162);
+            this.clientbx.Location = new System.Drawing.Point(156, 161);
             this.clientbx.Name = "clientbx";
             this.clientbx.Size = new System.Drawing.Size(247, 24);
             this.clientbx.TabIndex = 30;
@@ -331,12 +334,22 @@ namespace K1.Forms
             // 
             this.servicesTableAdapter.ClearBeforeFill = true;
             // 
+            // clientbox
+            // 
+            this.clientbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clientbox.FormattingEnabled = true;
+            this.clientbox.Location = new System.Drawing.Point(156, 23);
+            this.clientbox.Name = "clientbox";
+            this.clientbox.Size = new System.Drawing.Size(247, 24);
+            this.clientbox.TabIndex = 35;
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.clientbox);
             this.Controls.Add(this.idbx);
             this.Controls.Add(this.servbx);
             this.Controls.Add(this.statusbx);
@@ -400,5 +413,6 @@ namespace K1.Forms
         private OrdersKDataSetTableAdapters.OrderiTableAdapter orderiTableAdapter;
         private System.Windows.Forms.BindingSource servicesBindingSource;
         private OrdersKDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter;
+        private System.Windows.Forms.ComboBox clientbox;
     }
 }
