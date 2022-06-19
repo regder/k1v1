@@ -21,6 +21,7 @@ namespace K1.Forms
             btnRead.BackColor = Color.FromArgb(254, 128, 0);
             btnSave.BackColor = Color.FromArgb(254, 128, 0);
             updateBtn.BackColor = Color.FromArgb(254, 128, 0);
+            Searchbtn.BackColor = Color.FromArgb(254, 128, 0);
         }
 
         private void NotesForm_Load(object sender, EventArgs e)
@@ -78,25 +79,29 @@ namespace K1.Forms
         }
 
         private void btnDel_Click(object sender, EventArgs e)
-        {            
-            var db = new DataClasses1DataContext();
-            var ids = new List<string>();
-            var selected = dataGridView1.SelectedRows;
-            foreach (DataGridViewRow row in selected)
-            {
-                ids.Add((string)row.Cells["Заголовок"].Value);
-            }
-            var query = from n in db.Notes
-                        where ids.Contains(n.Заголовок)
-                        select n;
-            foreach (var q in query)
-            {
-                db.Notes.DeleteOnSubmit(q);
+        {
 
+            if (MessageBox.Show("Вы уверены?", "Attantion", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                var db = new DataClasses1DataContext();
+                var ids = new List<string>();
+                var selected = dataGridView1.SelectedRows;
+                foreach (DataGridViewRow row in selected)
+                {
+                    ids.Add((string)row.Cells["Заголовок"].Value);
+                }
+                var query = from n in db.Notes
+                            where ids.Contains(n.Заголовок)
+                            select n;
+                foreach (var q in query)
+                {
+                    db.Notes.DeleteOnSubmit(q);
+                }
+                db.SubmitChanges();
+                MessageBox.Show("=Данные успешно удалены!=");
+                dataGridView1.DataSource = from n in db.Notes select n;
             }
-            db.SubmitChanges();
-            
-            dataGridView1.DataSource = from n in db.Notes select n;
+                        
         }
 
         private void updateBtn_Click(object sender, EventArgs e)

@@ -240,7 +240,7 @@ namespace K1.Forms
             // discbx
             // 
             this.discbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.discbx.Location = new System.Drawing.Point(156, 283);
+            this.discbx.Location = new System.Drawing.Point(139, 281);
             this.discbx.Multiline = true;
             this.discbx.Name = "discbx";
             this.discbx.Size = new System.Drawing.Size(247, 101);
@@ -250,7 +250,7 @@ namespace K1.Forms
             // startPicker
             // 
             this.startPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.startPicker.Location = new System.Drawing.Point(156, 91);
+            this.startPicker.Location = new System.Drawing.Point(139, 89);
             this.startPicker.Name = "startPicker";
             this.startPicker.Size = new System.Drawing.Size(247, 22);
             this.startPicker.TabIndex = 28;
@@ -258,7 +258,7 @@ namespace K1.Forms
             // endPicker
             // 
             this.endPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.endPicker.Location = new System.Drawing.Point(156, 128);
+            this.endPicker.Location = new System.Drawing.Point(139, 126);
             this.endPicker.Name = "endPicker";
             this.endPicker.Size = new System.Drawing.Size(247, 22);
             this.endPicker.TabIndex = 29;
@@ -267,7 +267,7 @@ namespace K1.Forms
             // 
             this.workerbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.workerbx.FormattingEnabled = true;
-            this.workerbx.Location = new System.Drawing.Point(156, 238);
+            this.workerbx.Location = new System.Drawing.Point(139, 236);
             this.workerbx.Name = "workerbx";
             this.workerbx.Size = new System.Drawing.Size(247, 24);
             this.workerbx.TabIndex = 31;
@@ -276,7 +276,7 @@ namespace K1.Forms
             // 
             this.statusbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.statusbx.FormattingEnabled = true;
-            this.statusbx.Location = new System.Drawing.Point(156, 201);
+            this.statusbx.Location = new System.Drawing.Point(139, 199);
             this.statusbx.Name = "statusbx";
             this.statusbx.Size = new System.Drawing.Size(247, 24);
             this.statusbx.TabIndex = 32;
@@ -285,7 +285,7 @@ namespace K1.Forms
             // 
             this.servbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.servbx.FormattingEnabled = true;
-            this.servbx.Location = new System.Drawing.Point(156, 56);
+            this.servbx.Location = new System.Drawing.Point(139, 54);
             this.servbx.Name = "servbx";
             this.servbx.Size = new System.Drawing.Size(247, 24);
             this.servbx.TabIndex = 33;
@@ -328,7 +328,7 @@ namespace K1.Forms
             // 
             this.clientbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clientbox.FormattingEnabled = true;
-            this.clientbox.Location = new System.Drawing.Point(156, 161);
+            this.clientbox.Location = new System.Drawing.Point(139, 159);
             this.clientbox.Name = "clientbox";
             this.clientbox.Size = new System.Drawing.Size(247, 24);
             this.clientbox.TabIndex = 35;
