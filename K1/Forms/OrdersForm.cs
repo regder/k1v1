@@ -25,7 +25,8 @@ namespace K1.Forms
             closeBtn.BackColor = Color.FromArgb(254, 128, 0);
             ViewBtn.BackColor = Color.FromArgb(254, 128, 0);
             delBtn.BackColor = Color.FromArgb(254, 128, 0);
-            
+            connection = new SqlConnection("Server=DESKTOP-8847191\\SQL321;Database=OrdersK;Trusted_Connection=True;");
+
 
         }
 
@@ -42,24 +43,38 @@ namespace K1.Forms
             servbx.ValueMember = "id_service";
             servbx.DisplayMember = "title";
                         
-            connection = new SqlConnection("Server=DESKTOP-8847191\\SQL321;Database=OrdersK;Trusted_Connection=True;");
             command = new SqlCommand("Select  id_client, (convert(varchar(10),id_client)+' | ' + firstName + ' ' + lastName +' '+ patronymic) as FIO  from Clients", connection);
             connection.Open();
             SqlDataAdapter sda = new SqlDataAdapter(command);
             DataSet ds = new DataSet();
-            sda.Fill(ds);
-                        
-            clientbox.DataSource = ds.Tables[0];
-            clientbox.ValueMember = "id_client";
-            clientbox.DisplayMember = "FIO";
+            
+            try
+            {
+                sda.Fill(ds);
+                clientbox.DataSource = ds.Tables[0];
+                clientbox.ValueMember = "id_client";
+                clientbox.DisplayMember = "FIO";
+            }
+            finally
+            {
+                connection.Close();
+            }
 
-            wrk = new SqlCommand("Select id_worker, (convert(varchar(10),id_worker)+' | ' + firstName + ' ' + lastName +' '+ patronymic) as FioWorker  from Workers", connection); 
+            wrk = new SqlCommand("Select id_worker, (convert(varchar(10),id_worker)+' | ' + firstName + ' ' + lastName +' '+ patronymic) as FioWorker  from Workers", connection);
+            connection.Open();
             SqlDataAdapter wrke = new SqlDataAdapter(wrk);
             DataSet wke = new DataSet();
-            sda.Fill(wke);
-            workerbx.DataSource = wke.Tables[0];
-            workerbx.ValueMember = "id_worker";
-            workerbx.DisplayMember = "FioWorker";
+            try
+            {
+                wrke.Fill(wke);
+                workerbx.DataSource = wke.Tables[0];
+                workerbx.ValueMember = "id_worker";
+                workerbx.DisplayMember = "FioWorker";
+            }
+            finally
+            {
+                connection.Close();
+            }
             
             statusbx.DataSource = db.Status;
             statusbx.ValueMember = "id_status";
