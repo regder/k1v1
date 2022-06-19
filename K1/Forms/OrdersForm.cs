@@ -46,25 +46,25 @@ namespace K1.Forms
             servbx.DisplayMember = "title";
             
             
-            connection = new SqlConnection("Server=DESKTOP-8847191\\SQL321;Database=OrdersK;Trusted_Connection=True;");
-            command = new SqlCommand("Select * from [dbo].[Clients]", connection);
-            connection.Open();
-            SqlDataAdapter sda = new SqlDataAdapter(command);
-            DataSet ds = new DataSet();
-            sda.Fill(ds);
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-            {
+       //     connection = new SqlConnection("Server=DESKTOP-8847191\\SQL321;Database=OrdersK;Trusted_Connection=True;");
+        //    command = new SqlCommand("Select * from [dbo].[Clients]", connection);
+        //    connection.Open();
+        //    SqlDataAdapter sda = new SqlDataAdapter(command);
+        //    DataSet ds = new DataSet();
+        //    sda.Fill(ds);
+       //     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+       //     {
                 
-                clientbox.Items.Add(ds.Tables[0].Rows[i][0] + " | " + ds.Tables[0].Rows[i][1] + " | " + ds.Tables[0].Rows[i][2]);
+        //        clientbox.Items.Add(ds.Tables[0].Rows[i][0] + " | " + ds.Tables[0].Rows[i][1] + " | " + ds.Tables[0].Rows[i][2]);
                 // clientbox.DisplayMember = ds.Tables[0].Rows[i][0] + " | " + ds.Tables[0].Rows[i][1] + " | " + ds.Tables[0].Rows[i][2];
-                clientbox.SelectedItem = ds.Tables[0].Rows[i][0];
-            }
+          //      clientbox.ValueMember = "ds.Tables[0].Rows[i][0]";
+          //  }
             
             
             
-        //    clientbx.DataSource = db.Clients;
-         //   clientbx.ValueMember = "id_client";
-        //    clientbx.DisplayMember =  "firstName";
+            clientbx.DataSource = db.Clients;
+            clientbx.ValueMember = "id_client";
+            clientbx.DisplayMember =  "firstName";
 
             workerbx.DataSource = db.Workers;
             workerbx.ValueMember = "id_worker";
@@ -141,7 +141,7 @@ namespace K1.Forms
             discbx.Text = (string)dataGridView1.Rows[index].Cells[7].Value;
             endPicker.Value = (System.DateTime)dataGridView1.Rows[index].Cells[3].Value;
                         
-            clientbox.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[4].Value));
+         //   clientbox.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[4].Value));
 
             SaveBtn.Visible = false;
             UpBtn.Visible = true;
@@ -160,12 +160,12 @@ namespace K1.Forms
                 work.service = Convert.ToInt32(servbx.GetItemText(servbx.SelectedValue));
                 work.StartTime = startPicker.Value;
                 work.EndTime = endPicker.Value;
-                //work.Client = Convert.ToInt32(servbx.GetItemText(clientbx.SelectedValue));
+                work.Client = Convert.ToInt32(servbx.GetItemText(clientbx.SelectedValue));
                 work.Status = Convert.ToInt32(servbx.GetItemText(statusbx.SelectedValue));
                 work.Worker = Convert.ToInt32(servbx.GetItemText(workerbx.SelectedValue));
                 work.Discription = discbx.Text;
 
-                work.Client = Convert.ToInt32(servbx.GetItemText(clientbox.SelectedValue));
+             //   work.Client = Convert.ToInt32(servbx.GetItemText(clientbox.SelectedValue));
 
                 db.SubmitChanges();
             }
@@ -188,12 +188,12 @@ namespace K1.Forms
                 n.service = Convert.ToInt32(servbx.GetItemText(servbx.SelectedValue));
                 n.StartTime = startPicker.Value;
                 n.EndTime = endPicker.Value;
-                //n.Client = Convert.ToInt32(servbx.GetItemText(clientbx.SelectedValue));
+                n.Client = Convert.ToInt32(servbx.GetItemText(clientbx.SelectedValue));
                 n.Status = Convert.ToInt32(servbx.GetItemText(statusbx.SelectedValue));
                 n.Worker = Convert.ToInt32(servbx.GetItemText(workerbx.SelectedValue));
                 n.Discription = discbx.Text;
 
-                n.Client = Convert.ToInt32(clientbox.SelectedItem);
+              //  n.Client = Convert.ToInt32(clientbox.SelectedValue);
 
 
                 db.Orderi.InsertOnSubmit(n);
