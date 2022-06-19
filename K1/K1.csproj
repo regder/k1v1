@@ -91,6 +91,18 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckForm.Designer.cs">
+      <DependentUpon>CheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientCard.Designer.cs">
+      <DependentUpon>ClientCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,8 +183,20 @@
       <DependentUpon>RegForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="WorkerCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerCard.Designer.cs">
+      <DependentUpon>WorkerCard.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckForm.resx">
+      <DependentUpon>CheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientCard.resx">
+      <DependentUpon>ClientCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -218,6 +242,9 @@
       <DependentUpon>RegForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="WorkerCard.resx">
+      <DependentUpon>WorkerCard.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
