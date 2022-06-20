@@ -18,6 +18,7 @@ namespace K1.Forms
 
         SqlConnection connection;
         SqlCommand command;
+        SqlCommand serv;
         SqlDataAdapter adapter;
         DataTable table;
         public statistics()
@@ -66,17 +67,35 @@ namespace K1.Forms
             Totalprofit.Text = Convert.ToString(profit);
 
             dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
             ShowTable("SELECT TOP(5) Название_услуги, count(*) as topcount FROM ReportOrder group by Название_услуги order by topcount DESC");
-            // int index = dataGridView1.CurrentCell.RowIndex; 
-
-            //   int[] yValues =  { Convert.ToInt32(dataGridView1.Rows[index].Cells[].Value) };
-            //  string[] xValues = { Convert.ToString(dataGridView1.Rows[index].Cells[].Value) };
-            //  popServ.Series["Series1"].Points.DataBindXY( xValues, yValues);      
+               
             popServ.Series["Series1"].XValueMember = "Название_услуги";
             popServ.Series["Series1"].YValueMembers = "topcount";
             popServ.Series["Series1"]["PieLabelStyle"] = "Disabled";
             popServ.DataSource = dataGridView1.DataSource;
             popServ.DataBind();
+
+                        
+            serv = new SqlCommand("Select Дата_начала, count(Услуга) as ser from ord group by Дата_начала order by ser", connection);
+            connection.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(serv);
+            DataSet ds = new DataSet();
+            try
+            {
+                sda.Fill(ds);
+                dataGridView2.DataSource = ds.Tables[0];
+                StatDate.Series["Series1"].XValueMember= "Дата_начала";
+                StatDate.Series["Series1"].YValueMembers= "ser";
+                StatDate.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                StatDate.DataSource = dataGridView2.DataSource;
+                StatDate.DataBind();
+
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }
