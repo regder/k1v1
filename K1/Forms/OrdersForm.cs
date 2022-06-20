@@ -20,12 +20,12 @@ namespace K1.Forms
         public OrdersForm()
         {
             InitializeComponent();
-            UpBtn.BackColor = Color.FromArgb(254, 128, 0);
-            SaveBtn.BackColor = Color.FromArgb(254, 128, 0);
-            closeBtn.BackColor = Color.FromArgb(254, 128, 0);
-            ViewBtn.BackColor = Color.FromArgb(254, 128, 0);
-            delBtn.BackColor = Color.FromArgb(254, 128, 0);
-            Searchbtn.BackColor = Color.FromArgb(254, 128, 0);
+            UpBtn.BackColor = Color.FromArgb(73, 101, 214);
+            SaveBtn.BackColor = Color.FromArgb(73, 101, 214);
+            closeBtn.BackColor = Color.FromArgb(73, 101, 214);
+            ViewBtn.BackColor = Color.FromArgb(73, 101, 214);
+            delBtn.BackColor = Color.FromArgb(73, 101, 214);
+            Searchbtn.BackColor = Color.FromArgb(255, 160, 64);
             connection = new SqlConnection("Server=DESKTOP-8847191\\SQL321;Database=OrdersK;Trusted_Connection=True;");
 
 
@@ -33,6 +33,7 @@ namespace K1.Forms
 
         private void OrdersForm_Load(object sender, EventArgs e)
         {
+            idbx.Visible = false;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "ordersKDataSet.Services". При необходимости она может быть перемещена или удалена.
             this.servicesTableAdapter.Fill(this.ordersKDataSet.Services);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "ordersKDataSet.Orderi". При необходимости она может быть перемещена или удалена.

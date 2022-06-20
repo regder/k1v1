@@ -73,17 +73,16 @@ namespace K1.Forms
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.Location = new System.Drawing.Point(423, 23);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(365, 361);
@@ -95,6 +94,7 @@ namespace K1.Forms
             this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.delBtn.ForeColor = System.Drawing.Color.White;
             this.delBtn.Location = new System.Drawing.Point(667, 400);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(93, 38);
@@ -109,6 +109,7 @@ namespace K1.Forms
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaveBtn.ForeColor = System.Drawing.Color.White;
             this.SaveBtn.Location = new System.Drawing.Point(49, 400);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(106, 38);
@@ -123,6 +124,7 @@ namespace K1.Forms
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
             this.closeBtn.Location = new System.Drawing.Point(553, 400);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(93, 38);
@@ -137,6 +139,7 @@ namespace K1.Forms
             this.UpBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UpBtn.ForeColor = System.Drawing.Color.White;
             this.UpBtn.Location = new System.Drawing.Point(187, 400);
             this.UpBtn.Name = "UpBtn";
             this.UpBtn.Size = new System.Drawing.Size(108, 38);
@@ -151,6 +154,7 @@ namespace K1.Forms
             this.ViewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewBtn.ForeColor = System.Drawing.Color.White;
             this.ViewBtn.Location = new System.Drawing.Point(423, 400);
             this.ViewBtn.Name = "ViewBtn";
             this.ViewBtn.Size = new System.Drawing.Size(111, 38);
@@ -352,7 +356,7 @@ namespace K1.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Searchbtn);
             this.Controls.Add(this.clientbox);

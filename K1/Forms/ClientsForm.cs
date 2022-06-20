@@ -15,12 +15,12 @@ namespace K1.Forms
         public ClientsForm()
         {
             InitializeComponent();
-            UpBtn.BackColor = Color.FromArgb(254, 128, 0);
-            SaveBtn.BackColor = Color.FromArgb(254, 128, 0);
-            closeBtn.BackColor = Color.FromArgb(254, 128, 0);
-            ViewBtn.BackColor = Color.FromArgb(254, 128, 0);
-            delBtn.BackColor = Color.FromArgb(254, 128, 0);
-
+            UpBtn.BackColor = Color.FromArgb(73, 101, 214);
+            SaveBtn.BackColor = Color.FromArgb(73, 101, 214);
+            closeBtn.BackColor = Color.FromArgb(73, 101, 214);
+            ViewBtn.BackColor = Color.FromArgb(73, 101, 214);
+            delBtn.BackColor = Color.FromArgb(73, 101, 214);
+            Searchbtn.BackColor = Color.FromArgb(255, 160, 64);
         }
         
         private void ClientsForm_Load(object sender, EventArgs e)
@@ -35,7 +35,15 @@ namespace K1.Forms
             dataGridView1.Columns["patronymic"].HeaderText = "Отчество";
             dataGridView1.Columns["telephone"].HeaderText = "Телефон";
             dataGridView1.Columns["address"].HeaderText = "Адрес";
+            if(this.WindowState == FormWindowState.Maximized)
+            {
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            }
+            else
+            {
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            }
         }
 
         private void delBtn_Click(object sender, EventArgs e)

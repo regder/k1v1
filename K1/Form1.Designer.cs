@@ -31,8 +31,10 @@ namespace K1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.statbtn = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnNotes = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
@@ -50,13 +52,11 @@ namespace K1
             this.DesktopPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.labelhi = new System.Windows.Forms.Label();
-            this.statbtn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitle.SuspendLayout();
             this.DesktopPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,27 +77,36 @@ namespace K1
             this.panel1.Size = new System.Drawing.Size(220, 611);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // panel2
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::K1.Properties.Resources.imgonline_com_ua_Resize_dBCJ4MqitVy;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 551);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(220, 60);
-            this.button1.TabIndex = 8;
-            this.button1.Text = " Темная тема";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel2.Controls.Add(this.statbtn);
+            this.panel2.Controls.Add(this.btnSettings);
+            this.panel2.Location = new System.Drawing.Point(0, 438);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(220, 118);
+            this.panel2.TabIndex = 9;
+            // 
+            // statbtn
+            // 
+            this.statbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.statbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.statbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statbtn.FlatAppearance.BorderSize = 0;
+            this.statbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.statbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.statbtn.ForeColor = System.Drawing.Color.Transparent;
+            this.statbtn.Image = ((System.Drawing.Image)(resources.GetObject("statbtn.Image")));
+            this.statbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.statbtn.Location = new System.Drawing.Point(0, 0);
+            this.statbtn.Name = "statbtn";
+            this.statbtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.statbtn.Size = new System.Drawing.Size(220, 60);
+            this.statbtn.TabIndex = 9;
+            this.statbtn.Text = "Статистика";
+            this.statbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.statbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.statbtn.UseVisualStyleBackColor = true;
+            this.statbtn.Click += new System.EventHandler(this.statbtn_Click);
             // 
             // btnSettings
             // 
@@ -120,6 +129,28 @@ namespace K1
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Meiryo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = global::K1.Properties.Resources.imgonline_com_ua_Resize_dBCJ4MqitVy;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 551);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(220, 60);
+            this.button1.TabIndex = 8;
+            this.button1.Text = " Темная тема";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnNotes
             // 
@@ -403,37 +434,6 @@ namespace K1
             this.labelhi.Text = "--";
             this.labelhi.Click += new System.EventHandler(this.labelhi_Click);
             // 
-            // statbtn
-            // 
-            this.statbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.statbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.statbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.statbtn.FlatAppearance.BorderSize = 0;
-            this.statbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.statbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.statbtn.ForeColor = System.Drawing.Color.Transparent;
-            this.statbtn.Image = ((System.Drawing.Image)(resources.GetObject("statbtn.Image")));
-            this.statbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.statbtn.Location = new System.Drawing.Point(0, 0);
-            this.statbtn.Name = "statbtn";
-            this.statbtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.statbtn.Size = new System.Drawing.Size(220, 60);
-            this.statbtn.TabIndex = 9;
-            this.statbtn.Text = "Статистика";
-            this.statbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.statbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.statbtn.UseVisualStyleBackColor = true;
-            this.statbtn.Click += new System.EventHandler(this.statbtn_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.statbtn);
-            this.panel2.Controls.Add(this.btnSettings);
-            this.panel2.Location = new System.Drawing.Point(0, 438);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 118);
-            this.panel2.TabIndex = 9;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,13 +447,13 @@ namespace K1
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
             this.DesktopPanel.ResumeLayout(false);
             this.DesktopPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -475,13 +475,13 @@ namespace K1
         private System.Windows.Forms.Panel DesktopPanel;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnFill;
         private System.Windows.Forms.Button btnhide;
         private System.Windows.Forms.Label labelhi;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button statbtn;
+        public System.Windows.Forms.Button btnFill;
     }
 }
 

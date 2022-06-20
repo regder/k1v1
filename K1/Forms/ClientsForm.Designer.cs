@@ -30,7 +30,6 @@ namespace K1.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsForm));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.UpBtn = new System.Windows.Forms.Button();
             this.ViewBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
@@ -49,32 +48,10 @@ namespace K1.Forms
             this.telClient = new System.Windows.Forms.TextBox();
             this.addressClient = new System.Windows.Forms.TextBox();
             this.Searchbtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.Location = new System.Drawing.Point(416, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(372, 310);
-            this.dataGridView1.TabIndex = 1;
             // 
             // UpBtn
             // 
@@ -82,7 +59,8 @@ namespace K1.Forms
             this.UpBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UpBtn.Location = new System.Drawing.Point(180, 15);
+            this.UpBtn.ForeColor = System.Drawing.Color.White;
+            this.UpBtn.Location = new System.Drawing.Point(187, 15);
             this.UpBtn.Name = "UpBtn";
             this.UpBtn.Size = new System.Drawing.Size(108, 38);
             this.UpBtn.TabIndex = 4;
@@ -96,6 +74,7 @@ namespace K1.Forms
             this.ViewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewBtn.ForeColor = System.Drawing.Color.White;
             this.ViewBtn.Location = new System.Drawing.Point(416, 15);
             this.ViewBtn.Name = "ViewBtn";
             this.ViewBtn.Size = new System.Drawing.Size(111, 38);
@@ -110,6 +89,7 @@ namespace K1.Forms
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
             this.closeBtn.Location = new System.Drawing.Point(546, 15);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(93, 38);
@@ -124,6 +104,7 @@ namespace K1.Forms
             this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.delBtn.ForeColor = System.Drawing.Color.White;
             this.delBtn.Location = new System.Drawing.Point(660, 15);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(93, 38);
@@ -138,7 +119,8 @@ namespace K1.Forms
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveBtn.Location = new System.Drawing.Point(32, 15);
+            this.SaveBtn.ForeColor = System.Drawing.Color.White;
+            this.SaveBtn.Location = new System.Drawing.Point(45, 15);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(106, 38);
             this.SaveBtn.TabIndex = 8;
@@ -273,11 +255,33 @@ namespace K1.Forms
             this.Searchbtn.UseVisualStyleBackColor = true;
             this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridView1.Location = new System.Drawing.Point(388, 56);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(400, 310);
+            this.dataGridView1.TabIndex = 38;
+            // 
             // ClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Searchbtn);
             this.Controls.Add(this.addressClient);
             this.Controls.Add(this.telClient);
@@ -291,20 +295,17 @@ namespace K1.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "ClientsForm";
             this.Text = "ClientsForm";
             this.Load += new System.EventHandler(this.ClientsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button UpBtn;
         private System.Windows.Forms.Button ViewBtn;
         private System.Windows.Forms.Button closeBtn;
@@ -323,5 +324,6 @@ namespace K1.Forms
         public System.Windows.Forms.TextBox telClient;
         public System.Windows.Forms.TextBox addressClient;
         private System.Windows.Forms.Button Searchbtn;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
