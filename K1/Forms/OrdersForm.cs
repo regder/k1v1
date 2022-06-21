@@ -99,12 +99,13 @@ namespace K1.Forms
             dataGridView1.Columns["Услуга"].HeaderText = "Название услуги";
             dataGridView1.Columns["Дата_начала"].HeaderText = "Дата начала";
             dataGridView1.Columns["Дата_окончания"].HeaderText = "Дата Окончания";
-            dataGridView1.Columns["Клиент"].HeaderText = "Клиент";
+            dataGridView1.Columns["Клиент"].Visible = false;
             dataGridView1.Columns["Статус"].HeaderText = "Статус заказа";
-            dataGridView1.Columns["Сотрудник"].HeaderText = "Сотрудник";
+            dataGridView1.Columns["Сотрудник"].Visible = false;
             dataGridView1.Columns["Описание"].HeaderText = "Описание";
+            dataGridView1.Columns["FioOfWorker"].HeaderText = "ФИО сотрудника";
+            dataGridView1.Columns["FIO"].HeaderText = "ФИО клиента";
 
-            
 
         }
 
@@ -158,9 +159,9 @@ namespace K1.Forms
             discbx.Text = (string)dataGridView1.Rows[index].Cells[7].Value;
             endPicker.Value = (System.DateTime)dataGridView1.Rows[index].Cells[3].Value;
             
-            workerbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[6]));
+            workerbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[8].Value));
 
-            clientbox.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[4].Value));
+            clientbox.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[9].Value));
 
             SaveBtn.Visible = false;
             UpBtn.Visible = true;

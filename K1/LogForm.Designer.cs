@@ -29,6 +29,7 @@ namespace K1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogForm));
             this.btnClose = new System.Windows.Forms.Button();
             this.btnHide = new System.Windows.Forms.Button();
             this.btnEnter = new System.Windows.Forms.Button();
@@ -171,6 +172,7 @@ namespace K1
             this.Controls.Add(this.btnReg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEnter);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LogForm";
             this.Text = "LogForm";
             this.panel1.ResumeLayout(false);

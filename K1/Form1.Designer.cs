@@ -442,6 +442,7 @@ namespace K1
             this.Controls.Add(this.DesktopPanel);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1000, 650);
             this.Name = "Form1";
             this.Text = "Form1";
