@@ -17,6 +17,7 @@ namespace K1.Forms
         SqlConnection connection;
         SqlCommand command;
         SqlCommand wrk;
+        SqlCommand wr;
         public OrdersForm()
         {
             InitializeComponent();
@@ -71,18 +72,26 @@ namespace K1.Forms
                 wrke.Fill(wke);
                 workerbx.DataSource = wke.Tables[0];
                 workerbx.ValueMember = "id_worker";
-                workerbx.DisplayMember = "FioWorker";
+                workerbx.DisplayMember = "FioWorker";                               
+
             }
             finally
             {
                 connection.Close();
             }
+            wr = new SqlCommand ("SELECT dbo.Orderi.id_order AS Код_заказа, dbo.Services.title AS Услуга, dbo.Orderi.StartTime AS Дата_начала, dbo.Orderi.EndTime AS Дата_окончания, dbo.Clients.firstName AS Клиент, dbo.Status.name AS Статус, dbo.Workers.firstName AS Сотрудник, dbo.Orderi.Discription AS Описание, (convert(varchar(10), id_worker) + ' | ' + dbo.Workers.firstName + ' ' + dbo.Workers.lastName + ' ' + dbo.Workers.patronymic) as FioOfWorker, (convert(varchar(10), id_client) + ' | ' + dbo.Clients.firstName + ' ' + dbo.Clients.lastName + ' ' + dbo.Clients.patronymic) as FIO FROM dbo.Clients INNER JOIN dbo.Orderi ON dbo.Clients.id_client = dbo.Orderi.Client INNER JOIN dbo.Services ON dbo.Orderi.service = dbo.Services.id_service INNER JOIN dbo.Status ON dbo.Orderi.Status = dbo.Status.id_status INNER JOIN dbo.Workers ON dbo.Orderi.Worker = dbo.Workers.id_worker", connection);
+            connection.Open();
+            SqlDataAdapter wre = new SqlDataAdapter(wr);
+            DataSet wrek = new DataSet();
+            wre.Fill(wrek);
+                
+
             
             statusbx.DataSource = db.Status;
             statusbx.ValueMember = "id_status";
             statusbx.DisplayMember = "name";
 
-            dataGridView1.DataSource = from n in db.ord select n;
+            dataGridView1.DataSource = wrek.Tables[0];
             SaveBtn.Visible = true;
             UpBtn.Visible = false;
             
@@ -96,6 +105,7 @@ namespace K1.Forms
             dataGridView1.Columns["Описание"].HeaderText = "Описание";
 
             
+
         }
 
         private void delBtn_Click(object sender, EventArgs e)
@@ -145,10 +155,11 @@ namespace K1.Forms
             servbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[1].Value));
             statusbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[5].Value));
             startPicker.Value = (System.DateTime)dataGridView1.Rows[index].Cells[2].Value;
-            workerbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[6].Value));
             discbx.Text = (string)dataGridView1.Rows[index].Cells[7].Value;
             endPicker.Value = (System.DateTime)dataGridView1.Rows[index].Cells[3].Value;
-                        
+            
+            workerbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[6]));
+
             clientbox.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[4].Value));
 
             SaveBtn.Visible = false;
