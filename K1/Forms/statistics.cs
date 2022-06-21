@@ -75,8 +75,8 @@ namespace K1.Forms
             popServ.Series["Series1"]["PieLabelStyle"] = "Disabled";
             popServ.DataSource = dataGridView1.DataSource;
             popServ.DataBind();
-
-                        
+            panel7.Visible = false;
+            button5.Visible = false;            
             serv = new SqlCommand("Select Дата_начала, count(Услуга) as ser from ord group by Дата_начала order by ser", connection);
             connection.Open();
             SqlDataAdapter sda = new SqlDataAdapter(serv);
@@ -96,6 +96,26 @@ namespace K1.Forms
             {
                 connection.Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //select* from ReportOrder Where Дата_начала >= GETDATE() - 7
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //select* from ReportOrder Where Дата_начала >= GETDATE() - 30
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //select* from ReportOrder Where Дата_начала >= GETDATE() - 0
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //select* from ReportOrder
         }
     }
 }
