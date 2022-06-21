@@ -90,7 +90,7 @@ namespace K1.Forms
                 StatDate.Series["Series1"]["PieLabelStyle"] = "Disabled";
                 StatDate.DataSource = dataGridView2.DataSource;
                 StatDate.DataBind();
-
+                                
             }
             finally
             {
@@ -101,21 +101,126 @@ namespace K1.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             //select* from ReportOrder Where Дата_начала >= GETDATE() - 7
+            serv = new SqlCommand("Select Дата_начала, count(Услуга) as ser  from ord where Дата_начала >= GETDATE() - 7 group by Дата_начала order by ser ", connection);
+            connection.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(serv);
+            DataSet ds = new DataSet();
+            try
+            {
+                sda.Fill(ds);
+                dataGridView2.DataSource = ds.Tables[0];
+                StatDate.Series["Series1"].XValueMember = "Дата_начала";
+                StatDate.Series["Series1"].YValueMembers = "ser";
+                StatDate.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                StatDate.DataSource = dataGridView2.DataSource;
+                StatDate.DataBind();
+                
+                ShowTable("SELECT TOP(5) Название_услуги, count(*) as topcount FROM ReportOrder where Дата_начала >= GETDATE() - 7 group by Название_услуги order by topcount DESC");
+
+                popServ.Series["Series1"].XValueMember = "Название_услуги";
+                popServ.Series["Series1"].YValueMembers = "topcount";
+                popServ.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                popServ.DataSource = dataGridView1.DataSource;
+                popServ.DataBind();
+            }
+            finally
+            {
+                connection.Close();
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //select* from ReportOrder Where Дата_начала >= GETDATE() - 30
+            serv = new SqlCommand("Select Дата_начала, count(Услуга) as ser  from ord where Дата_начала >= GETDATE() - 30 group by Дата_начала order by ser", connection);
+            connection.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(serv);
+            DataSet ds = new DataSet();
+            try
+            {
+                sda.Fill(ds);
+                dataGridView2.DataSource = ds.Tables[0];
+                StatDate.Series["Series1"].XValueMember = "Дата_начала";
+                StatDate.Series["Series1"].YValueMembers = "ser";
+                StatDate.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                StatDate.DataSource = dataGridView2.DataSource;
+                StatDate.DataBind();
+
+                ShowTable("SELECT TOP(5) Название_услуги, count(*) as topcount FROM ReportOrder where Дата_начала >= GETDATE() - 30 group by Название_услуги order by topcount DESC");
+
+                popServ.Series["Series1"].XValueMember = "Название_услуги";
+                popServ.Series["Series1"].YValueMembers = "topcount";
+                popServ.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                popServ.DataSource = dataGridView1.DataSource;
+                popServ.DataBind();
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //select* from ReportOrder Where Дата_начала >= GETDATE() - 0
+            serv = new SqlCommand("Select Дата_начала, count(Услуга) as ser  from ord where Дата_начала >= GETDATE() - 0 group by Дата_начала order by ser", connection);
+            connection.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(serv);
+            DataSet ds = new DataSet();
+            try
+            {
+                sda.Fill(ds);
+                dataGridView2.DataSource = ds.Tables[0];
+                StatDate.Series["Series1"].XValueMember = "Дата_начала";
+                StatDate.Series["Series1"].YValueMembers = "ser";
+                StatDate.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                StatDate.DataSource = dataGridView2.DataSource;
+                StatDate.DataBind();
+
+                ShowTable("SELECT TOP(5) Название_услуги, count(*) as topcount FROM ReportOrder where Дата_начала >= GETDATE() - 0 group by Название_услуги order by topcount DESC");
+
+                popServ.Series["Series1"].XValueMember = "Название_услуги";
+                popServ.Series["Series1"].YValueMembers = "topcount";
+                popServ.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                popServ.DataSource = dataGridView1.DataSource;
+                popServ.DataBind();
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             //select* from ReportOrder
+            serv = new SqlCommand("Select Дата_начала, count(Услуга) as ser from ord group by Дата_начала order by ser", connection);
+            connection.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(serv);
+            DataSet ds = new DataSet();
+            try
+            {
+                sda.Fill(ds);
+                dataGridView2.DataSource = ds.Tables[0];
+                StatDate.Series["Series1"].XValueMember = "Дата_начала";
+                StatDate.Series["Series1"].YValueMembers = "ser";
+                StatDate.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                StatDate.DataSource = dataGridView2.DataSource;
+                StatDate.DataBind();
+
+                ShowTable("SELECT TOP(5) Название_услуги, count(*) as topcount FROM ReportOrder group by Название_услуги order by topcount DESC");
+
+                popServ.Series["Series1"].XValueMember = "Название_услуги";
+                popServ.Series["Series1"].YValueMembers = "topcount";
+                popServ.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                popServ.DataSource = dataGridView1.DataSource;
+                popServ.DataBind();
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }
