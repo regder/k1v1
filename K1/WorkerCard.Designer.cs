@@ -38,11 +38,11 @@ namespace K1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 24);
+            this.label1.Location = new System.Drawing.Point(39, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "а";
+            this.label1.Text = "ФИО";
             // 
             // label2
             // 
