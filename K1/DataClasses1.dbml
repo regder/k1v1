@@ -108,4 +108,18 @@
       <Column Name="Описание_заказа" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.search" Member="search">
+    <Type Name="search">
+      <Column Name="Код_заказа" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Услуга" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Дата_начала" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Дата_окончания" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Клиент" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Статус" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Сотрудник" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Описание" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FioOfWorker" Type="System.String" DbType="NVarChar(315)" CanBeNull="true" />
+      <Column Name="FIO" Type="System.String" DbType="NVarChar(315)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

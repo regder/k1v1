@@ -31,7 +31,7 @@ namespace K1.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdersForm));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.orderrr = new System.Windows.Forms.DataGridView();
             this.delBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
@@ -59,34 +59,36 @@ namespace K1.Forms
             this.servicesTableAdapter = new K1.OrdersKDataSetTableAdapters.ServicesTableAdapter();
             this.clientbox = new System.Windows.Forms.ComboBox();
             this.Searchbtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.orderrr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersKDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // orderrr
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.orderrr.AllowUserToAddRows = false;
+            this.orderrr.AllowUserToDeleteRows = false;
+            this.orderrr.AllowUserToResizeColumns = false;
+            this.orderrr.AllowUserToResizeRows = false;
+            this.orderrr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.Location = new System.Drawing.Point(423, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(365, 361);
-            this.dataGridView1.TabIndex = 13;
+            this.orderrr.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.orderrr.BackgroundColor = System.Drawing.Color.White;
+            this.orderrr.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.orderrr.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.orderrr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderrr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.orderrr.Location = new System.Drawing.Point(423, 23);
+            this.orderrr.Name = "orderrr";
+            this.orderrr.ReadOnly = true;
+            this.orderrr.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.orderrr.RowHeadersVisible = false;
+            this.orderrr.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.orderrr.Size = new System.Drawing.Size(365, 359);
+            this.orderrr.TabIndex = 13;
+            this.orderrr.SelectionChanged += new System.EventHandler(this.orderrr_SelectionChanged);
             // 
             // delBtn
             // 
@@ -352,12 +354,28 @@ namespace K1.Forms
             this.Searchbtn.UseVisualStyleBackColor = true;
             this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(553, 356);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(207, 38);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Чек на оплату";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Searchbtn);
             this.Controls.Add(this.clientbox);
             this.Controls.Add(this.idbx);
@@ -380,11 +398,11 @@ namespace K1.Forms
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.UpBtn);
             this.Controls.Add(this.ViewBtn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.orderrr);
             this.Name = "OrdersForm";
             this.Text = "OrdersForm";
             this.Load += new System.EventHandler(this.OrdersForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderrr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersKDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
@@ -394,8 +412,6 @@ namespace K1.Forms
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button delBtn;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button closeBtn;
@@ -423,5 +439,7 @@ namespace K1.Forms
         private OrdersKDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter;
         private System.Windows.Forms.ComboBox clientbox;
         private System.Windows.Forms.Button Searchbtn;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView orderrr;
     }
 }

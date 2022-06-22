@@ -165,6 +165,14 @@ namespace K1
 				return this.GetTable<ReportOrder>();
 			}
 		}
+		
+		public System.Data.Linq.Table<search> search
+		{
+			get
+			{
+				return this.GetTable<search>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Clients")]
@@ -2101,6 +2109,195 @@ namespace K1
 				if ((this._Описание_заказа != value))
 				{
 					this._Описание_заказа = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.search")]
+	public partial class search
+	{
+		
+		private int _Код_заказа;
+		
+		private string _Услуга;
+		
+		private System.DateTime _Дата_начала;
+		
+		private System.DateTime _Дата_окончания;
+		
+		private string _Клиент;
+		
+		private string _Статус;
+		
+		private string _Сотрудник;
+		
+		private string _Описание;
+		
+		private string _FioOfWorker;
+		
+		private string _FIO;
+		
+		public search()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Код_заказа", DbType="Int NOT NULL")]
+		public int Код_заказа
+		{
+			get
+			{
+				return this._Код_заказа;
+			}
+			set
+			{
+				if ((this._Код_заказа != value))
+				{
+					this._Код_заказа = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Услуга", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Услуга
+		{
+			get
+			{
+				return this._Услуга;
+			}
+			set
+			{
+				if ((this._Услуга != value))
+				{
+					this._Услуга = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_начала", DbType="Date NOT NULL")]
+		public System.DateTime Дата_начала
+		{
+			get
+			{
+				return this._Дата_начала;
+			}
+			set
+			{
+				if ((this._Дата_начала != value))
+				{
+					this._Дата_начала = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_окончания", DbType="Date NOT NULL")]
+		public System.DateTime Дата_окончания
+		{
+			get
+			{
+				return this._Дата_окончания;
+			}
+			set
+			{
+				if ((this._Дата_окончания != value))
+				{
+					this._Дата_окончания = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Клиент", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Клиент
+		{
+			get
+			{
+				return this._Клиент;
+			}
+			set
+			{
+				if ((this._Клиент != value))
+				{
+					this._Клиент = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Статус", DbType="NVarChar(50)")]
+		public string Статус
+		{
+			get
+			{
+				return this._Статус;
+			}
+			set
+			{
+				if ((this._Статус != value))
+				{
+					this._Статус = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Сотрудник", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Сотрудник
+		{
+			get
+			{
+				return this._Сотрудник;
+			}
+			set
+			{
+				if ((this._Сотрудник != value))
+				{
+					this._Сотрудник = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Описание", DbType="NVarChar(MAX)")]
+		public string Описание
+		{
+			get
+			{
+				return this._Описание;
+			}
+			set
+			{
+				if ((this._Описание != value))
+				{
+					this._Описание = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FioOfWorker", DbType="NVarChar(315)")]
+		public string FioOfWorker
+		{
+			get
+			{
+				return this._FioOfWorker;
+			}
+			set
+			{
+				if ((this._FioOfWorker != value))
+				{
+					this._FioOfWorker = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FIO", DbType="NVarChar(315)")]
+		public string FIO
+		{
+			get
+			{
+				return this._FIO;
+			}
+			set
+			{
+				if ((this._FIO != value))
+				{
+					this._FIO = value;
 				}
 			}
 		}

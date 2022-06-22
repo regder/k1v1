@@ -27,21 +27,22 @@ namespace K1.Forms
             ViewBtn.BackColor = Color.FromArgb(73, 101, 214);
             delBtn.BackColor = Color.FromArgb(73, 101, 214);
             Searchbtn.BackColor = Color.FromArgb(255, 160, 64);
+            button1.BackColor = Color.FromArgb(73, 101, 214);
             connection = new SqlConnection("Server=DESKTOP-8847191\\SQL321;Database=OrdersK;Trusted_Connection=True;");
-
-
+            
         }
 
         private void OrdersForm_Load(object sender, EventArgs e)
         {
             idbx.Visible = false;
+            button1.Visible = false;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "ordersKDataSet.Services". При необходимости она может быть перемещена или удалена.
             this.servicesTableAdapter.Fill(this.ordersKDataSet.Services);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "ordersKDataSet.Orderi". При необходимости она может быть перемещена или удалена.
             this.orderiTableAdapter.Fill(this.ordersKDataSet.Orderi);
 
             var db = new DataClasses1DataContext();
-
+            
             servbx.DataSource = db.Services;
             servbx.ValueMember = "id_service";
             servbx.DisplayMember = "title";
@@ -84,27 +85,28 @@ namespace K1.Forms
             SqlDataAdapter wre = new SqlDataAdapter(wr);
             DataSet wrek = new DataSet();
             wre.Fill(wrek);
-                
-
             
+
+
+
             statusbx.DataSource = db.Status;
             statusbx.ValueMember = "id_status";
             statusbx.DisplayMember = "name";
 
-            dataGridView1.DataSource = wrek.Tables[0];
+            orderrr.DataSource = wrek.Tables[0];
             SaveBtn.Visible = true;
             UpBtn.Visible = false;
             
-            dataGridView1.Columns["Код_заказа"].HeaderText = "Код заказа";
-            dataGridView1.Columns["Услуга"].HeaderText = "Название услуги";
-            dataGridView1.Columns["Дата_начала"].HeaderText = "Дата начала";
-            dataGridView1.Columns["Дата_окончания"].HeaderText = "Дата Окончания";
-            dataGridView1.Columns["Клиент"].Visible = false;
-            dataGridView1.Columns["Статус"].HeaderText = "Статус заказа";
-            dataGridView1.Columns["Сотрудник"].Visible = false;
-            dataGridView1.Columns["Описание"].HeaderText = "Описание";
-            dataGridView1.Columns["FioOfWorker"].HeaderText = "ФИО сотрудника";
-            dataGridView1.Columns["FIO"].HeaderText = "ФИО клиента";
+            orderrr.Columns["Код_заказа"].HeaderText = "Код заказа";
+            orderrr.Columns["Услуга"].HeaderText = "Название услуги";
+            orderrr.Columns["Дата_начала"].HeaderText = "Дата начала";
+            orderrr.Columns["Дата_окончания"].HeaderText = "Дата Окончания";
+            orderrr.Columns["Клиент"].Visible = false;
+            orderrr.Columns["Статус"].HeaderText = "Статус заказа";
+            orderrr.Columns["Сотрудник"].Visible = false;
+            orderrr.Columns["Описание"].HeaderText = "Описание";
+            orderrr.Columns["FioOfWorker"].HeaderText = "ФИО сотрудника";
+            orderrr.Columns["FIO"].HeaderText = "ФИО клиента";
 
 
         }
@@ -115,7 +117,7 @@ namespace K1.Forms
             {
                 var db = new DataClasses1DataContext();
                 var ids = new List<int>();
-                var selected = dataGridView1.SelectedRows;
+                var selected = orderrr.SelectedRows;
                 foreach (DataGridViewRow row in selected)
                 {
                     ids.Add((int)row.Cells["id_order"].Value);
@@ -129,7 +131,12 @@ namespace K1.Forms
                 }
                 db.SubmitChanges();
                 MessageBox.Show("=Данные успешно удалены!=");
-                dataGridView1.DataSource = from n in db.ord select n;
+                wr = new SqlCommand("SELECT dbo.Orderi.id_order AS Код_заказа, dbo.Services.title AS Услуга, dbo.Orderi.StartTime AS Дата_начала, dbo.Orderi.EndTime AS Дата_окончания, dbo.Clients.firstName AS Клиент, dbo.Status.name AS Статус, dbo.Workers.firstName AS Сотрудник, dbo.Orderi.Discription AS Описание, (convert(varchar(10), id_worker) + ' | ' + dbo.Workers.firstName + ' ' + dbo.Workers.lastName + ' ' + dbo.Workers.patronymic) as FioOfWorker, (convert(varchar(10), id_client) + ' | ' + dbo.Clients.firstName + ' ' + dbo.Clients.lastName + ' ' + dbo.Clients.patronymic) as FIO FROM dbo.Clients INNER JOIN dbo.Orderi ON dbo.Clients.id_client = dbo.Orderi.Client INNER JOIN dbo.Services ON dbo.Orderi.service = dbo.Services.id_service INNER JOIN dbo.Status ON dbo.Orderi.Status = dbo.Status.id_status INNER JOIN dbo.Workers ON dbo.Orderi.Worker = dbo.Workers.id_worker", connection);
+                
+                SqlDataAdapter wre = new SqlDataAdapter(wr);
+                DataSet wrek = new DataSet();
+                wre.Fill(wrek);
+                orderrr.DataSource = wrek.Tables[0];
             }
         }
 
@@ -142,26 +149,32 @@ namespace K1.Forms
             statusbx.Text = "";
             clientbox.Text = "";
             discbx.Clear();
-            dataGridView1.DataSource = from n in db.ord select n;
+            wr = new SqlCommand("SELECT dbo.Orderi.id_order AS Код_заказа, dbo.Services.title AS Услуга, dbo.Orderi.StartTime AS Дата_начала, dbo.Orderi.EndTime AS Дата_окончания, dbo.Clients.firstName AS Клиент, dbo.Status.name AS Статус, dbo.Workers.firstName AS Сотрудник, dbo.Orderi.Discription AS Описание, (convert(varchar(10), id_worker) + ' | ' + dbo.Workers.firstName + ' ' + dbo.Workers.lastName + ' ' + dbo.Workers.patronymic) as FioOfWorker, (convert(varchar(10), id_client) + ' | ' + dbo.Clients.firstName + ' ' + dbo.Clients.lastName + ' ' + dbo.Clients.patronymic) as FIO FROM dbo.Clients INNER JOIN dbo.Orderi ON dbo.Clients.id_client = dbo.Orderi.Client INNER JOIN dbo.Services ON dbo.Orderi.service = dbo.Services.id_service INNER JOIN dbo.Status ON dbo.Orderi.Status = dbo.Status.id_status INNER JOIN dbo.Workers ON dbo.Orderi.Worker = dbo.Workers.id_worker", connection);
+            
+            SqlDataAdapter wre = new SqlDataAdapter(wr);
+            DataSet wrek = new DataSet();
+            wre.Fill(wrek);
+            orderrr.DataSource = wrek.Tables[0];
+            
             SaveBtn.Visible = true;
             UpBtn.Visible = false;
         }
 
         private void ViewBtn_Click(object sender, EventArgs e)
         {
-            int index = dataGridView1.CurrentCell.RowIndex;
+            int index = orderrr.CurrentCell.RowIndex;
             var db = new DataClasses1DataContext();
             
-            idbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[0].Value));            
-            servbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[1].Value));
-            statusbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[5].Value));
-            startPicker.Value = (System.DateTime)dataGridView1.Rows[index].Cells[2].Value;
-            discbx.Text = (string)dataGridView1.Rows[index].Cells[7].Value;
-            endPicker.Value = (System.DateTime)dataGridView1.Rows[index].Cells[3].Value;
+            idbx.Text = (Convert.ToString(orderrr.Rows[index].Cells[0].Value));            
+            servbx.Text = (Convert.ToString(orderrr.Rows[index].Cells[1].Value));
+            statusbx.Text = (Convert.ToString(orderrr.Rows[index].Cells[5].Value));
+            startPicker.Value = (System.DateTime)orderrr.Rows[index].Cells[2].Value;
+            discbx.Text = (string)orderrr.Rows[index].Cells[7].Value;
+            endPicker.Value = (System.DateTime)orderrr.Rows[index].Cells[3].Value;
             
-            workerbx.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[8].Value));
+            workerbx.Text = (Convert.ToString(orderrr.Rows[index].Cells[8].Value));
 
-            clientbox.Text = (Convert.ToString(dataGridView1.Rows[index].Cells[9].Value));
+            clientbox.Text = (Convert.ToString(orderrr.Rows[index].Cells[9].Value));
 
             SaveBtn.Visible = false;
             UpBtn.Visible = true;
@@ -189,7 +202,13 @@ namespace K1.Forms
                 db.SubmitChanges();
                 MessageBox.Show("=Данные успешно обновлены!=");
             }
-            dataGridView1.DataSource = from n in db.ord select n;
+            wr = new SqlCommand("SELECT dbo.Orderi.id_order AS Код_заказа, dbo.Services.title AS Услуга, dbo.Orderi.StartTime AS Дата_начала, dbo.Orderi.EndTime AS Дата_окончания, dbo.Clients.firstName AS Клиент, dbo.Status.name AS Статус, dbo.Workers.firstName AS Сотрудник, dbo.Orderi.Discription AS Описание, (convert(varchar(10), id_worker) + ' | ' + dbo.Workers.firstName + ' ' + dbo.Workers.lastName + ' ' + dbo.Workers.patronymic) as FioOfWorker, (convert(varchar(10), id_client) + ' | ' + dbo.Clients.firstName + ' ' + dbo.Clients.lastName + ' ' + dbo.Clients.patronymic) as FIO FROM dbo.Clients INNER JOIN dbo.Orderi ON dbo.Clients.id_client = dbo.Orderi.Client INNER JOIN dbo.Services ON dbo.Orderi.service = dbo.Services.id_service INNER JOIN dbo.Status ON dbo.Orderi.Status = dbo.Status.id_status INNER JOIN dbo.Workers ON dbo.Orderi.Worker = dbo.Workers.id_worker", connection);
+
+            SqlDataAdapter wre = new SqlDataAdapter(wr);
+            DataSet wrek = new DataSet();
+            wre.Fill(wrek);
+            orderrr.DataSource = wrek.Tables[0];
+            
             servbx.Text = "";
             workerbx.Text = "";
             statusbx.Text = "";
@@ -223,7 +242,13 @@ namespace K1.Forms
             }
             db.SubmitChanges();
             MessageBox.Show("=Данные успешно сохранены!=");
-            dataGridView1.DataSource = from n in db.ord select n;
+            wr = new SqlCommand("SELECT dbo.Orderi.id_order AS Код_заказа, dbo.Services.title AS Услуга, dbo.Orderi.StartTime AS Дата_начала, dbo.Orderi.EndTime AS Дата_окончания, dbo.Clients.firstName AS Клиент, dbo.Status.name AS Статус, dbo.Workers.firstName AS Сотрудник, dbo.Orderi.Discription AS Описание, (convert(varchar(10), id_worker) + ' | ' + dbo.Workers.firstName + ' ' + dbo.Workers.lastName + ' ' + dbo.Workers.patronymic) as FioOfWorker, (convert(varchar(10), id_client) + ' | ' + dbo.Clients.firstName + ' ' + dbo.Clients.lastName + ' ' + dbo.Clients.patronymic) as FIO FROM dbo.Clients INNER JOIN dbo.Orderi ON dbo.Clients.id_client = dbo.Orderi.Client INNER JOIN dbo.Services ON dbo.Orderi.service = dbo.Services.id_service INNER JOIN dbo.Status ON dbo.Orderi.Status = dbo.Status.id_status INNER JOIN dbo.Workers ON dbo.Orderi.Worker = dbo.Workers.id_worker", connection);
+
+            SqlDataAdapter wre = new SqlDataAdapter(wr);
+            DataSet wrek = new DataSet();
+            wre.Fill(wrek);
+            orderrr.DataSource = wrek.Tables[0];
+            
             servbx.Text = "";
             workerbx.Text = "";
             statusbx.Text = "";
@@ -239,13 +264,47 @@ namespace K1.Forms
         private void Searchbtn_Click(object sender, EventArgs e)
         {
             var db = new DataClasses1DataContext();
+            
+            var query = from n in db.search
+                        where n.Статус == statusbx.Text
+                        select n;
 
-            var query =
-                 from n in db.ord
-                 where n.Статус == statusbx.Text
-                 select n;
+            orderrr.DataSource = query;
+        }
 
-            dataGridView1.DataSource = query;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            command = new SqlCommand("SELECT Orderi.id_order,(dbo.Clients.firstName+dbo.Clients.lastName+dbo.Clients.patronymic) AS Имя_клиента, dbo.Services.title AS Название_услуги, dbo.Orderi.StartTime AS Дата_начала,  dbo.Services.cost AS Цена FROM            dbo.Clients INNER JOIN dbo.Orderi ON dbo.Clients.id_client = dbo.Orderi.Client INNER JOIN dbo.Services ON dbo.Orderi.service = dbo.Services.id_service INNER JOIN dbo.Status ON dbo.Orderi.Status = dbo.Status.id_status INNER JOIN dbo.Workers ON dbo.Orderi.Worker = dbo.Workers.id_worker", connection);
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            DataSet ds = new DataSet();
+            try
+            {
+
+                sda.Fill(ds);
+                            
+                orderrr.DataSource = ds.Tables[0];
+             //   int index = orderrr.CurrentCell.RowIndex;
+                int currIndex = orderrr.CurrentCell.RowIndex;
+                orderrr.Rows[currIndex].Selected = true;
+                orderrr.CurrentCell = orderrr[0,currIndex];
+                
+                CheckForm check = new CheckForm();                
+                check.ids.Text = Convert.ToString(orderrr.Rows[currIndex].Cells[0].Value);
+                check.fio.Text = (string)orderrr.Rows[currIndex].Cells[1].Value;
+                check.date.Text = Convert.ToString(orderrr.Rows[currIndex].Cells[2].Value);
+                check.total.Text = Convert.ToString(orderrr.Rows[currIndex].Cells[4].Value);
+                check.serv.Text = Convert.ToString(orderrr.Rows[currIndex].Cells[3].Value);
+                check.Show();
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        private void orderrr_SelectionChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
