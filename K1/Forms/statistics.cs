@@ -35,10 +35,10 @@ namespace K1.Forms
             button3.BackColor = Color.FromArgb(73, 101, 214);
             button4.BackColor = Color.FromArgb(73, 101, 214);
             
-            button4.ForeColor = Color.FromArgb(73, 101, 214);
-            button3.ForeColor = Color.FromArgb(73, 101, 214);
-            button2.ForeColor = Color.FromArgb(73, 101, 214);
-            button1.ForeColor = Color.FromArgb(73, 101, 214);
+            button4.ForeColor = Color.FromArgb(255,255,255);
+            button3.ForeColor = Color.FromArgb(255, 255, 255);
+            button2.ForeColor = Color.FromArgb(255, 255, 255);
+            button1.ForeColor = Color.FromArgb(255, 255, 255);
 
 
         }
