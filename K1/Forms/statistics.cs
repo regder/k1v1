@@ -30,6 +30,17 @@ namespace K1.Forms
             command.CommandType = CommandType.Text;
             adapter = new SqlDataAdapter(command);
             table = new DataTable();
+            button1.BackColor = Color.FromArgb(73, 101, 214);
+            button2.BackColor = Color.FromArgb(73, 101, 214);
+            button3.BackColor = Color.FromArgb(73, 101, 214);
+            button4.BackColor = Color.FromArgb(73, 101, 214);
+            
+            button4.ForeColor = Color.FromArgb(73, 101, 214);
+            button3.ForeColor = Color.FromArgb(73, 101, 214);
+            button2.ForeColor = Color.FromArgb(73, 101, 214);
+            button1.ForeColor = Color.FromArgb(73, 101, 214);
+
+
         }
         private void ShowTable(string text)
         {
@@ -39,6 +50,7 @@ namespace K1.Forms
             table.Clear();
             adapter.Fill(table);
             dataGridView1.DataSource = table;
+
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -52,6 +64,7 @@ namespace K1.Forms
 
         private void statistics_Load(object sender, EventArgs e)
         {
+
             var db = new DataClasses1DataContext();
 
             int count = db.Clients.Count();

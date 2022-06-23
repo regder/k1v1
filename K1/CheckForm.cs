@@ -24,6 +24,8 @@ namespace K1
 
         private void CheckForm_Load(object sender, EventArgs e)
         {
+            
+
             //check.ids.Text = Convert.ToString(orderrr.Rows[index].Cells[0].Value);
             //check.fio.Text = (string)orderrr.Rows[index].Cells[1].Value;
             //check.date.Text = Convert.ToString(orderrr.Rows[index].Cells[2].Value);

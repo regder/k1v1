@@ -20,6 +20,7 @@ namespace K1.Forms
         SqlCommand wr;
         public OrdersForm()
         {
+
             InitializeComponent();
             UpBtn.BackColor = Color.FromArgb(73, 101, 214);
             SaveBtn.BackColor = Color.FromArgb(73, 101, 214);
@@ -27,7 +28,7 @@ namespace K1.Forms
             ViewBtn.BackColor = Color.FromArgb(73, 101, 214);
             delBtn.BackColor = Color.FromArgb(73, 101, 214);
             Searchbtn.BackColor = Color.FromArgb(255, 160, 64);
-            button1.BackColor = Color.FromArgb(73, 101, 214);
+           
             connection = new SqlConnection("Server=DESKTOP-8847191\\SQL321;Database=OrdersK;Trusted_Connection=True;");
             
         }
@@ -35,7 +36,7 @@ namespace K1.Forms
         private void OrdersForm_Load(object sender, EventArgs e)
         {
             idbx.Visible = false;
-            button1.Visible = false;
+            
             // TODO: данная строка кода позволяет загрузить данные в таблицу "ordersKDataSet.Services". При необходимости она может быть перемещена или удалена.
             this.servicesTableAdapter.Fill(this.ordersKDataSet.Services);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "ordersKDataSet.Orderi". При необходимости она может быть перемещена или удалена.
@@ -274,37 +275,42 @@ namespace K1.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            command = new SqlCommand("SELECT Orderi.id_order,(dbo.Clients.firstName+dbo.Clients.lastName+dbo.Clients.patronymic) AS Имя_клиента, dbo.Services.title AS Название_услуги, dbo.Orderi.StartTime AS Дата_начала,  dbo.Services.cost AS Цена FROM            dbo.Clients INNER JOIN dbo.Orderi ON dbo.Clients.id_client = dbo.Orderi.Client INNER JOIN dbo.Services ON dbo.Orderi.service = dbo.Services.id_service INNER JOIN dbo.Status ON dbo.Orderi.Status = dbo.Status.id_status INNER JOIN dbo.Workers ON dbo.Orderi.Worker = dbo.Workers.id_worker", connection);
-            SqlDataAdapter sda = new SqlDataAdapter(command);
-            DataSet ds = new DataSet();
-            try
-            {
-
-                sda.Fill(ds);
-                            
-                orderrr.DataSource = ds.Tables[0];
-             //   int index = orderrr.CurrentCell.RowIndex;
-                int currIndex = orderrr.CurrentCell.RowIndex;
-                orderrr.Rows[currIndex].Selected = true;
-                orderrr.CurrentCell = orderrr[0,currIndex];
-                
-                CheckForm check = new CheckForm();                
-                check.ids.Text = Convert.ToString(orderrr.Rows[currIndex].Cells[0].Value);
-                check.fio.Text = (string)orderrr.Rows[currIndex].Cells[1].Value;
-                check.date.Text = Convert.ToString(orderrr.Rows[currIndex].Cells[2].Value);
-                check.total.Text = Convert.ToString(orderrr.Rows[currIndex].Cells[4].Value);
-                check.serv.Text = Convert.ToString(orderrr.Rows[currIndex].Cells[3].Value);
-                check.Show();
-            }
-            finally
-            {
-                connection.Close();
-            }
+            
         }
 
         private void orderrr_SelectionChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void orderrr_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            command = new SqlCommand("SELECT Orderi.id_order,(dbo.Clients.firstName+dbo.Clients.lastName+dbo.Clients.patronymic) AS Имя_клиента, dbo.Services.title AS Название_услуги, dbo.Orderi.StartTime AS Дата_начала,  dbo.Services.cost AS Цена FROM            dbo.Clients INNER JOIN dbo.Orderi ON dbo.Clients.id_client = dbo.Orderi.Client INNER JOIN dbo.Services ON dbo.Orderi.service = dbo.Services.id_service INNER JOIN dbo.Status ON dbo.Orderi.Status = dbo.Status.id_status INNER JOIN dbo.Workers ON dbo.Orderi.Worker = dbo.Workers.id_worker", connection);
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            DataSet ds = new DataSet();
+            
+           // try
+            //{
+
+                sda.Fill(ds);
+                orderrr.DataSource = ds.Tables[0];
+                //   int index = orderrr.CurrentCell.RowIndex;
+                //  int currIndex = orderrr.CurrentCell.RowIndex;
+                //   orderrr.Rows[currIndex].Selected = true;
+                //   orderrr.CurrentCell = orderrr[0,currIndex];
+
+                CheckForm check = new CheckForm();
+                check.ids.Text = Convert.ToString(this.orderrr.CurrentRow.Cells[0].Value);
+                check.fio.Text = (string)this.orderrr.CurrentRow.Cells[1].Value;
+                check.date.Text = Convert.ToString(this.orderrr.CurrentRow.Cells[2].Value);
+                check.total.Text = Convert.ToString(this.orderrr.CurrentRow.Cells[4].Value);
+                check.serv.Text = Convert.ToString(this.orderrr.CurrentRow.Cells[3].Value);
+                check.ShowDialog();
+           // }
+          //  finally
+           // {
+              //  connection.Close();
+           // }
         }
     }
 }

@@ -59,7 +59,6 @@ namespace K1.Forms
             this.servicesTableAdapter = new K1.OrdersKDataSetTableAdapters.ServicesTableAdapter();
             this.clientbox = new System.Windows.Forms.ComboBox();
             this.Searchbtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.orderrr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersKDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderiBindingSource)).BeginInit();
@@ -68,7 +67,6 @@ namespace K1.Forms
             // 
             // orderrr
             // 
-            this.orderrr.AllowUserToAddRows = false;
             this.orderrr.AllowUserToDeleteRows = false;
             this.orderrr.AllowUserToResizeColumns = false;
             this.orderrr.AllowUserToResizeRows = false;
@@ -88,6 +86,7 @@ namespace K1.Forms
             this.orderrr.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.orderrr.Size = new System.Drawing.Size(365, 359);
             this.orderrr.TabIndex = 13;
+            this.orderrr.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderrr_CellDoubleClick);
             this.orderrr.SelectionChanged += new System.EventHandler(this.orderrr_SelectionChanged);
             // 
             // delBtn
@@ -354,28 +353,12 @@ namespace K1.Forms
             this.Searchbtn.UseVisualStyleBackColor = true;
             this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
             // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(553, 356);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 38);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Чек на оплату";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Searchbtn);
             this.Controls.Add(this.clientbox);
             this.Controls.Add(this.idbx);
@@ -439,7 +422,6 @@ namespace K1.Forms
         private OrdersKDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter;
         private System.Windows.Forms.ComboBox clientbox;
         private System.Windows.Forms.Button Searchbtn;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView orderrr;
     }
 }
