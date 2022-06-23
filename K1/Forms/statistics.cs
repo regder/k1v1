@@ -177,7 +177,7 @@ namespace K1.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             //select* from ReportOrder Where Дата_начала >= GETDATE() - 0
-            serv = new SqlCommand("Select Дата_начала, count(Услуга) as ser  from ord where Дата_начала >= GETDATE() - 0 group by Дата_начала order by ser", connection);
+            serv = new SqlCommand("Select Дата_начала, count(Услуга) as ser  from ord where Дата_начала >= GETDATE() - 1 group by Дата_начала order by ser", connection);
             connection.Open();
             SqlDataAdapter sda = new SqlDataAdapter(serv);
             DataSet ds = new DataSet();
@@ -191,7 +191,7 @@ namespace K1.Forms
                 StatDate.DataSource = dataGridView2.DataSource;
                 StatDate.DataBind();
 
-                ShowTable("SELECT TOP(5) Название_услуги, count(*) as topcount FROM ReportOrder where Дата_начала >= GETDATE() - 0 group by Название_услуги order by topcount DESC");
+                ShowTable("SELECT TOP(5) Название_услуги, count(*) as topcount FROM ReportOrder where Дата_начала >= GETDATE() - 1 group by Название_услуги order by topcount DESC");
 
                 popServ.Series["Series1"].XValueMember = "Название_услуги";
                 popServ.Series["Series1"].YValueMembers = "topcount";
