@@ -15,7 +15,7 @@ namespace K1.Forms
 {
     public partial class statistics : Form
     {
-
+        //connect
         SqlConnection connection;
         SqlCommand command;
         SqlCommand serv;
