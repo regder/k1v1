@@ -175,7 +175,11 @@ namespace K1
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Вы уверены?", "Attantion", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+                
         }
 
         private void btnFill_Click(object sender, EventArgs e)
